@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <v-navigation-drawer
-      
+
       fixed
       app
       dark
@@ -22,13 +22,13 @@
           class="red--text text-center"
         >
           <v-list-item-content style="padding:5px" >
-          <v-btn block 
+          <v-btn block
           height="50px"
           >
           {{item.title}}
-          </v-btn> 
+          </v-btn>
           </v-list-item-content>
-          <!-- <v-btn block 
+          <!-- <v-btn block
           >{{item.title}}</v-btn> -->
         </v-list-item>
       </v-list>
@@ -39,16 +39,16 @@
           :key="i"
           :to="item.to"
           router
-          exact 
+          exact
           class="red--text text-center"
-        >  
+        >
           <v-list-item-content >
             <v-list-item-title ><v-icon>{{ item.icon }}</v-icon> {{item.title}}</v-list-item-title>
           </v-list-item-content>
-         
+
         </v-list-item> -->
         <v-divider/>
-        <v-list-item 
+        <v-list-item
           link
           class="red--text text-center">
            <v-list-item-content >
@@ -56,7 +56,7 @@
           </v-list-item-content>
         </v-list-item>
         <v-divider/>
-        <v-list-item 
+        <v-list-item
         class="red--text text-center"
         link >
            <v-list-item-content >
@@ -69,7 +69,7 @@
             <v-list-item-title >app-123beta</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        
+
       </v-list>
         </template>
     </v-navigation-drawer>
@@ -79,7 +79,7 @@
       app
       height="20px"
     >
-     
+
       <v-toolbar-title v-text="title" />
       <v-spacer />
     </v-app-bar> -->
@@ -88,11 +88,11 @@
         <nuxt />
       </v-container>
     </v-content>
-    <v-footer 
-    color="rgba(0, 0, 0, 0.8)" 
-    padless 
-    height="40px" 
-    inset 
+    <v-footer
+    color="rgba(0, 0, 0, 0.8)"
+    padless
+    height="40px"
+    inset
     app
     dark
     >
@@ -123,11 +123,11 @@
       <v-divider vertical/>
       <div class="d-flex" style="width:165px">
         <div style="width:40px" class="pa-2">
-           
+
            <v-icon>attach_money</v-icon>
-           
+
         </div>
-        
+
         <div  class="pa-2" style="width:75px">
           5,00000
         </div>
@@ -135,8 +135,8 @@
         <div class=" pa-2" >
             <v-icon small>autorenew</v-icon>
         </div>
-        
-       
+
+
       </div>
       <v-divider vertical/>
        <div class="d-flex" style="width:180px">
@@ -223,8 +223,8 @@
         
      
 
-      
-      
+
+
     </v-row>
     </v-footer>
   </v-app>
