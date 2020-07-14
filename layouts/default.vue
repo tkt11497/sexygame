@@ -84,9 +84,9 @@
       <v-spacer />
     </v-app-bar> -->
     <v-content>
-      <v-container>
+      
         <nuxt />
-      </v-container>
+     
     </v-content>
     <v-footer
     color="rgba(0, 0, 0, 0.8)"
