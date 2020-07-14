@@ -155,15 +155,73 @@
         </div>
          <v-divider vertical/>
           <div class="d-flex justify-center">
-            <v-btn icon class="pa-2 ma-1">
+            <v-menu  
+            offset-y 
+            top
+            close-on-content-click
+            :nudge-width="100"
+            left 
+            :max-width="250"
+            >
+        <template v-slot:activator="{ on, attrs }">
+           <v-btn 
+           icon 
+           class="pa-2 ma-1"
+           v-bind="attrs"
+            v-on="on"
+           >
               <v-icon class="pa-2">menu</v-icon>
             </v-btn>
+        </template>
+       
+
+         <v-card>
+              <v-list 
+              dark
+              color="rgba(12, 10, 6, 0.8)">
+                 <v-subheader>
+                   <v-icon>account_circle</v-icon>PLAYER_NAME
+                 </v-subheader>
+            <v-list-item link>
+              <v-list-item-icon>
+                <v-icon >settings</v-icon>
+              </v-list-item-icon>
+              <v-list-item-content>Enable messages</v-list-item-content>
+            </v-list-item>
+  
+            <v-list-item link>
+              <v-list-item-icon>
+                <v-icon >settings</v-icon>
+              </v-list-item-icon>
+              <v-list-item-content>Enable hints</v-list-item-content>
+            </v-list-item>
+             <v-list-item link>
+              <v-list-item-icon>
+                <v-icon >settings</v-icon>
+              </v-list-item-icon>
+              <v-list-item-content>Enable hints</v-list-item-content>
+            </v-list-item>
+             <v-list-item link>
+              <v-list-item-icon>
+                <v-icon >settings</v-icon>
+              </v-list-item-icon>
+              <v-list-item-content>Enable hints</v-list-item-content>
+            </v-list-item>
+            <v-list-item>
+            <v-list-item-action-text>
+              v0.123
+            </v-list-item-action-text>
+             </v-list-item>
+            
+          </v-list>
+        </v-card>
+      </v-menu>
           </div>
          <v-divider vertical/>
           <div class="d-flex" style="width:100px">
           </div>
-        <v-divider vertical/>
-
+        
+     
 
       
       
