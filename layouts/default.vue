@@ -24,6 +24,7 @@
           <v-list-item-content style="padding:5px" >
           <v-btn block
           height="50px"
+          :to="item.to"
           >
           {{item.title}}
           </v-btn>
@@ -245,7 +246,7 @@ export default {
         {
           icon: 'mdi-chart-bubble',
           title: 'Inspire',
-          to: '/inspire'
+          to: '/Dashboard/dashboard'
         },
         {
           icon: 'mdi-chart-bubble',
@@ -262,6 +263,7 @@ export default {
           title: 'blabhlbabh',
           to: '/inspire'
         }
+
       ],
       miniVariant: false,
       right: true,

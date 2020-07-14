@@ -44,7 +44,7 @@
 
 
               <v-row>
-                  <div style="margin-left:11px;">
+                  <div class="profile-img" >
                     <v-img
                       height="200"
                       width="150"
@@ -52,9 +52,49 @@
                     ></v-img>
                   </div>
 
-                  <div class="showing-resultimg" >
+                  <v-hover v-slot:default="{ hover }">
+                      <div class="showing-resultimg"  >
 
-                  </div>
+                      <div :class="`justify-center justify-xl-center`"
+                        v-if="hover&&!show"
+                        class="d-flex  #1f180e darken-2 v-card--reveal display-3 white--text"
+
+                        style="height: 100%; background:gray;"
+                      >
+                      <!-- <v-input v-model="show">{{show}}</v-input> -->
+
+                      <div class="mt-15 mr-5 ">
+                          <v-btn class="white--text" large depressed color="#5f4d35"  @click="show=true">Primary</v-btn>
+                      </div>
+
+                      <div class="mt-15 mr-5 " >
+                          <v-btn class="white--text"  large depressed color="#5f4d35">Secondary</v-btn>
+                      </div>
+
+
+                      </div>
+
+                      <div :class="`justify-center justify-xl-center`"
+                        v-if="hover ? show&& hover : show=false "
+                        class="d-flex  #1f180e darken-2 v-card--reveal display-3 white--text"
+
+                        style="height: 100%; background:gray;"
+                      >
+                      <!-- <v-input v-model="show">{{show}}</v-input> -->
+
+                      <div class="mt-15 mr-5 ">
+                          <v-btn class="white--text" large depressed color="#5f4d35"  @click="show = true">sadsadsadsa</v-btn>
+                      </div>
+
+                      <div class="mt-15 mr-5 " >
+                          <v-btn class="white--text"  large depressed color="#5f4d35">Secondary</v-btn>
+                      </div>
+
+
+                      </div>
+
+                      </div>
+                      </v-hover>
               </v-row>
     </v-col>
 
@@ -101,7 +141,7 @@
 
 
           <v-row>
-              <div style="margin-left:11px;">
+              <div class="profile-img">
                 <v-img
                   height="200"
                   width="150"
@@ -164,7 +204,7 @@
 
 
           <v-row>
-              <div style="margin-left:11px;">
+              <div class="profile-img">
                 <v-img
                   height="200"
                   width="150"
@@ -221,7 +261,7 @@
 
 
       <v-row>
-          <div style="margin-left:11px;">
+          <div class="profile-img">
             <v-img
               height="200"
               width="150"
@@ -284,7 +324,7 @@
 
 
           <v-row>
-              <div style="margin-left:11px;">
+              <div class="profile-img">
                 <v-img
                   height="200"
                   width="150"
@@ -341,7 +381,7 @@
 
 
       <v-row>
-          <div style="margin-left:11px;">
+          <div class="profile-img">
             <v-img
               height="200"
               width="150"
@@ -405,7 +445,7 @@
 
 
           <v-row>
-              <div style="margin-left:11px;">
+              <div class="profile-img">
                 <v-img
                   height="200"
                   width="150"
@@ -462,7 +502,7 @@
 
 
       <v-row>
-          <div style="margin-left:11px;">
+          <div class="profile-img">
             <v-img
               height="200"
               width="150"
@@ -491,6 +531,7 @@
 export default {
 data() {
   return {
+    show: false,
     projects: [
       {seri:'C01',name:'SIKEN',user: '123300', bb: '1232200', pp: '2322200',tt: '2020', status:'ongoing'},
       {seri:'C02',name:'HONGLONG',user: '5200', bb: '1232200', pp: '2322200',tt: '2020', status:'complete'},
@@ -509,7 +550,7 @@ data() {
 }
 </script>
 
-<style>
+<style scoped>
 .dashboard-card {
   background:#1f180e;
   width: 770px;
@@ -519,5 +560,9 @@ data() {
  width:620px;
  height:200px;
 }
+.profile-img {
+margin-left:11px;
+}
+
 
 </style>
