@@ -1,29 +1,89 @@
 <template>
   <v-container >
+    <!-- first row -->
     <v-row>
-      <v-col>
-        <v-card v-if="project.name === 'siken'" flat v-for="project in projects" :key="project.name" >
-          <v-layout >
+
+        <v-col>
+          <v-card v-if="project.name === 'SIKEN'" flat v-for="project in projects" :key="project.name" >
+            <div class="dashboard-card">
+              <v-layout>
+                <v-flex>
+                  <span class="white--text">Seri {{ project.seri}}</span>
+                </v-flex>
+                  <v-flex >
+                    <div class="white--text"><v-icon class="white--text">group</v-icon> {{ project.user}} </div>
+                  </v-flex>
+                      <v-flex>
+                        <v-avatar color="red" size="25">
+                          <span class="white--text">B</span>
+                        </v-avatar>
+                        <span class="white--text">{{project.bb}}</span>
+                      </v-flex>
+                        <v-flex>
+                          <v-avatar color="blue" size="25">
+                            <span class="white--text ">P</span>
+                        </v-avatar>
+                            <span class="white--text">{{project.pp}}</span>
+                        </v-flex>
+                              <v-flex>
+                                <div class="white--text">
+                                  <v-avatar color="red" size="25">
+                                    <span class="white--text">T</span>
+                                  </v-avatar>
+                                  {{project.tt}}
+                                </div>
+                              </v-flex>
+                              <v-flex>
+                                    <div class="white--text" style="background:#196260; height:30px;">
+                                      <div> {{project.status}} </div>
+                                    </div>
+                              </v-flex>
+                    </v-layout>
+            </div>
+        </v-card>
+
+
+              <v-row>
+                  <div style="margin-left:11px;">
+                    <v-img
+                      height="200"
+                      width="150"
+                      src="https://cdn.vuetifyjs.com/images/cards/store.jpg"
+                    ></v-img>
+                  </div>
+
+                  <div class="showing-resultimg" >
+
+                  </div>
+              </v-row>
+    </v-col>
+
+
+    <!-- first row - second column -->
+    <v-col>
+      <v-card v-if="project.name === 'HONGLONG'" flat v-for="project in projects" :key="project.name" >
+        <div class="dashboard-card">
+          <v-layout>
             <v-flex>
-              <div>Seri {{ project.seri}} </div>
+              <span class="white--text">Seri {{ project.seri}}</span>
             </v-flex>
               <v-flex >
-                <div><v-icon>group</v-icon> {{ project.user}} </div>
+                <div class="white--text"><v-icon class="white--text">group</v-icon> {{ project.user}} </div>
               </v-flex>
                   <v-flex>
                     <v-avatar color="red" size="25">
                       <span class="white--text">B</span>
                     </v-avatar>
-                    <span>{{project.bb}}</span>
+                    <span class="white--text">{{project.bb}}</span>
                   </v-flex>
                     <v-flex>
                       <v-avatar color="blue" size="25">
                         <span class="white--text ">P</span>
                     </v-avatar>
-                        <span>{{project.pp}}</span>
+                        <span class="white--text">{{project.pp}}</span>
                     </v-flex>
                           <v-flex>
-                            <div >
+                            <div class="white--text">
                               <v-avatar color="red" size="25">
                                 <span class="white--text">T</span>
                               </v-avatar>
@@ -31,54 +91,119 @@
                             </div>
                           </v-flex>
                           <v-flex>
-                                <div style="background:#196260; height:30px;">
+                                <div class="white--text" style="background:#196260; height:30px;">
                                   <div> {{project.status}} </div>
                                 </div>
                           </v-flex>
                 </v-layout>
-            </v-card>
+        </div>
+    </v-card>
+
+
+          <v-row>
+              <div style="margin-left:11px;">
+                <v-img
+                  height="200"
+                  width="150"
+                  src="https://cdn.vuetifyjs.com/images/cards/store.jpg"
+                ></v-img>
+              </div>
+
+              <div class="showing-resultimg">
+
+              </div>
+          </v-row>
+   </v-col>
+   <!-- end first row - second column -->
+    </v-row>
+<!-- End first row -->
 
 
 
-      <v-row>
-          <div>
-            <v-img
-              height="200"
-              width="150"
-              src="https://cdn.vuetifyjs.com/images/cards/store.jpg"
-            ></v-img>
-          </div>
+<!-- second row -->
+<v-row>
 
-          <div style="border: 1px solid gray; width:650px; height:200px;">
+    <v-col>
+      <v-card v-if="project.name === 'KUNHEAR'" flat v-for="project in projects" :key="project.name" >
+        <div class="dashboard-card">
+          <v-layout>
+            <v-flex>
+              <span class="white--text">Seri {{ project.seri}}</span>
+            </v-flex>
+              <v-flex >
+                <div class="white--text"><v-icon class="white--text">group</v-icon> {{ project.user}} </div>
+              </v-flex>
+                  <v-flex>
+                    <v-avatar color="red" size="25">
+                      <span class="white--text">B</span>
+                    </v-avatar>
+                    <span class="white--text">{{project.bb}}</span>
+                  </v-flex>
+                    <v-flex>
+                      <v-avatar color="blue" size="25">
+                        <span class="white--text ">P</span>
+                    </v-avatar>
+                        <span class="white--text">{{project.pp}}</span>
+                    </v-flex>
+                          <v-flex>
+                            <div class="white--text">
+                              <v-avatar color="red" size="25">
+                                <span class="white--text">T</span>
+                              </v-avatar>
+                              {{project.tt}}
+                            </div>
+                          </v-flex>
+                          <v-flex>
+                                <div class="white--text" style="background:#196260; height:30px;">
+                                  <div> {{project.status}} </div>
+                                </div>
+                          </v-flex>
+                </v-layout>
+        </div>
+    </v-card>
 
-          </div>
-      </v-row>
-  </v-col>
 
- <!-- Second Card -->
-  <v-col>
-    <v-card v-if="project.name === 'siken'" flat v-for="project in projects" :key="project.name" >
-      <v-layout >
+          <v-row>
+              <div style="margin-left:11px;">
+                <v-img
+                  height="200"
+                  width="150"
+                  src="https://cdn.vuetifyjs.com/images/cards/store.jpg"
+                ></v-img>
+              </div>
+
+              <div class="showing-resultimg">
+
+              </div>
+          </v-row>
+</v-col>
+
+
+<!-- second row - second column -->
+<v-col>
+  <v-card v-if="project.name === 'CHEA_C'" flat v-for="project in projects" :key="project.name" >
+    <div class="dashboard-card">
+      <v-layout>
         <v-flex>
-          <div>Seri {{ project.seri}} </div>
+          <span class="white--text">Seri {{ project.seri}}</span>
         </v-flex>
           <v-flex >
-            <div><v-icon>group</v-icon> {{ project.user}} </div>
+            <div class="white--text"><v-icon class="white--text">group</v-icon> {{ project.user}} </div>
           </v-flex>
               <v-flex>
                 <v-avatar color="red" size="25">
                   <span class="white--text">B</span>
                 </v-avatar>
-                <span>{{project.bb}}</span>
+                <span class="white--text">{{project.bb}}</span>
               </v-flex>
                 <v-flex>
                   <v-avatar color="blue" size="25">
                     <span class="white--text ">P</span>
                 </v-avatar>
-                    <span>{{project.pp}}</span>
+                    <span class="white--text">{{project.pp}}</span>
                 </v-flex>
                       <v-flex>
-                        <div >
+                        <div class="white--text">
                           <v-avatar color="red" size="25">
                             <span class="white--text">T</span>
                           </v-avatar>
@@ -86,31 +211,276 @@
                         </div>
                       </v-flex>
                       <v-flex>
-                            <div style="background:#196260; height:30px;">
+                            <div class="white--text" style="background:#196260; height:30px;">
                               <div> {{project.status}} </div>
                             </div>
                       </v-flex>
             </v-layout>
-        </v-card>
+    </div>
+</v-card>
 
 
+      <v-row>
+          <div style="margin-left:11px;">
+            <v-img
+              height="200"
+              width="150"
+              src="https://cdn.vuetifyjs.com/images/cards/store.jpg"
+            ></v-img>
+          </div>
 
-  <v-row>
-      <div>
-        <v-img
-          height="200"
-          width="150"
-          src="https://cdn.vuetifyjs.com/images/cards/store.jpg"
-        ></v-img>
-      </div>
+          <div class="showing-resultimg">
 
-      <div style="border: 1px solid gray; width:650px; height:200px;">
-
-      </div>
-  </v-row>
+          </div>
+      </v-row>
 </v-col>
-<!-- End Second Card -->
-    </v-row>
+<!-- end second row - second column -->
+</v-row>
+<!-- End second row -->
+
+
+
+<!-- third row -->
+<v-row>
+
+    <v-col>
+      <v-card v-if="project.name === 'KUNHEAR'" flat v-for="project in projects" :key="project.name" >
+        <div class="dashboard-card">
+          <v-layout>
+            <v-flex>
+              <span class="white--text">Seri {{ project.seri}}</span>
+            </v-flex>
+              <v-flex >
+                <div class="white--text"><v-icon class="white--text">group</v-icon> {{ project.user}} </div>
+              </v-flex>
+                  <v-flex>
+                    <v-avatar color="red" size="25">
+                      <span class="white--text">B</span>
+                    </v-avatar>
+                    <span class="white--text">{{project.bb}}</span>
+                  </v-flex>
+                    <v-flex>
+                      <v-avatar color="blue" size="25">
+                        <span class="white--text ">P</span>
+                    </v-avatar>
+                        <span class="white--text">{{project.pp}}</span>
+                    </v-flex>
+                          <v-flex>
+                            <div class="white--text">
+                              <v-avatar color="red" size="25">
+                                <span class="white--text">T</span>
+                              </v-avatar>
+                              {{project.tt}}
+                            </div>
+                          </v-flex>
+                          <v-flex>
+                                <div class="white--text" style="background:#196260; height:30px;">
+                                  <div> {{project.status}} </div>
+                                </div>
+                          </v-flex>
+                </v-layout>
+        </div>
+    </v-card>
+
+
+          <v-row>
+              <div style="margin-left:11px;">
+                <v-img
+                  height="200"
+                  width="150"
+                  src="https://cdn.vuetifyjs.com/images/cards/store.jpg"
+                ></v-img>
+              </div>
+
+              <div class="showing-resultimg">
+
+              </div>
+          </v-row>
+</v-col>
+
+
+<!-- third row - second column -->
+<v-col>
+  <v-card v-if="project.name === 'CHEA_C'" flat v-for="project in projects" :key="project.name" >
+    <div class="dashboard-card">
+      <v-layout>
+        <v-flex>
+          <span class="white--text">Seri {{ project.seri}}</span>
+        </v-flex>
+          <v-flex >
+            <div class="white--text"><v-icon class="white--text">group</v-icon> {{ project.user}} </div>
+          </v-flex>
+              <v-flex>
+                <v-avatar color="red" size="25">
+                  <span class="white--text">B</span>
+                </v-avatar>
+                <span class="white--text">{{project.bb}}</span>
+              </v-flex>
+                <v-flex>
+                  <v-avatar color="blue" size="25">
+                    <span class="white--text ">P</span>
+                </v-avatar>
+                    <span class="white--text">{{project.pp}}</span>
+                </v-flex>
+                      <v-flex>
+                        <div class="white--text">
+                          <v-avatar color="red" size="25">
+                            <span class="white--text">T</span>
+                          </v-avatar>
+                          {{project.tt}}
+                        </div>
+                      </v-flex>
+                      <v-flex>
+                            <div class="white--text" style="background:#196260; height:30px;">
+                              <div> {{project.status}} </div>
+                            </div>
+                      </v-flex>
+            </v-layout>
+    </div>
+</v-card>
+
+
+      <v-row>
+          <div style="margin-left:11px;">
+            <v-img
+              height="200"
+              width="150"
+              src="https://cdn.vuetifyjs.com/images/cards/store.jpg"
+            ></v-img>
+          </div>
+
+          <div class="showing-resultimg">
+
+          </div>
+      </v-row>
+</v-col>
+<!-- end second row - second column -->
+</v-row>
+<!-- End third row -->
+
+
+
+
+<!-- fourth row -->
+<v-row>
+
+    <v-col>
+      <v-card v-if="project.name === 'MAkara'" flat v-for="project in projects" :key="project.name" >
+        <div class="dashboard-card">
+          <v-layout>
+            <v-flex>
+              <span class="white--text">Seri {{ project.seri}}</span>
+            </v-flex>
+              <v-flex >
+                <div class="white--text"><v-icon class="white--text">group</v-icon> {{ project.user}} </div>
+              </v-flex>
+                  <v-flex>
+                    <v-avatar color="red" size="25">
+                      <span class="white--text">B</span>
+                    </v-avatar>
+                    <span class="white--text">{{project.bb}}</span>
+                  </v-flex>
+                    <v-flex>
+                      <v-avatar color="blue" size="25">
+                        <span class="white--text ">P</span>
+                    </v-avatar>
+                        <span class="white--text">{{project.pp}}</span>
+                    </v-flex>
+                          <v-flex>
+                            <div class="white--text">
+                              <v-avatar color="red" size="25">
+                                <span class="white--text">T</span>
+                              </v-avatar>
+                              {{project.tt}}
+                            </div>
+                          </v-flex>
+                          <v-flex>
+                                <div class="white--text" style="background:#196260; height:30px;">
+                                  <div> {{project.status}} </div>
+                                </div>
+                          </v-flex>
+                </v-layout>
+        </div>
+    </v-card>
+
+
+          <v-row>
+              <div style="margin-left:11px;">
+                <v-img
+                  height="200"
+                  width="150"
+                  src="https://cdn.vuetifyjs.com/images/cards/store.jpg"
+                ></v-img>
+              </div>
+
+              <div class="showing-resultimg">
+
+              </div>
+          </v-row>
+</v-col>
+
+
+<!-- fourth row - second column -->
+<v-col>
+  <v-card v-if="project.name === 'HEAT_S'" flat v-for="project in projects" :key="project.name" >
+    <div class="dashboard-card">
+      <v-layout>
+        <v-flex>
+          <span class="white--text">Seri {{ project.seri}}</span>
+        </v-flex>
+          <v-flex >
+            <div class="white--text"><v-icon class="white--text">group</v-icon> {{ project.user}} </div>
+          </v-flex>
+              <v-flex>
+                <v-avatar color="red" size="25">
+                  <span class="white--text">B</span>
+                </v-avatar>
+                <span class="white--text">{{project.bb}}</span>
+              </v-flex>
+                <v-flex>
+                  <v-avatar color="blue" size="25">
+                    <span class="white--text ">P</span>
+                </v-avatar>
+                    <span class="white--text">{{project.pp}}</span>
+                </v-flex>
+                      <v-flex>
+                        <div class="white--text">
+                          <v-avatar color="red" size="25">
+                            <span class="white--text">T</span>
+                          </v-avatar>
+                          {{project.tt}}
+                        </div>
+                      </v-flex>
+                      <v-flex>
+                            <div class="white--text" style="background:#196260; height:30px;">
+                              <div> {{project.status}} </div>
+                            </div>
+                      </v-flex>
+            </v-layout>
+    </div>
+</v-card>
+
+
+      <v-row>
+          <div style="margin-left:11px;">
+            <v-img
+              height="200"
+              width="150"
+              src="https://cdn.vuetifyjs.com/images/cards/store.jpg"
+            ></v-img>
+          </div>
+
+          <div class="showing-resultimg">
+
+          </div>
+      </v-row>
+</v-col>
+<!-- end fourth row - second column -->
+</v-row>
+<!-- End fourth row -->
+
+
+
 
   </v-container>
 </template>
@@ -122,9 +492,16 @@ export default {
 data() {
   return {
     projects: [
-      {seri:'C01',name:'siken',user: '123300', bb: '1232200', pp: '2322200',tt: '2020', status:'ongoing'},
-      {seri:'C01',name:'honglang',user: '5200', bb: '1232200', pp: '2322200',tt: '2020', status:'complete'},
-      {seri:'C01',name:'kunhear',user: '2200', bb: '1232200', pp: '2322200',tt: '2020', status:'overdue'},
+      {seri:'C01',name:'SIKEN',user: '123300', bb: '1232200', pp: '2322200',tt: '2020', status:'ongoing'},
+      {seri:'C02',name:'HONGLONG',user: '5200', bb: '1232200', pp: '2322200',tt: '2020', status:'complete'},
+      {seri:'C03',name:'KUNHEAR',user: '2200', bb: '1232200', pp: '2322200',tt: '2020', status:'overdue'},
+      {seri:'C04',name:'CHEA_C',user: '2200', bb: '1232200', pp: '2322200',tt: '2020', status:'overdue'},
+      {seri:'C05',name:'MAkara',user: '2200', bb: '1232200', pp: '2322200',tt: '2020', status:'overdue'},
+      {seri:'C06',name:'HEAT_S',user: '2200', bb: '1232200', pp: '2322200',tt: '2020', status:'overdue'},
+      {seri:'C07',name:'SVEYNAR',user: '2200', bb: '1232200', pp: '2322200',tt: '2020', status:'overdue'},
+      {seri:'C08',name:'CHANDA',user: '2200', bb: '1232200', pp: '2322200',tt: '2020', status:'overdue'},
+      {seri:'C09',name:'YORNNEN',user: '2200', bb: '1232200', pp: '2322200',tt: '2020', status:'overdue'},
+      {seri:'C10',name:'PHALLA',user: '2200', bb: '1232200', pp: '2322200',tt: '2020', status:'overdue'},
 
     ]
   }
@@ -133,6 +510,14 @@ data() {
 </script>
 
 <style>
-
+.dashboard-card {
+  background:#1f180e;
+  width: 770px;
+}
+.showing-resultimg {
+ border: 1px solid gray;
+ width:620px;
+ height:200px;
+}
 
 </style>
