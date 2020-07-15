@@ -1,10 +1,10 @@
 <template>
   <v-app>
     <v-navigation-drawer
-
       fixed
       app
-      dark
+      dark 
+      permanent 
     >
     <v-img :aspect-ratio="16/10" src="https://cdn.vuetifyjs.com/images/parallax/material.jpg">
         <v-row align="end" class="lightbox white--text pa-2 fill-height">
@@ -95,7 +95,7 @@
     height="40px"
     inset
     app
-    dark
+    dark 
     >
     <v-row  class="d-flex flex-row justify-end">
        <v-divider vertical/>
