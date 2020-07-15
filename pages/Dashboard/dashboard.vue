@@ -53,47 +53,94 @@
                   </div>
 
                   <v-hover v-slot:default="{ hover }">
-                      <div class="showing-resultimg"  >
+                    <!-- Start show resultimg -->
+                      <div class="showing-resulting">
 
-                      <div :class="`justify-center justify-xl-center`"
-                        v-if="hover&&!show"
-                        class="d-flex  #1f180e darken-2 v-card--reveal display-3 white--text"
+                    <!-- first button -->
+                    <div :class="`justify-center justify-xl-center`"
+                      v-if="hover&&!show &&!secondshow"
+                      class="d-flex  #1f180e darken-2 v-card--reveal display-3 white--text"
 
-                        style="height: 100%; background:gray;"
-                      >
-                      <!-- <v-input v-model="show">{{show}}</v-input> -->
+                      style="height: 100%; background:gray;"
+                    >
+                    <!-- <v-input v-model="show">{{show}}</v-input> -->
 
-                      <div class="mt-15 mr-5 ">
-                          <v-btn class="white--text" large depressed color="#5f4d35"  @click="show=true">Primary</v-btn>
-                      </div>
+                    <div class="mt-15 mr-5 ">
+                        <v-btn class="white--text" large depressed color="#5f4d35"  @click="show=true">Baccarat</v-btn>
+                    </div>
 
-                      <div class="mt-15 mr-5 " >
-                          <v-btn class="white--text"  large depressed color="#5f4d35">Secondary</v-btn>
-                      </div>
+                    <div class="mt-15 mr-5 " >
+                        <v-btn class="white--text"  large depressed color="#5f4d35" @click="secondshow=true">7-Seat Baccarat</v-btn>
+                    </div>
 
 
-                      </div>
+                    </div>
+                    <!-- end first button -->
 
-                      <div :class="`justify-center justify-xl-center`"
+
+                      <!-- first button- second action-->
+                      <div
                         v-if="hover ? show&& hover : show=false "
-                        class="d-flex  #1f180e darken-2 v-card--reveal display-3 white--text"
+                        class=" #1f180e darken-2 v-card--reveal display-3 white--text"
 
                         style="height: 100%; background:gray;"
                       >
-                      <!-- <v-input v-model="show">{{show}}</v-input> -->
 
-                      <div class="mt-15 mr-5 ">
-                          <v-btn class="white--text" large depressed color="#5f4d35"  @click="show = true">sadsadsadsa</v-btn>
+                        <div class="d-flex align-center flex-row justify-center">
+                            <v-btn class="white--text mt-9 mr-3" large depressed color="#5f4d35">10 - 1,000</v-btn>
+
+
+
+                            <v-btn class="white--text mt-9 mr-3"  large depressed color="#5f4d35">50 - 5,000</v-btn>
+
+
+                            <v-btn class="white--text mt-9 mr-3"  large depressed color="#5f4d35">100 - 5,000</v-btn>
+                          </div>
+
+                          <div class="d-flex align-center flex-row justify-center">
+
+                            <v-btn class="white--text mt-7 mr-3"  large depressed color="#5f4d35">100 - 5,000</v-btn>
+
+
+                            <v-btn class="white--text mt-7 mr-3"  large depressed color="#5f4d35">100 - 5,000</v-btn>
+                          </div>
+
                       </div>
+                      <!-- end first button- second action-->
 
-                      <div class="mt-15 mr-5 " >
-                          <v-btn class="white--text"  large depressed color="#5f4d35">Secondary</v-btn>
+
+
+                      <!-- second button- second action-->
+                      <div
+                        v-if="hover ? secondshow&& hover : secondshow=false "
+                        class=" #1f180e darken-2 v-card--reveal display-3 white--text"
+
+                        style="height: 100%; background:gray;"
+                      >
+                        <div class="d-flex align-center flex-row justify-center">
+                            <v-btn class="white--text mt-9 mr-3" large depressed color="#5f4d35">10 - 1,000</v-btn>
+
+
+
+                            <v-btn class="white--text mt-9 mr-3"  large depressed color="#5f4d35">50 - 5,000</v-btn>
+
+
+                            <v-btn class="white--text mt-9 mr-3"  large depressed color="#5f4d35">100 - 5,000</v-btn>
+                          </div>
+
+                          <div class="d-flex align-center flex-row justify-center">
+
+                            <v-btn class="white--text mt-7 mr-3"  large depressed color="#5f4d35">100 - 5,000</v-btn>
+
+
+                            <v-btn class="white--text mt-7 mr-3"  large depressed color="#5f4d35">100 - 5,000</v-btn>
+                          </div>
+
                       </div>
-
-
-                      </div>
+                      <!-- end second button- second action-->
 
                       </div>
+                      <!-- End show resultimg -->
                       </v-hover>
               </v-row>
     </v-col>
@@ -149,7 +196,7 @@
                 ></v-img>
               </div>
 
-              <div class="showing-resultimg">
+              <div class="showing-resulting">
 
               </div>
           </v-row>
@@ -212,7 +259,7 @@
                 ></v-img>
               </div>
 
-              <div class="showing-resultimg">
+              <div class="showing-resulting">
 
               </div>
           </v-row>
@@ -269,7 +316,7 @@
             ></v-img>
           </div>
 
-          <div class="showing-resultimg">
+          <div class="showing-resulting">
 
           </div>
       </v-row>
@@ -332,7 +379,7 @@
                 ></v-img>
               </div>
 
-              <div class="showing-resultimg">
+              <div class="showing-resulting">
 
               </div>
           </v-row>
@@ -389,7 +436,7 @@
             ></v-img>
           </div>
 
-          <div class="showing-resultimg">
+          <div class="showing-resulting">
 
           </div>
       </v-row>
@@ -453,7 +500,7 @@
                 ></v-img>
               </div>
 
-              <div class="showing-resultimg">
+              <div class="showing-resulting">
 
               </div>
           </v-row>
@@ -510,7 +557,7 @@
             ></v-img>
           </div>
 
-          <div class="showing-resultimg">
+          <div class="showing-resulting">
 
           </div>
       </v-row>
@@ -532,17 +579,18 @@ export default {
 data() {
   return {
     show: false,
+    secondshow: false,
     projects: [
-      {seri:'C01',name:'SIKEN',user: '123300', bb: '1232200', pp: '2322200',tt: '2020', status:'ongoing'},
-      {seri:'C02',name:'HONGLONG',user: '5200', bb: '1232200', pp: '2322200',tt: '2020', status:'complete'},
-      {seri:'C03',name:'KUNHEAR',user: '2200', bb: '1232200', pp: '2322200',tt: '2020', status:'overdue'},
-      {seri:'C04',name:'CHEA_C',user: '2200', bb: '1232200', pp: '2322200',tt: '2020', status:'overdue'},
-      {seri:'C05',name:'MAkara',user: '2200', bb: '1232200', pp: '2322200',tt: '2020', status:'overdue'},
-      {seri:'C06',name:'HEAT_S',user: '2200', bb: '1232200', pp: '2322200',tt: '2020', status:'overdue'},
-      {seri:'C07',name:'SVEYNAR',user: '2200', bb: '1232200', pp: '2322200',tt: '2020', status:'overdue'},
-      {seri:'C08',name:'CHANDA',user: '2200', bb: '1232200', pp: '2322200',tt: '2020', status:'overdue'},
-      {seri:'C09',name:'YORNNEN',user: '2200', bb: '1232200', pp: '2322200',tt: '2020', status:'overdue'},
-      {seri:'C10',name:'PHALLA',user: '2200', bb: '1232200', pp: '2322200',tt: '2020', status:'overdue'},
+      {seri:'C01',name:'SIKEN',user: '123300', bb: '1232200', pp: '2322200',tt: '2020', status:'Dealing'},
+      {seri:'C02',name:'HONGLONG',user: '5200', bb: '1232200', pp: '2322200',tt: '2020', status:'Waiting'},
+      {seri:'C03',name:'KUNHEAR',user: '2200', bb: '1232200', pp: '2322200',tt: '2020', status:'12'},
+      {seri:'C04',name:'CHEA_C',user: '2200', bb: '1232200', pp: '2322200',tt: '2020', status:'Player Win'},
+      {seri:'C05',name:'MAkara',user: '2200', bb: '1232200', pp: '2322200',tt: '2020', status:'Shuffling'},
+      {seri:'C06',name:'HEAT_S',user: '2200', bb: '1232200', pp: '2322200',tt: '2020', status:'Waiting'},
+      {seri:'C07',name:'SVEYNAR',user: '2200', bb: '1232200', pp: '2322200',tt: '2020', status:'12'},
+      {seri:'C08',name:'CHANDA',user: '2200', bb: '1232200', pp: '2322200',tt: '2020', status:'Shuffling'},
+      {seri:'C09',name:'YORNNEN',user: '2200', bb: '1232200', pp: '2322200',tt: '2020', status:'Dealing'},
+      {seri:'C10',name:'PHALLA',user: '2200', bb: '1232200', pp: '2322200',tt: '2020', status:'Waiting'},
 
     ]
   }
@@ -555,7 +603,7 @@ data() {
   background:#1f180e;
   width: 770px;
 }
-.showing-resultimg {
+.showing-resulting {
  border: 1px solid gray;
  width:620px;
  height:200px;

@@ -85,9 +85,9 @@
       <v-spacer />
     </v-app-bar> -->
     <v-content>
-      
+
         <nuxt />
-     
+
     </v-content>
     <v-footer
     color="rgba(0, 0, 0, 0.8)"
@@ -156,17 +156,17 @@
         </div>
          <v-divider vertical/>
           <div class="d-flex justify-center">
-            <v-menu  
-            offset-y 
+            <v-menu
+            offset-y
             top
             close-on-content-click
             :nudge-width="100"
-            left 
+            left
             :max-width="250"
             >
         <template v-slot:activator="{ on, attrs }">
-           <v-btn 
-           icon 
+           <v-btn
+           icon
            class="pa-2 ma-1"
            v-bind="attrs"
             v-on="on"
@@ -174,10 +174,10 @@
               <v-icon class="pa-2">menu</v-icon>
             </v-btn>
         </template>
-       
+
 
          <v-card>
-              <v-list 
+              <v-list
               dark
               color="rgba(12, 10, 6, 0.8)">
                  <v-subheader>
@@ -189,7 +189,7 @@
               </v-list-item-icon>
               <v-list-item-content>Enable messages</v-list-item-content>
             </v-list-item>
-  
+
             <v-list-item link>
               <v-list-item-icon>
                 <v-icon >settings</v-icon>
@@ -213,7 +213,7 @@
               v0.123
             </v-list-item-action-text>
              </v-list-item>
-            
+
           </v-list>
         </v-card>
       </v-menu>
@@ -221,8 +221,8 @@
          <v-divider vertical/>
           <div class="d-flex" style="width:100px">
           </div>
-        
-     
+
+
 
 
 
@@ -255,8 +255,8 @@ export default {
         },
          {
           icon: 'mdi-chart-bubble',
-          title: 'blabhlbabh',
-          to: '/inspire'
+          title: 'MULTI-BET',
+          to: '/Dashboard/multi_bet'
         },
          {
           icon: 'mdi-chart-bubble',
