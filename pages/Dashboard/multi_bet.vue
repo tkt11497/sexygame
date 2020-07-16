@@ -1,32 +1,220 @@
 <template>
   <v-container class="pa-1 ma-0">
-    <v-row>
-      <v-col cols="8">
-          <v-tabs
-            fixed-tabs
-            background-color=#1c170e
-            dark
-            active-class="brown darken-4 text--accent-4"
-          >
-            <v-tab>
-              All Games
-            </v-tab>
-            <v-tab>
-              All Baccarat
-            </v-tab>
-            <v-tab>
-              Special Baccarat
-            </v-tab>
-            <v-tab>
-              Other Games
-            </v-tab>
-          </v-tabs>
+    <v-row >
+      <!-- Main First Col -->
+      <v-col cols="8" style="padding:0;" >
+
+            <v-tabs
+              fixed-tabs
+              background-color=#1c170e
+              dark
+              active-class="brown darken-4 text--accent-4"
+            >
+              <v-tab>
+                All Games
+              </v-tab>
+              <v-tab>
+                All Baccarat
+              </v-tab>
+              <v-tab>
+                Special Baccarat
+              </v-tab>
+              <v-tab>
+                Other Games
+              </v-tab>
+            </v-tabs>
 
 
-            <div  v-if="project.name === 'SIKEN'" flat v-for="project in projects" :key="project.name">
-              <div class="dashboard-card">
+            <!-- card panel -->
+              <v-card>
+              <div class="dashboard-card" v-if="project.name === 'SIKEN'" flat v-for="project in projects" :key="project.name">
+                  <v-layout>
+                    <v-flex mt-3 mb-2 ml-5>
+                      <span class="white--text">Seri {{ project.seri}}</span>
+                    </v-flex>
+                          <v-flex mt-3 mb-2>
+                              <span class="red--text">B</span>
+
+                            <span class="white--text">{{project.bb}}</span>
+                          </v-flex>
+                            <v-flex mt-3 mb-2>
+                              <span class="blue--text " >P</span>
+                                <span class="white--text">{{project.pp}}</span>
+                            </v-flex>
+                                  <v-flex mt-3 mb-2>
+                                    <div class="white--text">
+                                      <span class="green--text">T</span>
+                                      {{project.tt}}
+                                    </div>
+                                  </v-flex>
+                                  <v-flex mt-3 mb-2>
+                                    <div class="white--text">
+                                      <span class="red--text">BP</span>
+                                      {{project.tt}}
+                                    </div>
+                                  </v-flex>
+                                  <v-flex mt-3 mb-2>
+                                    <div class="white--text">
+                                      <span class="blue--text">PP</span>
+                                      {{project.tt}}
+                                    </div>
+                                  </v-flex>
+                                  <v-flex mt-2 mb-1  >
+                                    <v-btn class="white--text" small  color="#c70000">Ask B.</v-btn>
+                                  </v-flex>
+                                  <v-flex mt-2 mb-1 >
+                                    <v-btn class="white--text" small color="#2d30b1">
+                                        Ask P.
+                                    </v-btn>
+                                  </v-flex><v-spacer></v-spacer><v-spacer></v-spacer>
+                                  <v-flex mt-2 mb-1>
+                                    <v-icon medium color="#787878">favorite</v-icon>
+                                  </v-flex>
+                                  <v-flex mt-2 mb-1>
+                                    <v-icon medium color="#c3a475">switch_video</v-icon>
+                                  </v-flex>
+
+                                  <v-flex>
+                                        <div class="white--text" style="background:#196260; height:50px;">
+                                          <div> {{project.status}} </div>
+                                        </div>
+                                  </v-flex>
+                        </v-layout>
+                </div>
+
+
+
+            <v-row>
+              <div style="background:gray; margin-left:12px;">
+                <v-column>
+                  <v-img
+                    height="200"
+                    width="717"
+                  ></v-img>
+                </v-column>
+              </div>
+
+                <v-column>
+
+                        <v-tabs
+                        v-model="tab"
+                        background-color="deep-purple accent-4"
+                        centered
+                        dark
+                        icons-and-text
+                        >
+                        <v-tabs-slider></v-tabs-slider>
+
+                        <v-tab href="#tab-1">
+                        Baccarat
+                        </v-tab>
+
+                        <v-tab href="#tab-2">
+                        No Commission
+                        </v-tab>
+
+                        <v-tab href="#tab-3">
+                        Cow Cow ?
+                        </v-tab>
+
+                        <v-tab-item :value="'tab-' + 1">
+                          <v-card
+                             flat
+                             tile
+
+                           >
+                            <div class="playArea">
+                              <v-row style="margin:0;">
+                                <v-col tile cols="4" class="playArea-tile" align="center">
+                                  <h2>Player</h2>
+                                </v-col>
+                                <v-col tile cols="4" class="playArea-tile tile" align="center">
+                                  <h2> Tie</h2>
+                                </v-col>
+                                <v-col tile cols="4" class="playArea-tile banker" align="center">
+                                  <h2> Banker</h2>
+                                </v-col>
+                              </v-row>
+                              <v-row style="margin:0;">
+                                <v-col tile cols="4" class="playArea-tile" align="center">
+                                   <h2>P.Pair</h2>
+                                </v-col>
+                                <v-col tile cols="4" class="playArea-tile tile" align="center">
+                                   <h2>Lucky Six</h2>
+                                </v-col>
+                                <v-col tile cols="4" class="playArea-tile banker" align="center">
+                                   <h2>B.Pair</h2>
+                                </v-col>
+                              </v-row>
+                            </div>
+                          </v-card>
+                        </v-tab-item>
+
+                        <v-tab-item :value="'tab-' + 2">
+                          <v-card
+                             flat
+                             tile
+
+                           >
+                            <div class="playArea">
+                              <v-row style="margin:0;">
+                                <v-col tile cols="4" class="playArea-tile" align="center">
+                                  <h2>Player</h2>
+                                </v-col>
+                                <v-col tile cols="4" class="playArea-tile tile" align="center">
+                                  <h2> Tie</h2>
+                                </v-col>
+                                <v-col tile cols="4" class="playArea-tile banker" align="center">
+                                  <h2> Banker</h2>
+                                </v-col>
+                              </v-row>
+                              <v-row style="margin:0;">
+                                <v-col tile cols="4" class="playArea-tile" align="center">
+                                   <h2>P.Pair</h2>
+                                </v-col>
+                                <v-col tile cols="4" class="playArea-tile tile" align="center">
+                                   <h2>Lucky Six</h2>
+                                </v-col>
+                                <v-col tile cols="4" class="playArea-tile banker" align="center">
+                                   <h2>B.Pair</h2>
+                                </v-col>
+                              </v-row>
+                            </div>
+                          </v-card>
+                        </v-tab-item>
+
+                        <v-tab-item :value="'tab-' + 3">
+                          <v-card
+                             flat
+                             tile
+
+                           >
+                            <div class="playArea">
+                              <v-row style="margin:0;">
+                                <v-col tile cols="4" class="playArea-tile-last" align="center" >
+                                  <h2>Player</h2>
+                                </v-col>
+                                <v-col tile cols="4" class="playArea-tile-last tile" align="center">
+                                  <h2> Tie</h2>
+                                </v-col>
+                                <v-col tile cols="4" class="playArea-tile-last banker" align="center">
+                                  <h2> Banker</h2>
+                                </v-col>
+                              </v-row>
+                            </div>
+                          </v-card>
+                        </v-tab-item>
+                     </v-tabs>
+                  </v-column>
+            </v-row>
+          </v-card>
+          <!-- end card panel -->
+
+          <!-- card panel -->
+            <v-card>
+            <div class="dashboard-card" v-if="project.name === 'SIKEN'" flat v-for="project in projects" :key="project.name">
                 <v-layout>
-                  <v-flex mt-3 mb-2>
+                  <v-flex mt-3 mb-2 ml-5>
                     <span class="white--text">Seri {{ project.seri}}</span>
                   </v-flex>
                         <v-flex mt-3 mb-2>
@@ -78,7 +266,7 @@
                                 </v-flex>
                       </v-layout>
               </div>
-          </div>
+
 
 
           <v-row>
@@ -86,12 +274,11 @@
               <v-column>
                 <v-img
                   height="200"
-                  width="693"
+                  width="717"
                 ></v-img>
               </v-column>
             </div>
 
-            <div>
               <v-column>
 
                       <v-tabs
@@ -116,27 +303,939 @@
                       </v-tab>
 
                       <v-tab-item :value="'tab-' + 1">
-                      hey
+                        <v-card
+                           flat
+                           tile
+
+                         >
+                          <div class="playArea">
+                            <v-row style="margin:0;">
+                              <v-col tile cols="4" class="playArea-tile" align="center">
+                                <h2>Player</h2>
+                              </v-col>
+                              <v-col tile cols="4" class="playArea-tile tile" align="center">
+                                <h2> Tie</h2>
+                              </v-col>
+                              <v-col tile cols="4" class="playArea-tile banker" align="center">
+                                <h2> Banker</h2>
+                              </v-col>
+                            </v-row>
+                            <v-row style="margin:0;">
+                              <v-col tile cols="4" class="playArea-tile" align="center">
+                                 <h2>P.Pair</h2>
+                              </v-col>
+                              <v-col tile cols="4" class="playArea-tile tile" align="center">
+                                 <h2>Lucky Six</h2>
+                              </v-col>
+                              <v-col tile cols="4" class="playArea-tile banker" align="center">
+                                 <h2>B.Pair</h2>
+                              </v-col>
+                            </v-row>
+                          </div>
+                        </v-card>
                       </v-tab-item>
 
                       <v-tab-item :value="'tab-' + 2">
-                      2
+                        <v-card
+                           flat
+                           tile
+
+                         >
+                          <div class="playArea">
+                            <v-row style="margin:0;">
+                              <v-col tile cols="4" class="playArea-tile" align="center">
+                                <h2>Player</h2>
+                              </v-col>
+                              <v-col tile cols="4" class="playArea-tile tile" align="center">
+                                <h2> Tie</h2>
+                              </v-col>
+                              <v-col tile cols="4" class="playArea-tile banker" align="center">
+                                <h2> Banker</h2>
+                              </v-col>
+                            </v-row>
+                            <v-row style="margin:0;">
+                              <v-col tile cols="4" class="playArea-tile" align="center">
+                                 <h2>P.Pair</h2>
+                              </v-col>
+                              <v-col tile cols="4" class="playArea-tile tile" align="center">
+                                 <h2>Lucky Six</h2>
+                              </v-col>
+                              <v-col tile cols="4" class="playArea-tile banker" align="center">
+                                 <h2>B.Pair</h2>
+                              </v-col>
+                            </v-row>
+                          </div>
+                        </v-card>
                       </v-tab-item>
 
                       <v-tab-item :value="'tab-' + 3">
-                      3
+                        <v-card
+                           flat
+                           tile
+
+                         >
+                          <div class="playArea">
+                            <v-row style="margin:0;">
+                              <v-col tile cols="4" class="playArea-tile-last" align="center" >
+                                <h2>Player</h2>
+                              </v-col>
+                              <v-col tile cols="4" class="playArea-tile-last tile" align="center">
+                                <h2> Tie</h2>
+                              </v-col>
+                              <v-col tile cols="4" class="playArea-tile-last banker" align="center">
+                                <h2> Banker</h2>
+                              </v-col>
+                            </v-row>
+                          </div>
+                        </v-card>
                       </v-tab-item>
-                      </v-tabs>
-              </v-column>
-            </div>
+                   </v-tabs>
+                </v-column>
           </v-row>
+        </v-card>
+        <!-- end card panel -->
+
+        <!-- card panel -->
+          <v-card>
+          <div class="dashboard-card" v-if="project.name === 'SIKEN'" flat v-for="project in projects" :key="project.name">
+              <v-layout>
+                <v-flex mt-3 mb-2 ml-5>
+                  <span class="white--text">Seri {{ project.seri}}</span>
+                </v-flex>
+                      <v-flex mt-3 mb-2>
+                          <span class="red--text">B</span>
+
+                        <span class="white--text">{{project.bb}}</span>
+                      </v-flex>
+                        <v-flex mt-3 mb-2>
+                          <span class="blue--text " >P</span>
+                            <span class="white--text">{{project.pp}}</span>
+                        </v-flex>
+                              <v-flex mt-3 mb-2>
+                                <div class="white--text">
+                                  <span class="green--text">T</span>
+                                  {{project.tt}}
+                                </div>
+                              </v-flex>
+                              <v-flex mt-3 mb-2>
+                                <div class="white--text">
+                                  <span class="red--text">BP</span>
+                                  {{project.tt}}
+                                </div>
+                              </v-flex>
+                              <v-flex mt-3 mb-2>
+                                <div class="white--text">
+                                  <span class="blue--text">PP</span>
+                                  {{project.tt}}
+                                </div>
+                              </v-flex>
+                              <v-flex mt-2 mb-1  >
+                                <v-btn class="white--text" small  color="#c70000">Ask B.</v-btn>
+                              </v-flex>
+                              <v-flex mt-2 mb-1 >
+                                <v-btn class="white--text" small color="#2d30b1">
+                                    Ask P.
+                                </v-btn>
+                              </v-flex><v-spacer></v-spacer><v-spacer></v-spacer>
+                              <v-flex mt-2 mb-1>
+                                <v-icon medium color="#787878">favorite</v-icon>
+                              </v-flex>
+                              <v-flex mt-2 mb-1>
+                                <v-icon medium color="#c3a475">switch_video</v-icon>
+                              </v-flex>
+
+                              <v-flex>
+                                    <div class="white--text" style="background:#196260; height:50px;">
+                                      <div> {{project.status}} </div>
+                                    </div>
+                              </v-flex>
+                    </v-layout>
+            </div>
 
 
+
+        <v-row>
+          <div style="background:gray; margin-left:12px;">
+            <v-column>
+              <v-img
+                height="200"
+                width="717"
+              ></v-img>
+            </v-column>
+          </div>
+
+            <v-column>
+
+                    <v-tabs
+                    v-model="tab"
+                    background-color="deep-purple accent-4"
+                    centered
+                    dark
+                    icons-and-text
+                    >
+                    <v-tabs-slider></v-tabs-slider>
+
+                    <v-tab href="#tab-1">
+                    Baccarat
+                    </v-tab>
+
+                    <v-tab href="#tab-2">
+                    No Commission
+                    </v-tab>
+
+                    <v-tab href="#tab-3">
+                    Cow Cow ?
+                    </v-tab>
+
+                    <v-tab-item :value="'tab-' + 1">
+                      <v-card
+                         flat
+                         tile
+
+                       >
+                        <div class="playArea">
+                          <v-row style="margin:0;">
+                            <v-col tile cols="4" class="playArea-tile" align="center">
+                              <h2>Player</h2>
+                            </v-col>
+                            <v-col tile cols="4" class="playArea-tile tile" align="center">
+                              <h2> Tie</h2>
+                            </v-col>
+                            <v-col tile cols="4" class="playArea-tile banker" align="center">
+                              <h2> Banker</h2>
+                            </v-col>
+                          </v-row>
+                          <v-row style="margin:0;">
+                            <v-col tile cols="4" class="playArea-tile" align="center">
+                               <h2>P.Pair</h2>
+                            </v-col>
+                            <v-col tile cols="4" class="playArea-tile tile" align="center">
+                               <h2>Lucky Six</h2>
+                            </v-col>
+                            <v-col tile cols="4" class="playArea-tile banker" align="center">
+                               <h2>B.Pair</h2>
+                            </v-col>
+                          </v-row>
+                        </div>
+                      </v-card>
+                    </v-tab-item>
+
+                    <v-tab-item :value="'tab-' + 2">
+                      <v-card
+                         flat
+                         tile
+
+                       >
+                        <div class="playArea">
+                          <v-row style="margin:0;">
+                            <v-col tile cols="4" class="playArea-tile" align="center">
+                              <h2>Player</h2>
+                            </v-col>
+                            <v-col tile cols="4" class="playArea-tile tile" align="center">
+                              <h2> Tie</h2>
+                            </v-col>
+                            <v-col tile cols="4" class="playArea-tile banker" align="center">
+                              <h2> Banker</h2>
+                            </v-col>
+                          </v-row>
+                          <v-row style="margin:0;">
+                            <v-col tile cols="4" class="playArea-tile" align="center">
+                               <h2>P.Pair</h2>
+                            </v-col>
+                            <v-col tile cols="4" class="playArea-tile tile" align="center">
+                               <h2>Lucky Six</h2>
+                            </v-col>
+                            <v-col tile cols="4" class="playArea-tile banker" align="center">
+                               <h2>B.Pair</h2>
+                            </v-col>
+                          </v-row>
+                        </div>
+                      </v-card>
+                    </v-tab-item>
+
+                    <v-tab-item :value="'tab-' + 3">
+                      <v-card
+                         flat
+                         tile
+
+                       >
+                        <div class="playArea">
+                          <v-row style="margin:0;">
+                            <v-col tile cols="4" class="playArea-tile-last" align="center" >
+                              <h2>Player</h2>
+                            </v-col>
+                            <v-col tile cols="4" class="playArea-tile-last tile" align="center">
+                              <h2> Tie</h2>
+                            </v-col>
+                            <v-col tile cols="4" class="playArea-tile-last banker" align="center">
+                              <h2> Banker</h2>
+                            </v-col>
+                          </v-row>
+                        </div>
+                      </v-card>
+                    </v-tab-item>
+                 </v-tabs>
+              </v-column>
+        </v-row>
+      </v-card>
+      <!-- end card panel -->
+
+      <!-- card panel -->
+        <v-card>
+        <div class="dashboard-card" v-if="project.name === 'SIKEN'" flat v-for="project in projects" :key="project.name">
+            <v-layout>
+              <v-flex mt-3 mb-2 ml-5>
+                <span class="white--text">Seri {{ project.seri}}</span>
+              </v-flex>
+                    <v-flex mt-3 mb-2>
+                        <span class="red--text">B</span>
+
+                      <span class="white--text">{{project.bb}}</span>
+                    </v-flex>
+                      <v-flex mt-3 mb-2>
+                        <span class="blue--text " >P</span>
+                          <span class="white--text">{{project.pp}}</span>
+                      </v-flex>
+                            <v-flex mt-3 mb-2>
+                              <div class="white--text">
+                                <span class="green--text">T</span>
+                                {{project.tt}}
+                              </div>
+                            </v-flex>
+                            <v-flex mt-3 mb-2>
+                              <div class="white--text">
+                                <span class="red--text">BP</span>
+                                {{project.tt}}
+                              </div>
+                            </v-flex>
+                            <v-flex mt-3 mb-2>
+                              <div class="white--text">
+                                <span class="blue--text">PP</span>
+                                {{project.tt}}
+                              </div>
+                            </v-flex>
+                            <v-flex mt-2 mb-1  >
+                              <v-btn class="white--text" small  color="#c70000">Ask B.</v-btn>
+                            </v-flex>
+                            <v-flex mt-2 mb-1 >
+                              <v-btn class="white--text" small color="#2d30b1">
+                                  Ask P.
+                              </v-btn>
+                            </v-flex><v-spacer></v-spacer><v-spacer></v-spacer>
+                            <v-flex mt-2 mb-1>
+                              <v-icon medium color="#787878">favorite</v-icon>
+                            </v-flex>
+                            <v-flex mt-2 mb-1>
+                              <v-icon medium color="#c3a475">switch_video</v-icon>
+                            </v-flex>
+
+                            <v-flex>
+                                  <div class="white--text" style="background:#196260; height:50px;">
+                                    <div> {{project.status}} </div>
+                                  </div>
+                            </v-flex>
+                  </v-layout>
+          </div>
+
+
+
+      <v-row>
+        <div style="background:gray; margin-left:12px;">
+          <v-column>
+            <v-img
+              height="200"
+              width="717"
+            ></v-img>
+          </v-column>
+        </div>
+
+          <v-column>
+
+                  <v-tabs
+                  v-model="tab"
+                  background-color="deep-purple accent-4"
+                  centered
+                  dark
+                  icons-and-text
+                  >
+                  <v-tabs-slider></v-tabs-slider>
+
+                  <v-tab href="#tab-1">
+                  Baccarat
+                  </v-tab>
+
+                  <v-tab href="#tab-2">
+                  No Commission
+                  </v-tab>
+
+                  <v-tab href="#tab-3">
+                  Cow Cow ?
+                  </v-tab>
+
+                  <v-tab-item :value="'tab-' + 1">
+                    <v-card
+                       flat
+                       tile
+
+                     >
+                      <div class="playArea">
+                        <v-row style="margin:0;">
+                          <v-col tile cols="4" class="playArea-tile" align="center">
+                            <h2>Player</h2>
+                          </v-col>
+                          <v-col tile cols="4" class="playArea-tile tile" align="center">
+                            <h2> Tie</h2>
+                          </v-col>
+                          <v-col tile cols="4" class="playArea-tile banker" align="center">
+                            <h2> Banker</h2>
+                          </v-col>
+                        </v-row>
+                        <v-row style="margin:0;">
+                          <v-col tile cols="4" class="playArea-tile" align="center">
+                             <h2>P.Pair</h2>
+                          </v-col>
+                          <v-col tile cols="4" class="playArea-tile tile" align="center">
+                             <h2>Lucky Six</h2>
+                          </v-col>
+                          <v-col tile cols="4" class="playArea-tile banker" align="center">
+                             <h2>B.Pair</h2>
+                          </v-col>
+                        </v-row>
+                      </div>
+                    </v-card>
+                  </v-tab-item>
+
+                  <v-tab-item :value="'tab-' + 2">
+                    <v-card
+                       flat
+                       tile
+
+                     >
+                      <div class="playArea">
+                        <v-row style="margin:0;">
+                          <v-col tile cols="4" class="playArea-tile" align="center">
+                            <h2>Player</h2>
+                          </v-col>
+                          <v-col tile cols="4" class="playArea-tile tile" align="center">
+                            <h2> Tie</h2>
+                          </v-col>
+                          <v-col tile cols="4" class="playArea-tile banker" align="center">
+                            <h2> Banker</h2>
+                          </v-col>
+                        </v-row>
+                        <v-row style="margin:0;">
+                          <v-col tile cols="4" class="playArea-tile" align="center">
+                             <h2>P.Pair</h2>
+                          </v-col>
+                          <v-col tile cols="4" class="playArea-tile tile" align="center">
+                             <h2>Lucky Six</h2>
+                          </v-col>
+                          <v-col tile cols="4" class="playArea-tile banker" align="center">
+                             <h2>B.Pair</h2>
+                          </v-col>
+                        </v-row>
+                      </div>
+                    </v-card>
+                  </v-tab-item>
+
+                  <v-tab-item :value="'tab-' + 3">
+                    <v-card
+                       flat
+                       tile
+
+                     >
+                      <div class="playArea">
+                        <v-row style="margin:0;">
+                          <v-col tile cols="4" class="playArea-tile-last" align="center" >
+                            <h2>Player</h2>
+                          </v-col>
+                          <v-col tile cols="4" class="playArea-tile-last tile" align="center">
+                            <h2> Tie</h2>
+                          </v-col>
+                          <v-col tile cols="4" class="playArea-tile-last banker" align="center">
+                            <h2> Banker</h2>
+                          </v-col>
+                        </v-row>
+                      </div>
+                    </v-card>
+                  </v-tab-item>
+               </v-tabs>
+            </v-column>
+      </v-row>
+    </v-card>
+    <!-- end card panel -->
 
 
 
       </v-col>
-    <v-col cols="4" style="background:blue;">Column</v-col>
+<!-- End Main First Col -->
+
+
+<!-- Main Second Col -->
+    <v-col cols="4" style="padding:0;">
+
+        <div class="playTable">
+
+        </div>
+<!-- start slite -->
+    <v-row >
+      <v-sheet
+        class="mx-auto"
+        elevation="8"
+        width="28.8vw"
+      >
+        <v-slide-group >
+          <v-row style="background:#382b1c;">
+            <v-row style="width:100%;">
+             <v-slide-item
+
+            v-slot:default="{ active, toggle }"
+          >
+            <v-card
+              :color="active ? '#766143' : '#0e0a06'"
+              class="ma-4 ml-8"
+              height="30"
+              width="75"
+              @click="toggle"
+               align="center"
+            ><span class="white--text pa-5">C01</span>
+
+            </v-card>
+          </v-slide-item>
+
+              <v-slide-item
+
+            v-slot:default="{ active, toggle }"
+          >
+            <v-card
+              :color="active ? '#766143' : '#0e0a06'"
+              class="ma-4"
+              height="30"
+              width="75"
+              @click="toggle"
+               align="center"
+            ><span class="white--text ">C02</span>
+
+            </v-card>
+          </v-slide-item>
+
+              <v-slide-item
+
+            v-slot:default="{ active, toggle }"
+          >
+            <v-card
+              :color="active ? '#766143' : '#0e0a06'"
+              class="ma-4"
+              height="30"
+              width="75"
+              @click="toggle"
+               align="center"
+            ><span class="white--text ">C03</span>
+
+            </v-card>
+          </v-slide-item>
+
+              <v-slide-item
+
+            v-slot:default="{ active, toggle }"
+          >
+            <v-card
+              :color="active ? '#766143' : '#0e0a06'"
+              class="ma-4"
+              height="30"
+              width="75"
+              @click="toggle"
+               align="center"
+            ><span class="white--text ">C04</span>
+
+            </v-card>
+          </v-slide-item>
+
+              <v-slide-item
+
+            v-slot:default="{ active, toggle }"
+          >
+            <v-card
+              :color="active ? '#766143' : '#0e0a06'"
+              class="ma-4 ml-4"
+              height="30"
+              width="75"
+              @click="toggle"
+               align="center"
+            ><span class="white--text ">P03</span>
+
+            </v-card>
+          </v-slide-item>
+
+              <v-slide-item
+
+            v-slot:default="{ active, toggle }"
+          >
+            <v-card
+              :color="active ? '#766143' : '#0e0a06'"
+              class="ma-4"
+              height="30"
+              width="75"
+              @click="toggle"
+               align="center"
+            ><span class="white--text ">P04</span>
+
+            </v-card>
+          </v-slide-item>
+
+              <v-slide-item
+
+            v-slot:default="{ active, toggle }"
+          >
+            <v-card
+              :color="active ? '#766143' : '#0e0a06'"
+              class="ma-4"
+              height="30"
+              width="75"
+              @click="toggle"
+               align="center"
+            ><span class="white--text ">P05</span>
+
+            </v-card>
+          </v-slide-item>
+
+              <v-slide-item
+
+            v-slot:default="{ active, toggle }"
+          >
+            <v-card
+              :color="active ? '#766143' : '#0e0a06'"
+              class="ma-4 m-15"
+              height="30"
+              width="75"
+              @click="toggle"
+               align="center"
+            ><span class="white--text ">P06</span>
+
+            </v-card>
+          </v-slide-item>
+
+              <v-slide-item
+
+            v-slot:default="{ active, toggle }"
+          >
+            <v-card
+              :color="active ? '#766143' : '#0e0a06'"
+              class="ma-4 ml-3"
+              height="30"
+              width="75"
+              @click="toggle"
+               align="center"
+            ><span class="white--text ">A03</span>
+
+            </v-card>
+          </v-slide-item>
+
+              <v-slide-item
+
+            v-slot:default="{ active, toggle }"
+          >
+            <v-card
+              :color="active ? '#766143' : '#0e0a06'"
+              class="ma-4"
+              height="30"
+              width="75"
+              @click="toggle"
+               align="center"
+            ><span class="white--text ">A04</span>
+
+            </v-card>
+          </v-slide-item>
+              <v-slide-item
+
+            v-slot:default="{ active, toggle }"
+          >
+            <v-card
+              :color="active ? '#766143' : '#0e0a06'"
+              class="ma-4"
+              height="30"
+              width="75"
+              @click="toggle"
+               align="center"
+            ><span class="white--text ">A05</span>
+
+            </v-card>
+          </v-slide-item>
+              <v-slide-item
+
+            v-slot:default="{ active, toggle }"
+          >
+            <v-card
+              :color="active ? '#766143' : '#0e0a06'"
+              class="ma-4"
+              height="30"
+              width="75"
+              @click="toggle"
+               align="center"
+            ><span class="white--text ">A06</span>
+
+            </v-card>
+          </v-slide-item>
+              <v-slide-item
+
+            v-slot:default="{ active, toggle }"
+          >
+            <v-card
+              :color="active ? '#766143' : '#0e0a06'"
+              class="ma-4 ml-3"
+              height="30"
+              width="75"
+              @click="toggle"
+               align="center"
+            ><span class="white--text ">A11</span>
+
+            </v-card>
+          </v-slide-item>
+              <v-slide-item
+
+            v-slot:default="{ active, toggle }"
+          >
+            <v-card
+              :color="active ? '#766143' : '#0e0a06'"
+              class="ma-4 "
+              height="30"
+              width="75"
+              @click="toggle"
+               align="center"
+            ><span class="white--text ">A12</span>
+
+            </v-card>
+          </v-slide-item>
+              <v-slide-item
+
+            v-slot:default="{ active, toggle }"
+          >
+            <v-card
+              :color="active ? '#766143' : '#0e0a06'"
+              class="ma-4 "
+              height="30"
+              width="75"
+              @click="toggle"
+               align="center"
+            ><span class="white--text ">CD &T</span>
+
+            </v-card>
+          </v-slide-item>
+              <v-slide-item
+
+            v-slot:default="{ active, toggle }"
+          >
+            <v-card
+              :color="active ? '#766143' : '#0e0a06'"
+              class="ma-4 "
+              height="30"
+              width="75"
+              @click="toggle"
+               align="center"
+            ><span class="white--text ">P D&T</span>
+
+            </v-card>
+          </v-slide-item>
+          </v-row>
+          <v-row >
+            <v-slide-item
+
+            v-slot:default="{ active, toggle }"
+          >
+            <v-card
+              :color="active ? '#766143' : '#0e0a06'"
+              class="ma-4 ml-8"
+              height="30"
+              width="75"
+              @click="toggle"
+               align="center"
+            ><span class="white--text ">C05</span>
+
+            </v-card>
+          </v-slide-item>
+
+            <v-slide-item
+
+            v-slot:default="{ active, toggle }"
+          >
+            <v-card
+              :color="active ? '#766143' : '#0e0a06'"
+              class="ma-4"
+              height="30"
+              width="75"
+              @click="toggle"
+               align="center"
+            ><span class="white--text ">C06</span>
+
+            </v-card>
+          </v-slide-item>
+
+            <v-slide-item
+
+            v-slot:default="{ active, toggle }"
+          >
+            <v-card
+              :color="active ? '#766143' : '#0e0a06'"
+              class="ma-4"
+              height="30"
+              width="75"
+              @click="toggle"
+               align="center"
+            ><span class="white--text ">P01</span>
+
+            </v-card>
+          </v-slide-item>
+
+            <v-slide-item
+
+            v-slot:default="{ active, toggle }"
+          >
+            <v-card
+              :color="active ? '#766143' : '#0e0a06'"
+              class="ma-4"
+              height="30"
+              width="75"
+              @click="toggle"
+               align="center"
+            ><span class="white--text ">P02</span>
+
+            </v-card>
+          </v-slide-item>
+
+            <v-slide-item
+
+            v-slot:default="{ active, toggle }"
+          >
+            <v-card
+              :color="active ? '#766143' : '#0e0a06'"
+              class="ma-4 ml-4"
+              height="30"
+              width="75"
+              @click="toggle"
+               align="center"
+            ><span class="white--text ">P07</span>
+
+            </v-card>
+          </v-slide-item>
+
+            <v-slide-item
+
+            v-slot:default="{ active, toggle }"
+          >
+            <v-card
+              :color="active ? '#766143' : '#0e0a06'"
+              class="ma-4"
+              height="30"
+              width="75"
+              @click="toggle"
+               align="center"
+            ><span class="white--text ">P08</span>
+
+            </v-card>
+          </v-slide-item>
+
+            <v-slide-item
+
+            v-slot:default="{ active, toggle }"
+          >
+            <v-card
+              :color="active ? '#766143' : '#0e0a06'"
+              class="ma-4"
+              height="30"
+              width="75"
+              @click="toggle"
+               align="center"
+            ><span class="white--text ">A01</span>
+
+            </v-card>
+          </v-slide-item>
+
+            <v-slide-item
+
+            v-slot:default="{ active, toggle }"
+          >
+            <v-card
+              :color="active ? '#766143' : '#0e0a06'"
+              class="ma-4"
+              height="30"
+              width="75"
+              @click="toggle"
+               align="center"
+            ><span class="white--text ">A02</span>
+
+            </v-card>
+          </v-slide-item>
+
+            <v-slide-item
+
+            v-slot:default="{ active, toggle }"
+          >
+            <v-card
+              :color="active ? '#766143' : '#0e0a06'"
+              class="ma-4 ml-3"
+              height="30"
+              width="75"
+              @click="toggle"
+               align="center"
+            ><span class="white--text ">A07</span>
+
+            </v-card>
+          </v-slide-item>
+            <v-slide-item
+
+            v-slot:default="{ active, toggle }"
+          >
+            <v-card
+              :color="active ? '#766143' : '#0e0a06'"
+              class="ma-4"
+              height="30"
+              width="75"
+              @click="toggle"
+               align="center"
+            ><span class="white--text ">A08</span>
+
+            </v-card>
+          </v-slide-item>
+            <v-slide-item
+
+            v-slot:default="{ active, toggle }"
+          >
+            <v-card
+              :color="active ? '#766143' : '#0e0a06'"
+              class="ma-4"
+              height="30"
+              width="75"
+              @click="toggle"
+               align="center"
+            ><span class="white--text ">A09</span>
+
+            </v-card>
+          </v-slide-item>
+            <v-slide-item
+
+            v-slot:default="{ active, toggle }"
+          >
+            <v-card
+              :color="active ? '#766143' : '#0e0a06'"
+              class="ma-4"
+              height="30"
+              width="75"
+              @click="toggle"
+               align="center"
+            ><span class="white--text ">A10</span>
+
+            </v-card>
+          </v-slide-item>
+          </v-row>
+          </v-row>
+        </v-slide-group>
+      </v-sheet>
+
+    </v-row>
+<!-- End slite -->
+
+</v-col>
+<!-- End Main Second Col -->
   </v-row>
   </v-container>
 </template>
@@ -165,9 +1264,48 @@ data() {
 
 <style scoped>
 .dashboard-card {
-  background:#120e09;
-  height: 50px;
-  margin-top: 5px;
+    background:#120e09;
+    height: 50px;
+    margin-top: 5px;
+}
+.playArea-tile{
+    border:1px solid rgba(255,255,255, 0.3);
+    color:#3470A9;
+    height: 64px;
+
+}
+.playArea-tile-last{
+  border:1px solid rgba(255,255,255, 0.3);
+  color:#3470A9;
+  height: 127px;
+}
+
+.banker{
+  color:red
+}
+
+.tie{
+  color:#0C930A;
+}
+
+.tile{
+  color:green
+}
+
+.playArea{
+    background-color:rgb(3, 62, 29);
+    height:128px;
+}
+
+.playTable{
+    background-image: url("~assets/images/table.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 305px;
+    margin: 0;
+    padding: 0;
 }
 
 </style>
