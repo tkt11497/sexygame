@@ -1,6 +1,6 @@
 <template>
  <v-container class="pa-0 ma-0" fluid>
-<v-row class="pa-0 ma-0" style="height:100vh;">
+<v-row class="pa-0" style="height:100vh;" no-gutters>
     <v-col cols="7" class="pa-0">
         <div class="playTable"> 
 
@@ -121,7 +121,7 @@
           
         </div>
     </v-col>
-    <v-col cols="4">
+    <v-col cols="4" class="pa-0">
       <v-tabs
         background-color="rgba(0, 0, 0, 1)"
         class="elevation-2"
@@ -154,18 +154,114 @@
          <v-card
             flat
             tile
-            height="31vh"
+            height="32vh" 
+            dark
           >
-          <v-row style="height:80%;width:100%; margin:0;background-color:red; ">
-          <v-col style="width:50%; background-color:red; padding:0 ">
-            <v-row style="background-color:purple;margin:0;" dense>
-             <v-col cols="6"> Banker 65</v-col>  
+          <v-row style="height:80%;width:100%; margin:0;" class="table-info">
+          <v-col style="width:50%; padding:0;border-right:1px solid white ">
+            <v-row style="margin:0;" dense>
+             <v-col cols="6" class="banker"> Banker 65%</v-col>  
+             <v-col cols="6">2242532/1213</v-col>
+              <v-progress-linear
+                  v-model="progress"
+                  color="red"
+                ></v-progress-linear>
+            </v-row>
+
+             <v-row style="margin:0;" dense>
+             <v-col cols="6" class="player"> Player 41%</v-col>  
+             <v-col cols="6">2242532/1213</v-col>
+              <v-progress-linear
+                  v-model="progress"
+                  color="blue"
+                ></v-progress-linear>
+            </v-row>
+
+             <v-row style="margin:0;" dense>
+             <v-col cols="6" class="tie-text"> Tie 1%</v-col>  
+             <v-col cols="6">2242532/1213</v-col>
+              <v-progress-linear
+                  v-model="progress"
+                  color="green"
+                ></v-progress-linear>
+            </v-row>
+             <v-row style="margin:0;" dense>
+             <v-col cols="6" class="banker"> Banker Pair</v-col>  
+             <v-col cols="6">2242532/1213</v-col>
+            </v-row>
+             <v-row style="margin:0;" dense>
+             <v-col cols="6" class="player"> Player Pair</v-col>  
+             <v-col cols="6">2242532/1213</v-col>
+            </v-row>
+             <v-row style="margin:0;" dense>
+             <v-col cols="6" class="banker"> Banker Natural</v-col>  
+             <v-col cols="6">2242532/1213</v-col>
+            </v-row>
+             <v-row style="margin:0;" dense>
+             <v-col cols="6" class="player"> Player Natural</v-col>  
              <v-col cols="6">2242532/1213</v-col>
             </v-row>
           </v-col>
-          <v-col style="width:50%; background-color:blue;padding:0">
+          <v-col style="width:50%; ;padding:0">
+              <v-row style="margin:0;" dense>
+             <v-col cols="6" > Table</v-col>  
+             <v-col cols="6">C01</v-col>
+            </v-row>
+              <v-row style="margin:0;" dense>
+             <v-col cols="6" > Dealer</v-col>  
+             <v-col cols="6">Monkey Dog</v-col>
+            </v-row>
+              <v-row style="margin:0;" dense>
+             <v-col cols="6" > Round</v-col>  
+             <v-col cols="6">3-25</v-col>
+            </v-row>
+              <v-row style="margin:0;" dense>
+             <v-col cols="6" > ID</v-col>  
+             <v-col cols="6">1291200211</v-col>
+            </v-row>
+              <v-row style="margin:0;" dense>
+             <v-col cols="6" > Table Limit</v-col>  
+             <v-col cols="6">20000</v-col>
+            </v-row>
+              <v-row style="margin:0;" dense>
+             <v-col cols="6" > Max. Limit</v-col>  
+             <v-col cols="6">5000</v-col>
+            </v-row>
+              <v-row style="margin:0;" dense>
+             <v-col cols="6" > Min. Limit</v-col>  
+             <v-col cols="6">100</v-col>
+            </v-row>
           </v-col>
           </v-row>
+
+           <v-row style="height:20%;width:100%; margin:0; " class="table-info">
+             <v-col cols="2" class="text-center">
+               <span>Banker</span><br>
+               <span>5000</span>
+             </v-col>
+             <v-col  cols="2" class="text-center">
+               <span>Player</span><br>
+               <span>5000</span>
+             </v-col >
+             <v-col  cols="2" class="text-center">
+               <span>Tie</span><br>
+               <span>5000</span>
+             </v-col>
+             <v-col  cols="2" class="text-center">
+               <span>Pair</span><br>
+               <span>500</span>
+             </v-col>
+             <v-col  cols="2" class="text-center">
+               <span>Natural</span><br>
+               <span>5000</span>
+             </v-col>
+             <v-col  cols="2" class="text-center d-flex align-center justify-center" >
+            <v-btn x-small>
+               change
+            </v-btn>
+             </v-col>
+            
+           </v-row>
          </v-card>
          
         </v-tab-item>
@@ -196,6 +292,142 @@
           </v-card>
         </v-tab-item>
       </v-tabs>
+  <div style="height:13% ;background-color:black" >
+     <v-row style="height:50%;width:100%; margin:0;" >
+       <div style="width:12.5%;" class="d-flex justify-center align-center">
+         <v-card height="80%" width="80%"  color="secondary" dark 
+         class="d-flex justify-center align-center room-list">C01</v-card>
+       </div>
+        <div style="width:12.5%;" class="d-flex justify-center align-center">
+          <v-card height="80%" width="80%"  color="secondary" dark 
+          class="d-flex justify-center align-center room-list">C02</v-card>
+       </div>
+        <div style="width:12.5%;" class="d-flex justify-center align-center">
+          <v-card height="80%" width="80%"  color="secondary" dark 
+          class="d-flex justify-center align-center room-list">C03</v-card>
+       </div>
+        <div style="width:12.5%;" class="d-flex justify-center align-center">
+          <v-card height="80%" width="80%"  color="secondary" dark 
+          class="d-flex justify-center align-center room-list">C06</v-card>
+       </div>
+        <div style="width:12.5%;" class="d-flex justify-center align-center">
+          <v-card height="80%" width="80%"  color="secondary" dark 
+          class="d-flex justify-center align-center room-list">C07</v-card>
+       </div>
+        <div style="width:12.5%;" class="d-flex justify-center align-center">
+          <v-card height="80%" width="80%"  color="secondary" dark 
+          class="d-flex justify-center align-center room-list">P01</v-card>
+       </div>
+        <div style="width:12.5%;" class="d-flex justify-center align-center">
+          <v-card height="80%" width="80%"  color="secondary" dark 
+          class="d-flex justify-center align-center room-list">P02</v-card>
+       </div>
+        <div style="width:12.5%;" class="d-flex justify-center align-center">
+          <v-card height="80%" width="80%"  color="secondary" dark 
+          class="d-flex justify-center align-center room-list">P03</v-card>
+       </div>
+     </v-row>
+      <v-row style="height:50%;width:100%; margin:0;">
+       <div style="width:12.5%;" class="d-flex justify-center align-center">
+         <v-card height="80%" width="80%"  color="secondary" dark 
+         class="d-flex justify-center align-center room-list"
+         @click="window=2">C01</v-card>
+       </div>
+        <div style="width:12.5%;" class="d-flex justify-center align-center">
+          <v-card height="80%" width="80%"  color="secondary" dark 
+          class="d-flex justify-center align-center room-list">C02</v-card>
+       </div>
+        <div style="width:12.5%;" class="d-flex justify-center align-center">
+          <v-card height="80%" width="80%"  color="secondary" dark 
+          class="d-flex justify-center align-center room-list">C03</v-card>
+       </div>
+        <div style="width:12.5%;" class="d-flex justify-center align-center">
+          <v-card height="80%" width="80%"  color="secondary" dark 
+          class="d-flex justify-center align-center room-list">C06</v-card>
+       </div>
+        <div style="width:12.5%;" class="d-flex justify-center align-center">
+          <v-card height="80%" width="80%"  color="secondary" dark 
+          class="d-flex justify-center align-center room-list">C07</v-card>
+       </div>
+        <div style="width:12.5%;" class="d-flex justify-center align-center">
+          <v-card height="80%" width="80%"  color="secondary" dark 
+          class="d-flex justify-center align-center room-list"
+          @click="window=1">P01</v-card>
+       </div>
+        <div style="width:12.5%;" class="d-flex justify-center align-center">
+          <v-card height="80%" width="80%"  color="secondary" dark 
+          class="d-flex justify-center align-center room-list"
+          @click="window=2">P02</v-card>
+       </div>
+        <div style="width:12.5%;" class="d-flex justify-center align-center">
+          <v-card  height="80%" width="80%" color="secondary" dark 
+          class="d-flex justify-center align-center room-list"
+          @click="window=3">P03</v-card>
+       </div>
+     </v-row>
+      
+  </div>
+    <v-window v-model="window">
+        <v-window-item :value="1">
+           <div class="text-center" style="height:46vh; width:100%;background-color:pink">
+            <div style="width:100%; height:30%">
+             <previewTable :row="6" :column="36"/>
+            </div>
+            <v-divider/>
+            <div style="width:100%; height:10%">
+              <previewTable :row="3" :column="36"/>
+            </div>
+            <v-divider/>
+            <v-row style="width:100%; height:10%" no-gutters>
+              <div style="width:49.7%; height:100%; ">
+               <previewTable :row="3" :column="16"/>
+              </div>
+              <v-divider vertical/>
+              <div style="width:50%; height:100%">
+                 <previewTable :row="3" :column="16"/>
+              </div>
+            </v-row>
+            <v-divider/>
+            <div style="width:100%; height:40%">
+              <previewTable :row="6" :column="18"/>
+            </div>
+            <v-row style="width:100%; height:10%" no-gutters>
+            </v-row>
+          </div>
+        </v-window-item>
+  
+        <v-window-item :value="2">
+         <div class="pa-4 text-center" style="height:100%; width:100%;background-color:black">
+            <v-text-field
+              label="Password"
+              type="password"
+            ></v-text-field>
+            <v-text-field
+              label="Confirm Password"
+              type="password"
+            ></v-text-field>
+            <span class="caption grey--text text--darken-1">
+              Please enter a password for your account
+            </span>
+          </div>
+        </v-window-item>
+  
+        <v-window-item :value="3">
+          <div class="pa-4 text-center" style="height:100%; width:100%;background-color:black">
+            <v-img
+              class="mb-4"
+              contain
+              height="128"
+              src="https://cdn.vuetifyjs.com/images/logos/v.svg"
+            ></v-img>
+            <h3 class="title font-weight-light mb-2">Welcome to Vuetify</h3>
+            <span class="caption grey--text">Thanks for signing up!</span>
+          </div>
+        </v-window-item>
+      </v-window> 
+    
+    
+    
     </v-col>
     <v-col cols="1">
         <h1>HHIII </h1>
@@ -206,11 +438,15 @@
 </template>
 
 <script>
+import previewTable from '@/components/previewTable';
 export default {
+  components:{
+        previewTable
+    },
   data () {
     return {
-    
-      
+      progress:50,
+      window:1,
             }
             }
 }
@@ -235,15 +471,21 @@ export default {
         color:#3470A9;
         font-size:0.7vw ;
     }
+    .player{
+      color:#3470A9
+    }
     .banker{
       color:red
+    }
+    .tie-text{
+      color:#0C930A;
     }
     .tie{
       height:50%;
       width:100%; 
       margin:0;
       color:#0C930A;
-       font-size:0.9vw ;
+       font-size:0.75vw ;
     }
     .tie1{
       border-bottom: 1px solid  rgba(255,255,255, 0.3);
@@ -258,4 +500,11 @@ export default {
         height: 11vh;
         background-color: brown;
     }
+    .table-info{
+      font-size: 0.8vw;
+    }
+    .room-list{
+        font-size: 0.8vw;
+    }
+    
 </style>

@@ -4,7 +4,8 @@
       fixed
       app
       dark 
-      permanent 
+      permanent
+      width="10vw"
     >
     <v-img :aspect-ratio="16/10" src="https://cdn.vuetifyjs.com/images/parallax/material.jpg">
         <v-row align="end" class="lightbox white--text pa-2 fill-height">
@@ -23,8 +24,9 @@
         >
           <v-list-item-content style="padding:5px" >
           <v-btn block
-          height="50px"
+          height="5vh"
           :to="item.to"
+          class="text-size"
           >
           {{item.title}}
           </v-btn>
@@ -51,9 +53,9 @@
         <v-divider/>
         <v-list-item
           link
-          class="red--text text-center">
+          class="red--text text-center ">
            <v-list-item-content >
-            <v-list-item-title ><v-icon>email</v-icon> blah blah</v-list-item-title>
+            <v-list-item-title class="text-size"><v-icon>email</v-icon> blah blah</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
         <v-divider/>
@@ -61,13 +63,13 @@
         class="red--text text-center"
         link >
            <v-list-item-content >
-            <v-list-item-title ><v-icon>people</v-icon> blah blah</v-list-item-title>
+            <v-list-item-title class="text-size" ><v-icon>people</v-icon> blah blah</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
         <v-divider/>
         <v-list-item class="red--text text-center" link>
            <v-list-item-content >
-            <v-list-item-title >app-123beta</v-list-item-title>
+            <v-list-item-title class="text-size" >app-123beta</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
 
@@ -273,3 +275,8 @@ export default {
   }
 }
 </script>
+<style scoped>
+.text-size{
+  font-size: 1.6vh;
+}
+</style>
