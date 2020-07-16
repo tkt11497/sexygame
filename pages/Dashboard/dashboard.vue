@@ -2,7 +2,6 @@
   <v-container >
     <!-- first row -->
     <v-row>
-
         <v-col>
           <v-card v-if="project.name === 'SIKEN'" flat v-for="project in projects" :key="project.name" >
             <div class="dashboard-card">
@@ -23,7 +22,7 @@
                           <v-avatar color="blue" size="25">
                             <span class="white--text ">P</span>
                         </v-avatar>
-                            <span class="white--text">{{project.pp}}</span>
+                            <span class="white--text">{{project.pp}}</span> vv
                         </v-flex>
                               <v-flex>
                                 <div class="white--text">
@@ -600,16 +599,16 @@ data() {
 
 <style scoped>
 .dashboard-card {
-  background:#1f180e;
-  width: 770px;
+    background:#1f180e;
+    width: 770px;
 }
 .showing-resulting {
- border: 1px solid gray;
- width:620px;
- height:200px;
+   border: 1px solid gray;
+   width:620px;
+   height:200px;
 }
 .profile-img {
-margin-left:11px;
+  margin-left:11px;
 }
 
 
