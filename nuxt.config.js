@@ -43,12 +43,19 @@ export default {
   */
   modules: [
   ],
-  /*
-  ** vuetify module configuration
-  ** https://github.com/nuxt-community/vuetify-module
-  */
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
+    theme: {
+      options: {
+        customProperties: true,
+      },
+      themes: {
+        dark: {
+          background: 'black',
+        },
+      },
+        dark: true,
+    },
     // theme: {
     //  dark: true,
     //   themes: {
@@ -64,6 +71,11 @@ export default {
     //   }
     // }
   },
+  /*
+  ** vuetify module configuration
+  ** https://github.com/nuxt-community/vuetify-module
+  */
+
   /*
   ** Build configuration
   */
