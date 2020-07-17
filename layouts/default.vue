@@ -1,11 +1,12 @@
 <template>
-  <v-app>
+  <v-app id="app">
     <v-navigation-drawer
       fixed
       app
       dark 
       permanent
-      width="10vw"
+      width="10vw" 
+      color="rgba(0, 0, 0, 0.8)"
     >
     <v-img :aspect-ratio="16/10" src="https://cdn.vuetifyjs.com/images/parallax/material.jpg">
         <v-row align="end" class="lightbox white--text pa-2 fill-height">
@@ -278,5 +279,8 @@ export default {
 <style scoped>
 .text-size{
   font-size: 1.6vh;
+}
+#app {
+    background-color: var(--v-background-base);
 }
 </style>

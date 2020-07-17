@@ -1,13 +1,13 @@
 <template>
  <v-container class="pa-0 ma-0" fluid>
 <v-row class="pa-0" style="height:100vh;" no-gutters>
-    <v-col cols="7" class="pa-0">
+    <v-col class="pa-0" style="width:50% ;max-width: 50%">
         <div class="playTable"> 
 
         </div>
        
         <v-tabs
-        background-color="rgba(0, 0, 0, 1)"
+        background-color="rgba(0, 0, 0, 0.7)"
         class="elevation-2"
         dark
         centered
@@ -369,7 +369,7 @@
   </div>
     <v-window v-model="window">
         <v-window-item :value="1">
-           <div class="text-center" style="height:46vh; width:100%;background-color:pink">
+           <div class="text-center" style="height:46vh; width:100%;background-color:black">
             <div style="width:100%; height:30%">
              <previewTable :row="6" :column="36"/>
             </div>
@@ -391,7 +391,45 @@
             <div style="width:100%; height:40%">
               <previewTable :row="6" :column="18"/>
             </div>
-            <v-row style="width:100%; height:10%" no-gutters>
+            <v-row no-gutters style="width:100%; height:10%">
+            <div class="d-flex align-center justify-left room-list" style="width:50%; height:100%; background-color:black">
+              <span class="font-weight-bold red--text ml-1">B</span>
+              <span class="font-weight-bold white--text ml-1">13</span>
+              <span class="font-weight-bold blue--text ml-1">P</span>
+              <span class="font-weight-bold white--text ml-1">123</span>
+              <span class="font-weight-bold green--text ml-1">T</span>
+              <span class="font-weight-bold white--text ml-1">13</span>
+              <span class="font-weight-bold red--text ml-1">BP</span>
+              <span class="font-weight-bold white--text ml-1">13</span>
+              <span class="font-weight-bold blue--text ml-1">PP</span>
+              <span class="font-weight-bold white--text ml-1">133</span>
+            </div>
+             <div class="d-flex align-center justify-left room-list" style="width:50%; height:100%; background-color:black">
+                <v-btn x-small color="red" class="ml-1"> <span class="white--text"> Ask B.</span></v-btn>
+                <v-progress-circular 
+                :value="100"  
+                width="3" 
+                color="blue"
+                class="ml-1" 
+                size="15"
+                ></v-progress-circular>
+                <v-avatar color="blue" class="ml-1" size="15">
+                  
+                </v-avatar>
+                <span class="font-weight-bold red--text ml-1 mr-5  ">/</span>
+                 <v-btn x-small color="blue" class="ml-1"><span class="white--text"> Ask P.</span></v-btn>
+                <v-progress-circular 
+                :value="100"  
+                width="3" 
+                color="red"
+                class="ml-1" 
+                size="15"
+                ></v-progress-circular>
+                <v-avatar color="red" class="ml-1" size="15">
+                  
+                </v-avatar>
+                <span class="font-weight-bold blue--text ml-1">/</span>
+             </div>
             </v-row>
           </div>
         </v-window-item>
@@ -429,8 +467,187 @@
     
     
     </v-col>
-    <v-col cols="1">
-        <h1>HHIII </h1>
+    <v-col cols="2">
+      
+         <v-card height="50vh" >
+
+          <v-expansion-panels flat> 
+            <v-expansion-panel>
+              <v-expansion-panel-header color="black">
+                <span class="white--text">Switch Table</span>
+                  <template v-slot:actions>
+                  <v-icon color="white">clear_all</v-icon>
+                </template>
+              </v-expansion-panel-header>
+              <v-expansion-panel-content>
+                <v-row class="d-flex justify-center align-center ma-0 pa-0">
+                 <v-checkbox label="Checkbox 1"
+                  ></v-checkbox>
+                  <v-checkbox label="Checkbox 1"
+                  ></v-checkbox>
+                </v-row>
+              </v-expansion-panel-content>
+            </v-expansion-panel>
+          </v-expansion-panels>
+          <v-divider></v-divider>
+          <v-card-text style="height: 85%;" class="scroll pa-0 ma-0">
+                  <v-card height="150px" class="mb-2" color="blue">
+                    <v-system-bar
+                        color="black"
+                        dark
+                        class="ma-0 pa-0"
+                      >
+                      <span class="room-list ml-1 white--text">Baccarat C02</span>
+                            <v-spacer></v-spacer>
+
+                            <div class="d-flex justify-center align-center ma-0 pa-0"
+                            style="width:30%;height:100%;background-color:#196260">
+                              <span>20</span>
+                            </div>
+
+                          </v-system-bar>
+                          <previewTable :row="7" :column="16"/>
+                  </v-card>
+                  <v-card height="150px" class="mb-2" color="blue">
+                    <v-system-bar
+                        color="black"
+                        dark
+                        class="ma-0 pa-0"
+                      >
+                      <span class="room-list ml-1 white--text">Baccarat C02</span>
+                            <v-spacer></v-spacer>
+
+                            <div class="d-flex justify-center align-center ma-0 pa-0"
+                            style="width:30%;height:100%;background-color:#196260">
+                              <span>20</span>
+                            </div>
+
+                          </v-system-bar>
+                          <previewTable :row="7" :column="16"/>
+                  </v-card>
+                  <v-card height="150px" class="mb-2" color="blue">
+                    <v-system-bar
+                        color="black"
+                        dark
+                        class="ma-0 pa-0"
+                      >
+                      <span class="room-list ml-1 white--text">Baccarat C02</span>
+                            <v-spacer></v-spacer>
+
+                            <div class="d-flex justify-center align-center ma-0 pa-0"
+                            style="width:30%;height:100%;background-color:#196260">
+                              <span>20</span>
+                            </div>
+                          </v-system-bar>
+                        <previewTable :row="7" :column="16"/>
+                  </v-card>
+                  <v-card height="150px" class="mb-2" color="blue">
+                    <v-system-bar
+                        color="black"
+                        dark
+                        class="ma-0 pa-0"
+                      >
+                      <span class="room-list ml-1 white--text">Baccarat C02</span>
+                            <v-spacer></v-spacer>
+
+                            <div class="d-flex justify-center align-center ma-0 pa-0"
+                            style="width:30%;height:100%;background-color:#196260">
+                              <span>20</span>
+                            </div>
+
+                          </v-system-bar>
+
+                          <previewTable :row="7" :column="16"/>
+                  </v-card>
+          </v-card-text>
+        </v-card>
+
+         <v-card height="46vh" >
+           <v-system-bar
+                    color="black"
+                    dark
+                    class="ma-0 pa-0" 
+                    height="35"
+                  >
+                  <span class="room-list ml-5 white--text">Good Road</span>
+                        <v-spacer></v-spacer>
+
+                        <v-icon color="white">mdi-menu-down</v-icon>
+            </v-system-bar>
+          <v-divider></v-divider>
+          <v-card-text style="height: 85%;" class="scroll pa-0 ma-0">
+                    <v-card height="150px" class="mb-2" color="blue">
+                    <v-system-bar
+                        color="black"
+                        dark
+                        class="ma-0 pa-0"
+                      >
+                      <span class="room-list ml-1 white--text">Baccarat C02</span>
+                            <v-spacer></v-spacer>
+
+                            <div class="d-flex justify-center align-center ma-0 pa-0"
+                            style="width:30%;height:100%;background-color:#196260">
+                              <span>20</span>
+                            </div>
+
+                          </v-system-bar>
+                          <previewTable :row="7" :column="16"/>
+                  </v-card>
+                  <v-card height="150px" class="mb-2" color="blue">
+                    <v-system-bar
+                        color="black"
+                        dark
+                        class="ma-0 pa-0"
+                      >
+                      <span class="room-list ml-1 white--text">Baccarat C02</span>
+                            <v-spacer></v-spacer>
+
+                            <div class="d-flex justify-center align-center ma-0 pa-0"
+                            style="width:30%;height:100%;background-color:#196260">
+                              <span>20</span>
+                            </div>
+
+                          </v-system-bar>
+                          <previewTable :row="7" :column="16"/>
+                  </v-card>
+                  <v-card height="150px" class="mb-2" color="blue">
+                    <v-system-bar
+                        color="black"
+                        dark
+                        class="ma-0 pa-0"
+                      >
+                      <span class="room-list ml-1 white--text">Baccarat C02</span>
+                            <v-spacer></v-spacer>
+
+                            <div class="d-flex justify-center align-center ma-0 pa-0"
+                            style="width:30%;height:100%;background-color:#196260">
+                              <span>20</span>
+                            </div>
+                          </v-system-bar>
+                        <previewTable :row="7" :column="16"/>
+                  </v-card>
+                  <v-card height="150px" class="mb-2" color="blue">
+                    <v-system-bar
+                        color="black"
+                        dark
+                        class="ma-0 pa-0"
+                      >
+                      <span class="room-list ml-1 white--text">Baccarat C02</span>
+                            <v-spacer></v-spacer>
+
+                            <div class="d-flex justify-center align-center ma-0 pa-0"
+                            style="width:30%;height:100%;background-color:#196260">
+                              <span>20</span>
+                            </div>
+
+                          </v-system-bar>
+
+                          <previewTable :row="7" :column="16"/>
+                  </v-card>
+          </v-card-text>
+        </v-card>
+        
+     
     </v-col>
 </v-row>
     
@@ -447,11 +664,15 @@ export default {
     return {
       progress:50,
       window:1,
+     
             }
             }
 }
 </script>
 <style scoped>
+ .scroll {
+      overflow-y: auto;
+    }
     .playTable{
         background-image: url("~assets/images/table.png");
         background-repeat: no-repeat;
@@ -498,7 +719,6 @@ export default {
     .selectCoin{
         width: 100%;
         height: 11vh;
-        background-color: brown;
     }
     .table-info{
       font-size: 0.8vw;
