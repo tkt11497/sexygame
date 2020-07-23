@@ -3,9 +3,9 @@
     <v-navigation-drawer
       fixed
       app
-      dark 
+      dark
       permanent
-      width="10vw" 
+      width="10vw"
       color="rgba(0, 0, 0, 0.8)"
     >
     <v-img :aspect-ratio="16/10" src="https://cdn.vuetifyjs.com/images/parallax/material.jpg">
@@ -126,7 +126,7 @@
     height="40px"
     inset
     app
-    dark 
+    dark
     >
     <v-row  class="d-flex flex-row justify-end">
        <v-divider vertical/>
@@ -301,7 +301,7 @@ export default {
          {
           icon: 'mdi-chart-bubble',
           title: 'MULTI-BET',
-          to: '/Dashboard/multi_bet'
+          to: '/Dashboard/complete_view'
         },
          {
           icon: 'mdi-chart-bubble',

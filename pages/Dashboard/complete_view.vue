@@ -1346,6 +1346,7 @@ data() {
       {seri:'C10',name:'PHALLA',user: '2200', bb: '1232200', pp: '2322200',tt: '2020', status:'Waiting'},
 
     ],
+    
     headers: [
         {
           text: 'Table',
