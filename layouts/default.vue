@@ -56,7 +56,7 @@
           link
           class="red--text text-center ">
            <v-list-item-content >
-            <v-list-item-title class="text-size"><v-icon>email</v-icon> blah blah</v-list-item-title>
+            <v-list-item-title class="text-size"><v-icon>email</v-icon> Feedback</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
         <v-divider/>
@@ -64,7 +64,7 @@
         class="red--text text-center"
         link >
            <v-list-item-content >
-            <v-list-item-title class="text-size" ><v-icon>people</v-icon> blah blah</v-list-item-title>
+            <v-list-item-title class="text-size" ><v-icon>people</v-icon> 12,213</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
         <v-divider/>
@@ -285,27 +285,22 @@ export default {
       items: [
         {
           icon: 'mdi-apps',
-          title: 'Welcome',
+          title: 'BACCARAT',
+          to: '/roomlist'
+        },
+        {
+          icon: 'mdi-chart-bubble',
+          title: 'Other Games',
           to: '/'
-        },
-        {
-          icon: 'mdi-chart-bubble',
-          title: 'Inspire',
-          to: '/Dashboard/dashboard'
-        },
-        {
-          icon: 'mdi-chart-bubble',
-          title: 'blabhlbabh',
-          to: '/inspire'
         },
          {
           icon: 'mdi-chart-bubble',
           title: 'MULTI-BET',
-          to: '/Dashboard/complete_view'
+          to: '/multibet'
         },
          {
           icon: 'mdi-chart-bubble',
-          title: 'blabhlbabh',
+          title: 'Mobile',
           to: '/inspire'
         }
 
