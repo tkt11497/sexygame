@@ -92,6 +92,34 @@
         <nuxt />
 
     </v-content>
+    <v-dialog
+      v-model="betlogDialog"
+      max-width="1200" 
+      min-width="290"
+    >
+      <betLog @close="betlogDialog=false"/>
+    </v-dialog>
+    <v-dialog
+      v-model="memberReportDialog"
+      max-width="800" 
+      min-width="290"
+    >
+      <memberReport @close="memberReportDialog=false"/>
+    </v-dialog>
+    <v-dialog
+      v-model="gameAgreementDialog"
+      max-width="800" 
+      min-width="290"
+    >
+      <gameAgreement @close="gameAgreementDialog=false"/>
+    </v-dialog>
+     <v-dialog
+      v-model="settingDialog"
+      max-width="800" 
+      min-width="290"
+    >
+      <setting @close="settingDialog=false"/>
+    </v-dialog>
     <v-footer
     color="rgba(0, 0, 0, 0.8)"
     padless
@@ -186,30 +214,30 @@
                  <v-subheader>
                    <v-icon>account_circle</v-icon>PLAYER_NAME
                  </v-subheader>
-            <v-list-item link>
+            <v-list-item link @click="betlogDialog=true">
               <v-list-item-icon>
-                <v-icon >settings</v-icon>
+                <v-icon >history</v-icon>
               </v-list-item-icon>
-              <v-list-item-content>Enable messages</v-list-item-content>
+              <v-list-item-content>Bet Log  </v-list-item-content>
             </v-list-item>
 
-            <v-list-item link>
+            <v-list-item link @click="memberReportDialog=true">
               <v-list-item-icon>
-                <v-icon >settings</v-icon>
+                <v-icon >text_snippet</v-icon>
               </v-list-item-icon>
-              <v-list-item-content>Enable hints</v-list-item-content>
+              <v-list-item-content>Member Report</v-list-item-content>
             </v-list-item>
-             <v-list-item link>
+             <v-list-item link @click="settingDialog=true">
               <v-list-item-icon>
                 <v-icon >settings</v-icon>
               </v-list-item-icon>
-              <v-list-item-content>Enable hints</v-list-item-content>
+              <v-list-item-content>Settings</v-list-item-content>
             </v-list-item>
-             <v-list-item link>
+             <v-list-item link @click="gameAgreementDialog=true">
               <v-list-item-icon>
-                <v-icon >settings</v-icon>
+                <v-icon >info</v-icon>
               </v-list-item-icon>
-              <v-list-item-content>Enable hints</v-list-item-content>
+              <v-list-item-content>Game Agreement</v-list-item-content>
             </v-list-item>
             <v-list-item>
             <v-list-item-action-text>
@@ -235,11 +263,25 @@
 </template>
 
 <script>
+import betLog from '@/components/bet_log';
+import memberReport from '@/components/member_report';
+import gameAgreement from '@/components/gameAgreement';
+import setting from '@/components/setting';
 export default {
+   components:{
+        betLog,
+        memberReport,
+        gameAgreement,
+        setting
+    },
   data () {
     return {
       fixed: false,
       soundOn:true,
+      betlogDialog:false,
+      memberReportDialog:false,
+      gameAgreementDialog:false,
+      settingDialog:false,
       items: [
         {
           icon: 'mdi-apps',

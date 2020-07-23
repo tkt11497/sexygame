@@ -117,8 +117,42 @@
         >
             Total BetAmount : 0.0
         </div>
-        <div class="selectCoin">
-          
+        <div class="selectCoin d-flex justify-center align-center white--text" >
+            
+                            <div class="text-center mt-1 ml-2"
+                            style="width:4vw; height:2.6vw; background-color:rgba(0,0,0,0.5)">
+                                <v-icon dark>monetization_on</v-icon>
+                                <span style="font-size:0.8vw">Custom</span>
+
+                            </div>
+                            <div class="text-center mt-1"
+                            style="width:4vw; height:2.6vw; ">
+                            <img src="~assets/images/Coin1.jpg" style="width:3.2vw;" />
+                            </div>
+                             <div class="text-center mt-1"
+                            style="width:4vw; height:2.6vw; ">
+                            <img src="~assets/images/Coin1.jpg" style="width:3.2vw;" />
+                            </div>
+                             <div class="text-center mt-1"
+                            style="width:4vw; height:2.6vw; ">
+                            <img src="~assets/images/Coin1.jpg" style="width:3.2vw;" />
+                            </div>
+                             <div class="text-center mt-1"
+                            style="width:4vw; height:2.6vw; ">
+                            <img src="~assets/images/Coin1.jpg" style="width:3.2vw;" />
+                            </div>
+                              <div class="text-center mt-1"
+                            style="width:4vw; height:2.6vw; ">
+                            <img src="~assets/images/Coin1.jpg" style="width:3.2vw;" />
+                            </div>
+                              <div class="text-center mt-1 ml-2"
+                            style="width:4vw; height:2.6vw; background-color:rgba(0,0,0,0.5)">
+                                <v-icon dark>monetization_on</v-icon><br>
+                                <span style="font-size:0.8vw">Double</span>
+
+                            </div>
+                           
+      
         </div>
     </v-col>
     <v-col cols="4" class="pa-0">
@@ -718,7 +752,7 @@ export default {
     }
     .selectCoin{
         width: 100%;
-        height: 11vh;
+        background-color:#4F3C2B
     }
     .table-info{
       font-size: 0.8vw;
