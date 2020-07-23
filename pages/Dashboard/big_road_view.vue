@@ -42,7 +42,7 @@
                               <v-flex ml-1 mt-3>
                                 <span class="white--text">Seri {{ project.seri}}</span>
                               </v-flex><v-spacer></v-spacer><v-spacer></v-spacer><v-spacer></v-spacer><v-spacer></v-spacer><v-spacer></v-spacer><v-spacer></v-spacer><v-spacer></v-spacer><v-spacer></v-spacer><v-spacer></v-spacer><v-spacer></v-spacer><v-spacer></v-spacer>
-                              <v-flex >
+                              <v-flex pb-4>
                                 <v-btn text icon color="#787878" @click="favoriteshow=true">
                                     <v-icon>favorite</v-icon>
                               </v-btn>
