@@ -24,13 +24,13 @@
                 </v-avatar>
                 <div class="result-cards">
                     <img
-                    src="~assets/images/card.png"
+                    src="/card.png"
                      style="width:20%; height:40%; position:absolute;left:15%;top:0; transform: rotate(-90deg);"/>
                     <img
-                    src="~assets/images/card.png"
+                    src="/card.png"
                      style="width:20%; height:40%; position:absolute;left:5%;bottom:23%"/>
                      <img
-                    src="~assets/images/card.png"
+                    src="/card.png"
                      style="width:20%; height:40%; position:absolute;left:27%;bottom:23%"/>
                     <div
                     class=" d-flex justify-center align-center"
@@ -38,13 +38,13 @@
                         <span>P 6</span>
                     </div>
                       <img
-                    src="~assets/images/card.png"
+                    src="/card.png"
                      style="width:20%; height:40%; position:absolute;right:15%;top:0; transform: rotate(-90deg);"/>
                     <img
-                    src="~assets/images/card.png"
+                    src="/card.png"
                      style="width:20%; height:40%; position:absolute;right:5%;bottom:23%"/>
                      <img
-                    src="~assets/images/card.png"
+                    src="/card.png"
                      style="width:20%; height:40%; position:absolute;right:27%;bottom:23%"/>
                     <div
                     class=" d-flex justify-center align-center"
@@ -278,23 +278,23 @@
                             </div>
                             <div class="text-center mt-4"
                             style="width:4vw; height:2.6vw; ">
-                            <img src="~assets/images/coin1.jpg" style="width:3.2vw;" />
+                            <img src="/coin1.jpg" style="width:3.2vw;" />
                             </div>
                              <div class="text-center mt-4"
                             style="width:4vw; height:2.6vw; ">
-                            <img src="~assets/images/coin1.jpg" style="width:3.2vw;" />
+                            <img src="/coin1.jpg" style="width:3.2vw;" />
                             </div>
                              <div class="text-center mt-4"
                             style="width:4vw; height:2.6vw; ">
-                            <img src="~assets/images/coin1.jpg" style="width:3.2vw;" />
+                            <img src="/coin1.jpg" style="width:3.2vw;" />
                             </div>
                              <div class="text-center mt-4"
                             style="width:4vw; height:2.6vw; ">
-                            <img src="~assets/images/coin1.jpg" style="width:3.2vw;" />
+                            <img src="/coin1.jpg" style="width:3.2vw;" />
                             </div>
                               <div class="text-center mt-4"
                             style="width:4vw; height:2.6vw; ">
-                            <img src="~assets/images/coin1.jpg" style="width:3.2vw;" />
+                            <img src="/coin1.jpg" style="width:3.2vw;" />
                             </div>
                               <div class="text-center mt-4 ml-2"
                             style="width:4vw; height:2.6vw; background-color:rgba(0,0,0,0.5)">
@@ -562,7 +562,7 @@ export default {
       overflow-y: auto;
     }
     .tableInfo{
-        background-image: url("~assets/images/table.png");
+        background-image: url("/table.png");
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;

@@ -197,23 +197,23 @@
                             </div>
                             <div class="text-center mt-1"
                             style="width:4vw; height:2.6vw; ">
-                            <img src="~assets/images/coin1.jpg" style="width:3.2vw;" />
+                            <img src="/coin1.jpg" style="width:3.2vw;" />
                             </div>
                              <div class="text-center mt-1"
                             style="width:4vw; height:2.6vw; ">
-                            <img src="~assets/images/coin1.jpg" style="width:3.2vw;" />
+                            <img src="/coin1.jpg" style="width:3.2vw;" />
                             </div>
                              <div class="text-center mt-1"
                             style="width:4vw; height:2.6vw; ">
-                            <img src="~assets/images/coin1.jpg" style="width:3.2vw;" />
+                            <img src="/coin1.jpg" style="width:3.2vw;" />
                             </div>
                              <div class="text-center mt-1"
                             style="width:4vw; height:2.6vw; ">
-                            <img src="~assets/images/coin1.jpg" style="width:3.2vw;" />
+                            <img src="/coin1.jpg" style="width:3.2vw;" />
                             </div>
                               <div class="text-center mt-1"
                             style="width:4vw; height:2.6vw; ">
-                            <img src="~assets/images/coin1.jpg" style="width:3.2vw;" />
+                            <img src="/coin1.jpg" style="width:3.2vw;" />
                             </div>
                               <div class="text-center mt-1 ml-2"
                             style="width:4vw; height:2.6vw; background-color:rgba(0,0,0,0.5)">
@@ -393,13 +393,13 @@
           
                 <div class="result-cards"> 
                     <img 
-                    src="~assets/images/card.png" 
+                    src="/card.png" 
                      style="width:20%; height:42%; position:absolute;left:15%;top:0; transform: rotate(-90deg);"/>
                     <img 
-                    src="~assets/images/card.png" 
+                    src="/card.png" 
                      style="width:20%; height:42%; position:absolute;left:5%;bottom:18%"/>
                      <img 
-                    src="~assets/images/card.png" 
+                    src="/card.png" 
                      style="width:20%; height:42%; position:absolute;left:27%;bottom:18%"/>
                     <div 
                     class=" d-flex justify-center align-center"
@@ -407,13 +407,13 @@
                         <span>P 6</span>
                     </div>
                       <img 
-                    src="~assets/images/card.png" 
+                    src="/card.png" 
                      style="width:20%; height:42%; position:absolute;right:15%;top:0; transform: rotate(-90deg);"/>
                     <img 
-                    src="~assets/images/card.png" 
+                    src="/card.png" 
                      style="width:20%; height:42%; position:absolute;right:5%;bottom:18%"/>
                      <img 
-                    src="~assets/images/card.png" 
+                    src="/card.png" 
                      style="width:20%; height:42%; position:absolute;right:27%;bottom:18%"/>
                     <div 
                     class=" d-flex justify-center align-center"
@@ -819,7 +819,7 @@ export default {
       overflow-y: auto;
     }
     .playTable{
-        background-image: url("~assets/images/table.png");
+        background-image: url("/table.png");
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
@@ -860,7 +860,7 @@ export default {
         background-color:rgb(3, 62, 29);
         width:100%;
         height:100%;
-        cursor: url('~assets/images/coin1.jpg'),pointer;
+        cursor: url('/coin1.jpg'),pointer;
     }
     .selectCoin{
         width: 100%;

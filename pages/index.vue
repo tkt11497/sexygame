@@ -97,11 +97,11 @@ computed: {
 
 }
 .playTable{
-    background-image: url("~assets/images/logo.jpg");
+    background-image: url("/logo.jpg");
     height: 100px;
 }
 .logo{
-  background-image: url("~assets/images/gaming.jpg");
+  background-image: url("/gaming.jpg");
   height: 100px;
 }
 

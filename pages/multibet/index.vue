@@ -1303,19 +1303,19 @@
    </v-btn>
             </v-flex>
             <v-flex class=" mt-4">
-              <img src="~assets/images/coin1.jpg" style="width:3.2vw;" />
+              <img src="/coin1.jpg" style="width:3.2vw;" />
             </v-flex>
               <v-flex class=" mt-4">
-                <img src="~assets/images/coin2.jpg" style="width:3.2vw;" />
+                <img src="/coin2.jpg" style="width:3.2vw;" />
               </v-flex>
               <v-flex class=" mt-4">
-                <img src="~assets/images/coin3.jpg" style="width:3.2vw;" />
+                <img src="/coin3.jpg" style="width:3.2vw;" />
               </v-flex>
               <v-flex class=" mt-4">
-                <img src="~assets/images/coin4.jpg" style="width:3.2vw;" />
+                <img src="/coin4.jpg" style="width:3.2vw;" />
               </v-flex>
               <v-flex class=" mt-4">
-                <img src="~assets/images/coin5.jpg" style="width:3.2vw;" />
+                <img src="/coin5.jpg" style="width:3.2vw;" />
               </v-flex>
 
 
@@ -1438,7 +1438,7 @@ data() {
 }
 
 .playTable{
-    background-image: url("~assets/images/table.png");
+    background-image: url("/table.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
