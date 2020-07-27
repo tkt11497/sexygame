@@ -2767,19 +2767,19 @@
    </v-btn>
             </v-flex>
             <v-flex class=" mt-4">
-              <img src="~assets/images/Coin1.jpg" style="width:3.2vw;" />
+              <img src="~assets/images/coin1.jpg" style="width:3.2vw;" />
             </v-flex>
               <v-flex class=" mt-4">
-                <img src="~assets/images/Coin2.jpg" style="width:3.2vw;" />
+                <img src="~assets/images/coin2.jpg" style="width:3.2vw;" />
               </v-flex>
               <v-flex class=" mt-4">
-                <img src="~assets/images/Coin3.jpg" style="width:3.2vw;" />
+                <img src="~assets/images/coin3.jpg" style="width:3.2vw;" />
               </v-flex>
               <v-flex class=" mt-4">
-                <img src="~assets/images/Coin4.jpg" style="width:3.2vw;" />
+                <img src="~assets/images/coin4.jpg" style="width:3.2vw;" />
               </v-flex>
               <v-flex class=" mt-4">
-                <img src="~assets/images/Coin5.jpg" style="width:3.2vw;" />
+                <img src="~assets/images/coin5.jpg" style="width:3.2vw;" />
               </v-flex>
 
 

@@ -278,23 +278,23 @@
                             </div>
                             <div class="text-center mt-4"
                             style="width:4vw; height:2.6vw; ">
-                            <img src="~assets/images/Coin1.jpg" style="width:3.2vw;" />
+                            <img src="~assets/images/coin1.jpg" style="width:3.2vw;" />
                             </div>
                              <div class="text-center mt-4"
                             style="width:4vw; height:2.6vw; ">
-                            <img src="~assets/images/Coin1.jpg" style="width:3.2vw;" />
+                            <img src="~assets/images/coin1.jpg" style="width:3.2vw;" />
                             </div>
                              <div class="text-center mt-4"
                             style="width:4vw; height:2.6vw; ">
-                            <img src="~assets/images/Coin1.jpg" style="width:3.2vw;" />
+                            <img src="~assets/images/coin1.jpg" style="width:3.2vw;" />
                             </div>
                              <div class="text-center mt-4"
                             style="width:4vw; height:2.6vw; ">
-                            <img src="~assets/images/Coin1.jpg" style="width:3.2vw;" />
+                            <img src="~assets/images/coin1.jpg" style="width:3.2vw;" />
                             </div>
                               <div class="text-center mt-4"
                             style="width:4vw; height:2.6vw; ">
-                            <img src="~assets/images/Coin1.jpg" style="width:3.2vw;" />
+                            <img src="~assets/images/coin1.jpg" style="width:3.2vw;" />
                             </div>
                               <div class="text-center mt-4 ml-2"
                             style="width:4vw; height:2.6vw; background-color:rgba(0,0,0,0.5)">
