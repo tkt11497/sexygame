@@ -1,14 +1,54 @@
  <template>       
-        <v-flex md6 xs12>
+        <v-flex :md4="cardSize.md4" :md3="cardSize.md3" :md6="cardSize.md6" xs12>
           <v-card class="ma-2" >
-              <v-row no-gutters class="dashboard-bar">
+            <v-row no-gutters class="dashboard-bar" v-if="PropCardSize=='md6'">
+                  <v-flex>
+                    <span class="white--text textSize">Seri {{project.seri}}  </span>
+                  </v-flex>
+                    <v-flex >
+                      <div class="white--text textSize"><v-icon class="white--text ">group</v-icon>  {{project.user}} </div>
+                    </v-flex>
+                        <v-flex>
+                          <v-avatar color="red" size="25">
+                            <span class="white--text textSize">B</span>
+                          </v-avatar>
+                          <span class="white--text textSize">{{project.bb}}</span>
+                        </v-flex>
+                          <v-flex>
+                            <v-avatar color="blue" size="25">
+                              <span class="white--text textSize">P</span>
+                          </v-avatar>
+                              <span class="white--text textSize">{{project.pp}}</span> 
+                          </v-flex>
+                                <v-flex>
+                                  <div class="white--text textSize">
+                                    <v-avatar color="red" size="25">
+                                      <span class="white--text textSize">T</span>
+                                    </v-avatar>
+                                    {{project.tt}}
+                                  </div>
+                                </v-flex>
+                                <v-flex>
+                                      <div class="white--text textSize text-center" style="background:#196260; height:30px;">
+                                        <span> {{project.status }}</span>
+                                      </div>
+                                </v-flex>
+            </v-row >
+            <v-row no-gutters class="dashboard-bar" v-if="PropCardSize!='md6'">
                 <v-flex>
                   <span class="white--text textSize">Seri {{project.seri}}  </span>
                 </v-flex>
                   <v-flex >
                     <div class="white--text textSize"><v-icon class="white--text ">group</v-icon>  {{project.user}} </div>
                   </v-flex>
-                      <v-flex>
+                  <v-flex>
+                                    <div class="white--text textSize text-center" style="background:#196260; height:30px;">
+                                      <span> {{project.status }}</span>
+                                    </div>
+                  </v-flex>
+            </v-row >
+            <v-row no-gutters class="dashboard-bar" v-if="PropCardSize!='md6'">
+                <v-flex>
                         <v-avatar color="red" size="25">
                           <span class="white--text textSize">B</span>
                         </v-avatar>
@@ -28,12 +68,7 @@
                                   {{project.tt}}
                                 </div>
                               </v-flex>
-                              <v-flex>
-                                    <div class="white--text textSize text-center" style="background:#196260; height:30px;">
-                                      <span> {{project.status }}</span>
-                                    </div>
-                              </v-flex>
-                    </v-row >
+            </v-row>
                       <v-row no-gutters dense>
                         <div style="height:21vh; width:17%">
                           <v-img
@@ -47,10 +82,10 @@
                       <div class="showing-resulting">
                          <div style="width:100%; height:100%; background-color:#1f180e">
                              <v-row no-gutters style="height:100%">
-                                    <div style="height:100%;  width:40%">
+                                    <div :style="{height:'100%', width:PropCardSize=='md3'?'100%':'40%'}"  v-if="PropCardSize=='md6'||PropCardSize=='md3'">
                                         <previewTable :row="7" :column="15" />
                                     </div>
-                                    <div style="height:100%;  width:60%">
+                                    <div :style="{ height: '100%', width: PropCardSize=='md4'?'100%':'60%' }" v-if="PropCardSize=='md4'||PropCardSize=='md6'">
                                         <div style="width:100%; height:45%">
                                                 <previewTable :row="6" :column="36"/>
                                             </div>
@@ -60,11 +95,11 @@
                                             </div>
                                             <v-divider/>
                                         <v-row style="width:100%; height:27.5%" no-gutters>
-                                            <div style="width:49%; height:100%; ">
+                                            <div style="width:49.5%; height:100%; ">
                                             <previewTable :row="4" :column="18"/>
                                             </div>
                                             <v-divider vertical/>
-                                            <div style="width:49%; height:100%">
+                                            <div style="width:49.5%; height:100%">
                                                 <previewTable :row="4" :column="18"/>
                                             </div>
                                         </v-row>
@@ -165,17 +200,55 @@
 <script>
 import previewTable from './previewTable';
 export default {
-    props:['project'],
+    props:['project','PropCardSize'],
       components:{
         previewTable
     },
     data() {
+      
     return {
         show: false,
         secondshow: false,
         
     }
-}
+   },
+   computed: {
+   
+    cardSize() {
+       switch(this.PropCardSize){
+         case 'md6':
+          return {
+          md6:true,
+          md4:false,
+          md3:false
+        }
+        break;
+        case 'md4':
+          return {
+          md6:false,
+          md4:true,
+          md3:false
+        }
+        break;
+        case 'md3':
+          return {
+            md6:false,
+            md4:false,
+            md3:true
+          }
+        break;
+        default:
+          return {
+          md6:true,
+          md4:false,
+          md3:false
+        }
+
+       }
+        
+    }
+  },
+
 }
 </script>
 <style scoped>

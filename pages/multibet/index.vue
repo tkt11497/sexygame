@@ -1,5 +1,5 @@
 <template>
-  <v-container class="pa-1 ma-0">
+  <v-container class="ma-0" fluid>
     <v-row >
       <!-- Main First Col -->
       <v-col cols="8" style="padding:0;" >
