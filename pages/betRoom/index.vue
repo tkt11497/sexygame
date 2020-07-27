@@ -3,7 +3,25 @@
 <v-row class="pa-0" style="height:100vh;" no-gutters>
     <v-col class="pa-0" style="width:50% ;max-width: 50%">
         <div class="playTable"> 
-
+           <v-btn class="mx-2"  dark small color="#4F3C2B" style="position:absolute;bottom:1%;left:0" link to="/betRoom/betRoom2">
+              <v-icon dark>picture_in_picture</v-icon>
+            </v-btn>
+            <div class="room-title d-flex justify-center align-center">
+                    Baccrart C01
+            </div>
+              <v-avatar 
+                    color="rgba(0,0,0,0.5)" 
+                    size="130" 
+                    class="gameCountDown" 
+                    v-show="true">
+                        <v-progress-circular
+                        :value="70"
+                        color="red" 
+                        size="100"
+                        >
+                    <span> 60</span>
+                    </v-progress-circular>
+                </v-avatar>
         </div>
        
         <v-tabs
@@ -305,7 +323,7 @@
           <v-card
             flat
             tile
-            height="31vh"
+            height="32vh"
           >
            <div class="playArea">
                <h1> 2</h1>
@@ -318,11 +336,40 @@
           <v-card
             flat
             tile
-            height="31vh"
+            height="32vh"
           >
-           <div class="playArea">
-               3
-           </div>
+          
+                <div class="result-cards"> 
+                    <img 
+                    src="~assets/images/card.png" 
+                     style="width:20%; height:42%; position:absolute;left:15%;top:0; transform: rotate(-90deg);"/>
+                    <img 
+                    src="~assets/images/card.png" 
+                     style="width:20%; height:42%; position:absolute;left:5%;bottom:18%"/>
+                     <img 
+                    src="~assets/images/card.png" 
+                     style="width:20%; height:42%; position:absolute;left:27%;bottom:18%"/>
+                    <div 
+                    class=" d-flex justify-center align-center"
+                    style="width:42%; height:10%; position:absolute; top:85%; left:5%; background-color:blue"> 
+                        <span>P 6</span>
+                    </div>
+                      <img 
+                    src="~assets/images/card.png" 
+                     style="width:20%; height:42%; position:absolute;right:15%;top:0; transform: rotate(-90deg);"/>
+                    <img 
+                    src="~assets/images/card.png" 
+                     style="width:20%; height:42%; position:absolute;right:5%;bottom:18%"/>
+                     <img 
+                    src="~assets/images/card.png" 
+                     style="width:20%; height:42%; position:absolute;right:27%;bottom:18%"/>
+                    <div 
+                    class=" d-flex justify-center align-center"
+                    style="width:42%; height:10%; position:absolute; top:85%; right:5%; background-color:red"> 
+                        <span>B 5</span>
+                    </div>
+                </div>
+           
           </v-card>
         </v-tab-item>
       </v-tabs>
@@ -330,58 +377,70 @@
      <v-row style="height:50%;width:100%; margin:0;" >
        <div style="width:12.5%;" class="d-flex justify-center align-center">
          <v-card height="80%" width="80%"  color="secondary" dark 
-         class="d-flex justify-center align-center room-list">C01</v-card>
+         class="d-flex justify-center align-center room-list" 
+         @click="window=1">C01</v-card>
        </div>
         <div style="width:12.5%;" class="d-flex justify-center align-center">
           <v-card height="80%" width="80%"  color="secondary" dark 
-          class="d-flex justify-center align-center room-list">C02</v-card>
+          class="d-flex justify-center align-center room-list" 
+          @click="window=2">C02</v-card>
        </div>
         <div style="width:12.5%;" class="d-flex justify-center align-center">
           <v-card height="80%" width="80%"  color="secondary" dark 
-          class="d-flex justify-center align-center room-list">C03</v-card>
+          class="d-flex justify-center align-center room-list" 
+          @click="window=3">C03</v-card>
        </div>
         <div style="width:12.5%;" class="d-flex justify-center align-center">
           <v-card height="80%" width="80%"  color="secondary" dark 
-          class="d-flex justify-center align-center room-list">C06</v-card>
+          class="d-flex justify-center align-center room-list" 
+          @click="window=1">C06</v-card>
        </div>
         <div style="width:12.5%;" class="d-flex justify-center align-center">
           <v-card height="80%" width="80%"  color="secondary" dark 
-          class="d-flex justify-center align-center room-list">C07</v-card>
+          class="d-flex justify-center align-center room-list" 
+          @click="window=1">C07</v-card>
        </div>
         <div style="width:12.5%;" class="d-flex justify-center align-center">
           <v-card height="80%" width="80%"  color="secondary" dark 
-          class="d-flex justify-center align-center room-list">P01</v-card>
+          class="d-flex justify-center align-center room-list" 
+          @click="window=1">P01</v-card>
        </div>
         <div style="width:12.5%;" class="d-flex justify-center align-center">
           <v-card height="80%" width="80%"  color="secondary" dark 
-          class="d-flex justify-center align-center room-list">P02</v-card>
+          class="d-flex justify-center align-center room-list" 
+          @click="window=3">P02</v-card>
        </div>
         <div style="width:12.5%;" class="d-flex justify-center align-center">
           <v-card height="80%" width="80%"  color="secondary" dark 
-          class="d-flex justify-center align-center room-list">P03</v-card>
+          class="d-flex justify-center align-center room-list"
+          @click="window=2">P03</v-card>
        </div>
      </v-row>
       <v-row style="height:50%;width:100%; margin:0;">
        <div style="width:12.5%;" class="d-flex justify-center align-center">
          <v-card height="80%" width="80%"  color="secondary" dark 
          class="d-flex justify-center align-center room-list"
-         @click="window=2">C01</v-card>
+         @click="window=2" >C01</v-card>
        </div>
         <div style="width:12.5%;" class="d-flex justify-center align-center">
           <v-card height="80%" width="80%"  color="secondary" dark 
-          class="d-flex justify-center align-center room-list">C02</v-card>
+          class="d-flex justify-center align-center room-list" 
+          @click="window=1">C02</v-card>
        </div>
         <div style="width:12.5%;" class="d-flex justify-center align-center">
           <v-card height="80%" width="80%"  color="secondary" dark 
-          class="d-flex justify-center align-center room-list">C03</v-card>
+          class="d-flex justify-center align-center room-list" 
+          @click="window=1">C03</v-card>
        </div>
         <div style="width:12.5%;" class="d-flex justify-center align-center">
           <v-card height="80%" width="80%"  color="secondary" dark 
-          class="d-flex justify-center align-center room-list">C06</v-card>
+          class="d-flex justify-center align-center room-list" 
+          @click="window=1">C06</v-card>
        </div>
         <div style="width:12.5%;" class="d-flex justify-center align-center">
           <v-card height="80%" width="80%"  color="secondary" dark 
-          class="d-flex justify-center align-center room-list">C07</v-card>
+          class="d-flex justify-center align-center room-list" 
+          @click="window=1">C07</v-card>
        </div>
         <div style="width:12.5%;" class="d-flex justify-center align-center">
           <v-card height="80%" width="80%"  color="secondary" dark 
@@ -760,5 +819,24 @@ export default {
     .room-list{
         font-size: 0.8vw;
     }
-    
+    .room-title{
+        width:20%;
+        height:5vh;
+        position:absolute; 
+        top:0;
+        left:0; 
+        background-color:rgba(0,0,0,0.5);
+        font-size: 1vw;
+    }
+    .gameCountDown{
+        position:absolute; 
+        top:10%;
+        left:5%;
+    }
+    .result-cards{
+        background-color:rgba(0, 0, 0, 0.5);
+         position: relative;;
+        width:100%; 
+        height:100%
+    }
 </style>

@@ -60,11 +60,11 @@
                                             </div>
                                             <v-divider/>
                                         <v-row style="width:100%; height:27.5%" no-gutters>
-                                            <div style="width:49.7%; height:100%; ">
+                                            <div style="width:49%; height:100%; ">
                                             <previewTable :row="4" :column="18"/>
                                             </div>
                                             <v-divider vertical/>
-                                            <div style="width:50%; height:100%">
+                                            <div style="width:49%; height:100%">
                                                 <previewTable :row="4" :column="18"/>
                                             </div>
                                         </v-row>
@@ -101,22 +101,22 @@
                         style="height: 100%; background:gray;"
                       >
                         <div class="d-flex align-center flex-row justify-center">
-                            <v-btn class="white--text mt-9 mr-3" large depressed color="#5f4d35">10 - 1,000</v-btn>
+                            <v-btn class="white--text mt-9 mr-3" large depressed color="#5f4d35" link to="/betRoom">10 - 1,000</v-btn>
 
 
 
-                            <v-btn class="white--text mt-9 mr-3"  large depressed color="#5f4d35">50 - 5,000</v-btn>
+                            <v-btn class="white--text mt-9 mr-3"  large depressed color="#5f4d35" link to="/betRoom">50 - 5,000</v-btn>
 
 
-                            <v-btn class="white--text mt-9 mr-3"  large depressed color="#5f4d35">100 - 5,000</v-btn>
+                            <v-btn class="white--text mt-9 mr-3"  large depressed color="#5f4d35" link to="/betRoom">100 - 5,000</v-btn>
                           </div>
 
                           <div class="d-flex align-center flex-row justify-center">
 
-                            <v-btn class="white--text mt-7 mr-3"  large depressed color="#5f4d35">100 - 5,000</v-btn>
+                            <v-btn class="white--text mt-7 mr-3"  large depressed color="#5f4d35" link to="/betRoom">100 - 5,000</v-btn>
 
 
-                            <v-btn class="white--text mt-7 mr-3"  large depressed color="#5f4d35">100 - 5,000</v-btn>
+                            <v-btn class="white--text mt-7 mr-3"  large depressed color="#5f4d35" link to="/betRoom">100 - 5,000</v-btn>
                           </div>
                        
 
@@ -133,22 +133,22 @@
                         style="height: 100%; background:gray;"
                       >
                         <div class="d-flex align-center flex-row justify-center">
-                            <v-btn class="white--text mt-9 mr-3" large depressed color="#5f4d35">10 - 1,000</v-btn>
+                            <v-btn class="white--text mt-9 mr-3" large depressed color="#5f4d35" link to="/betRoom">10 - 1,000</v-btn>
 
 
 
-                            <v-btn class="white--text mt-9 mr-3"  large depressed color="#5f4d35">50 - 5,000</v-btn>
+                            <v-btn class="white--text mt-9 mr-3"  large depressed color="#5f4d35" link to="/betRoom">50 - 5,000</v-btn>
 
 
-                            <v-btn class="white--text mt-9 mr-3"  large depressed color="#5f4d35">100 - 5,000</v-btn>
+                            <v-btn class="white--text mt-9 mr-3"  large depressed color="#5f4d35" link to="/betRoom">100 - 5,000</v-btn>
                           </div>
 
                           <div class="d-flex align-center flex-row justify-center">
 
-                            <v-btn class="white--text mt-7 mr-3"  large depressed color="#5f4d35">100 - 5,000</v-btn>
+                            <v-btn class="white--text mt-7 mr-3" link to="/betRoom"  large depressed color="#5f4d35">100 - 5,000</v-btn>
 
 
-                            <v-btn class="white--text mt-7 mr-3"  large depressed color="#5f4d35">100 - 5,000</v-btn>
+                            <v-btn class="white--text mt-7 mr-3"  large depressed color="#5f4d35" link to="/betRoom">100 - 5,000</v-btn>
                           </div>
 
                       </div>

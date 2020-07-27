@@ -6,6 +6,9 @@
                 <div class="room-title d-flex justify-center align-center">
                     Baccrart C01
                 </div>
+                 <v-btn class="mx-2"  dark small color="#4F3C2B" style="position:absolute;bottom:1%;left:0" link to="/betRoom">
+                    <v-icon dark>picture_in_picture</v-icon>
+                </v-btn>
                 <v-avatar 
                     color="rgba(0,0,0,0.5)" 
                     size="130" 

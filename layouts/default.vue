@@ -131,24 +131,107 @@
     <v-row  class="d-flex flex-row justify-end">
        <v-divider vertical/>
       <div class="d-flex justify-center">
-        <v-btn icon class="pa-2 ma-1">
-          <v-icon class="pa-2" v-show="soundOn">audiotrack</v-icon>
-          <v-icon class="pa-2" v-show="!soundOn">music_off</v-icon>
-        </v-btn>
+          <v-menu
+            offset-y
+            top 
+            :close-on-content-click="false"
+            :nudge-width="350"
+            :max-width="350"
+            >
+            <template v-slot:activator="{ on, attrs }">
+              <v-btn icon class="pa-2 ma-1"  
+              v-bind="attrs"
+              v-on="on">
+                <v-icon class="pa-2" v-show="soundOn">audiotrack</v-icon>
+                <v-icon class="pa-2" v-show="!soundOn">music_off</v-icon>
+              </v-btn>
+            </template>
+                <v-card>
+                  <v-row no-gutters>
+                      <v-col cols="3" class="text-center">
+                        <p style="color:#876f4d" class="mt-4">Music</p>
+                      </v-col>
+               
+                      <v-col cols="9" class="text-center">
+                      <v-row no-gutters dense >
+                          <v-btn icon color="#876f4d" class="mt-2">
+                          <v-icon>volume_up</v-icon>
+                          <!-- <v-icon>volume_off</v-icon> -->
+                          </v-btn>
+                          <v-slider
+                              v-model="music" 
+                              class="mt-3" 
+                          ></v-slider>
+                      </v-row>
+                  </v-col>
+                  </v-row>
+                </v-card>
+            
+          </v-menu>
       </div>
 
       <v-divider vertical/>
       <div class="d-flex" style="width:175px">
-        <v-btn icon class="pa-2 ma-1">
-        <v-icon class="pa-2 ">volume_up</v-icon>
-        </v-btn>
-         <v-btn icon class="pa-2 ma-1">
+        <v-menu
+            offset-y
+            top 
+            :close-on-content-click="false"
+            :nudge-width="350"
+            :max-width="350"
+            >
+            <template v-slot:activator="{ on, attrs }">
+                <v-btn icon class="pa-2 ma-1"
+                 v-bind="attrs"
+                  v-on="on">
+                <v-icon class="pa-2 ">volume_up</v-icon>
+                </v-btn>
+            </template>
+             <v-card>
+                  <v-row no-gutters>
+                      <v-col cols="4" class="text-center">
+                        <p style="color:#876f4d" class="mt-4">Studio Sound</p>
+                      </v-col>
+               
+                      <v-col cols="8" class="text-center">
+                      <v-row no-gutters dense >
+                          <v-btn icon color="#876f4d" class="mt-2">
+                          <v-icon>volume_up</v-icon>
+                          <!-- <v-icon>volume_off</v-icon> -->
+                          </v-btn>
+                          <v-slider
+                              v-model="studioSound" 
+                              class="mt-3" 
+                          ></v-slider>
+                      </v-row>
+                  </v-col>
+                  </v-row>
+                  <v-row no-gutters>
+                      <v-col cols="4" class="text-center">
+                            <p style="color:#876f4d" class="mt-4">Game Volume</p>
+                      </v-col>
+               
+                      <v-col cols="8" class="text-center">
+                          <v-row no-gutters dense >
+                              <v-btn icon color="#876f4d" class="mt-2">
+                              <v-icon>volume_up</v-icon>
+                              <!-- <v-icon>volume_off</v-icon> -->
+                              </v-btn>
+                              <v-slider
+                                  v-model="gameVolume" 
+                                  class="mt-3" 
+                              ></v-slider>
+                          </v-row>
+                      </v-col>
+                  </v-row>
+                </v-card>
+        </v-menu>
+         <v-btn icon class="pa-2 ma-1" link :to="toRouteName" exact>
         <v-icon class="pa-2 ">view_list</v-icon>
         </v-btn>
-         <v-btn icon class="pa-2 ma-1">
+         <v-btn icon class="pa-2 ma-1" link :to="toRouteName+'/road_map_view'" exact>
         <v-icon class="pa-2 ">view_module</v-icon>
         </v-btn>
-         <v-btn icon class="pa-2 ma-1">
+         <v-btn icon class="pa-2 ma-1" link :to="toRouteName+'/big_road_view'" exact>
         <v-icon class="pa-2 ">view_column</v-icon>
         </v-btn>
       </div>
@@ -274,8 +357,23 @@ export default {
         gameAgreement,
         setting
     },
+    computed: {
+   
+    toRouteName() {
+        let routeArr= this.$route.name.split('-')
+        console.log(routeArr)
+        if(routeArr.includes("multibet")){
+          return '/multibet'
+        }else{
+        return '/roomlist';
+        }
+    }
+  },
   data () {
     return {
+      studioSound:50,
+      gameVolume:60,
+      music:30,
       fixed: false,
       soundOn:true,
       betlogDialog:false,
