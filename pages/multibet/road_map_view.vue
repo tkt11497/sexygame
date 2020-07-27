@@ -61,7 +61,9 @@
 
                                            <v-spacer></v-spacer><v-spacer></v-spacer>
                                            <v-flex mt-2 mb-1>
+
                                              <v-btn @click="favoriteshow=true"><v-icon medium color="#787878">favorite</v-icon></v-btn>
+
                                            </v-flex>
 
                                            <v-flex mt-2 mb-1>
@@ -1690,7 +1692,7 @@
                  v-bind="attrs"
                   v-on="on"
                  >
-                    <v-btn color=#756043 class="white--text ">Change</v-btn>
+                    <v-btn color=#756043 class="white--text ">dd</v-btn>
                   </v-btn>
               </template>
 

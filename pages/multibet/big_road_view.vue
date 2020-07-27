@@ -2685,31 +2685,70 @@
         }"
       ></v-data-table>
 
-      <div class="changenumber" >
+      <div class="changepicture" flat >
         <v-layout >
 
             <v-flex class="ml-3 mt-4">
               <span style="color:#776345; font-size:18px;">Bet-Limit</span><br>
-              <span class="white--text">200-20K</span>
+              <span class="white--text"> {{ changenumbers[betLimit].bet_limit }} </span>
             </v-flex>
               <v-flex class="mr-2 mt-4">
                 <span style="color:#776345; font-size:18px;">Banker</span><br>
-                <span class="white--text">20,000</span>
+                <span class="white--text"> {{ changenumbers[betLimit].banker }} </span>
               </v-flex>
               <v-flex class="mr-2 mt-4">
                 <span style="color:#776345; font-size:18px;">Player</span><br>
-                <span class="white--text">20,000</span>
+                <span class="white--text"> {{ changenumbers[betLimit].player }} </span>
               </v-flex>
               <v-flex class="mr-2 mt-4">
                 <span style="color:#776345; font-size:18px;">Tie</span><br>
-                <span class="white--text">2,500</span>
+                <span class="white--text"> {{ changenumbers[betLimit].tie }} </span>
               </v-flex>
               <v-flex class="mr-2 mt-4">
                 <span style="color:#776345; font-size:18px;">Pair</span><br>
-                <span class="white--text">1,818</span>
+                <span class="white--text"> {{ changenumbers[betLimit].pair}} </span>
               </v-flex>
-              <v-flex class=" mt-5">
-                <v-btn color=#756043 class="white--text">Change</v-btn>
+              <v-flex class=" mt-5 mr-4">
+                <div class="d-flex justify-center">
+                  <v-menu
+                  offset-y
+                  top
+                  close-on-content-click
+                  :nudge-width="100"
+                  left
+                  :max-width="250"
+                  >
+              <template v-slot:activator="{ on, attrs }">
+                 <v-btn
+                 icon
+                 class="pa-2 ma-1"
+                 v-bind="attrs"
+                  v-on="on"
+                 >
+                    <v-btn color=#756043 class="white--text ">Change</v-btn>
+                  </v-btn>
+              </template>
+
+
+               <v-card>
+                    <v-list
+                    dark
+
+                    color="rgba(12, 10, 6, 0.8)">
+
+                    <v-radio-group v-model="betLimit" :mandatory="false">
+                      <v-radio label="10 - 1,000" value='10-1000' on-icon="done" off-icon="" ></v-radio>
+                      <v-radio label="50 - 5,000" value='50-5000' on-icon="done" off-icon="" ></v-radio>
+                      <v-radio label="100 - 5,000" value='100-5000' on-icon="done" off-icon=""></v-radio>
+                      <v-radio label="100 - 10K" value='100-10k' on-icon="done" off-icon=""></v-radio>
+                      <v-radio label="200 - 20K" value='200-20k' on-icon="done" off-icon=""></v-radio>
+                    </v-radio-group>
+
+                </v-list>
+              </v-card>
+            </v-menu>
+                </div>
+
               </v-flex>
 
 
@@ -2758,6 +2797,7 @@
 export default {
 data() {
   return {
+    betLimit:'10-1000',
     projects: [
       {seri:'C01',name:'SIKEN',user: '12', bb: '12', pp: '23',tt: '220', status:'Dealing'},
       {seri:'C02',name:'HONGLONG',user: '52', bb: '123', pp: '20',tt: '220', status:'Waiting'},
@@ -2771,6 +2811,13 @@ data() {
       {seri:'C10',name:'PHALLA',user: '22', bb: '200', pp: '230',tt: '200', status:'Waiting'},
 
     ],
+    changenumbers: {
+      '10-1000':{bet_limit:'10 - 1,000', banker:'1,000', player:'1,000', tie:'125', pair:'90'},
+      '50-5000':{bet_limit:'50 - 5,000', banker:'5,000', player:'5,000', tie:'625', pair:'454'},
+      '100-5000':{bet_limit:'100 - 5,000', banker:'5,000', player:'5,000', tie:'625', pair:'454'},
+      '100-10k':{bet_limit:'100 - 10K', banker:'10,000', player:'10,000', tie:'1250', pair:'909'},
+      '200-20k':{bet_limit:'200 - 20K', banker:'20,000', player:'20,000', tie:'2500', pair:'1818'},
+    },
 
     headers: [
         {
@@ -2864,7 +2911,7 @@ data() {
     margin: 0;
     padding: 0;
 }
-.changenumber {
+.changepicture {
   background-color: #231b12;
   height: 9vh;
   width: 100%;
