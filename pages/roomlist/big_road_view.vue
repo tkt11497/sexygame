@@ -2,7 +2,7 @@
   <v-container class="pa-0 ma-0" fluid>
     <!-- first row -->
       <v-row no-gutters dense>
-        <dashboardCard v-for="project in projects" :key="project.name" :project="project" PropCardSize="md6"/>
+        <dashboardCard v-for="project in projects" :key="project.name" :project="project" PropCardSize="md3"/>
         
 
 

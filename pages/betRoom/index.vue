@@ -104,15 +104,52 @@
            <v-tab-item
           :value="'tab-' + 2"
         >
-          <v-card
+         <v-card
             flat
             tile
             height="30vh"
           >
            <div class="playArea">
-               <h1> 2</h1>
+             <v-row style="height:55%;width:100%; margin:0">
+               <v-col tile cols="4" class="playArea-tile" align="center">
+                 <h1> Player</h1>
+                  <h2>1:1</h2>
+               </v-col>
+               <v-col tile cols="4" class="playArea-tile pa-0" align="center">
+                <div class="tie tie1">
+                  <h2> Tie</h2>
+                  <h2>8:1</h2>
+                </div>
+                <div  class="tie">
+                  <h2> Lucky Six</h2>
+                  <h2> 12:1 / 20:1</h2>
+                </div>
+               </v-col>
+               <v-col tile cols="4" class="playArea-tile banker" align="center">
+                 <h1> Banker</h1>
+                  <h2>1:1</h2>
+               </v-col>
+             </v-row>
+             <v-row style="height:45%;width:100%; margin:0">
+               <v-col tile cols="3" class="playArea-tile1" align="center">
+                  <h1>Player Pair</h1>
+                  <h2>11:1</h2>
+               </v-col>
+               <v-col tile cols="3" class="playArea-tile1" align="center">
+                  <h1>Player Natural</h1>
+                  <h2>7:2</h2>
+               </v-col>
+               <v-col tile cols="3" class="playArea-tile1 banker" align="center">
+                  <h1>Banker Natural</h1>
+                  <h2>7:2</h2>
+               </v-col>
+               <v-col tile cols="3" class="playArea-tile1 banker" align="center">
+                  <h1>Banker Pair</h1>
+                  <h2>11:1</h2>
+               </v-col>
+             </v-row>
            </div>
-          </v-card>
+         </v-card>
         </v-tab-item>
            <v-tab-item
           :value="'tab-' + 3"
@@ -123,7 +160,22 @@
             height="30vh"
           >
            <div class="playArea">
-               3
+              <v-row style="height:100%;width:100%; margin:0">
+                  <v-col tile cols="4" class="playArea-tile" align="center">
+                    <h1> Player</h1>
+                      <h2>1:1</h2>
+                  </v-col>
+                  <v-col tile cols="4" class="playArea-tile" align="center">
+                  
+                      <h2> Tie</h2>
+                      <h2>8:1</h2>
+                    
+                  </v-col>
+                  <v-col tile cols="4" class="playArea-tile banker" align="center">
+                    <h1> Banker</h1>
+                      <h2>1:1</h2>
+                  </v-col>
+             </v-row>
            </div>
           </v-card>
         </v-tab-item>
@@ -807,7 +859,8 @@ export default {
     .playArea{
         background-color:rgb(3, 62, 29);
         width:100%;
-        height:100%
+        height:100%;
+        cursor: url('~assets/images/Coin1.jpg'),pointer;
     }
     .selectCoin{
         width: 100%;

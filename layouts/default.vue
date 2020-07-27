@@ -225,14 +225,25 @@
                   </v-row>
                 </v-card>
         </v-menu>
-         <v-btn icon class="pa-2 ma-1" link :to="toRouteName" exact>
+         <v-btn icon class="pa-2 ma-1" link :to="toRouteName" exact v-if="!showViewList">
         <v-icon class="pa-2 ">view_list</v-icon>
         </v-btn>
-         <v-btn icon class="pa-2 ma-1" link :to="toRouteName+'/road_map_view'" exact>
+         <v-btn icon class="pa-2 ma-1" link :to="toRouteName+'/road_map_view'" exact v-if="!showViewList">
         <v-icon class="pa-2 ">view_module</v-icon>
         </v-btn>
-         <v-btn icon class="pa-2 ma-1" link :to="toRouteName+'/big_road_view'" exact>
+         <v-btn icon class="pa-2 ma-1" link :to="toRouteName+'/big_road_view'" exact v-if="!showViewList">
         <v-icon class="pa-2 ">view_column</v-icon>
+        </v-btn>
+
+
+         <v-btn icon class="pa-2 ma-1" link  exact v-if="showViewList">
+        <v-icon class="pa-2 ">hd</v-icon>
+        </v-btn>
+         <v-btn icon class="pa-2 ma-1" link exact v-if="showViewList">
+        <v-icon class="pa-2 ">videocam</v-icon>
+        </v-btn>
+         <v-btn icon class="pa-2 ma-1" link exact v-if="showViewList">
+        <v-icon class="pa-2 ">videocam_off</v-icon>
         </v-btn>
       </div>
       <v-divider vertical/>
@@ -361,11 +372,19 @@ export default {
    
     toRouteName() {
         let routeArr= this.$route.name.split('-')
-        console.log(routeArr)
         if(routeArr.includes("multibet")){
           return '/multibet'
         }else{
         return '/roomlist';
+        }
+    },
+    showViewList(){
+        let routeArr= this.$route.name.split('-')
+        console.log(routeArr)
+        if(routeArr.includes("betRoom")){
+          return true
+        }else{
+        return false;
         }
     }
   },
