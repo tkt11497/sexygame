@@ -860,7 +860,7 @@ export default {
         background-color:rgb(3, 62, 29);
         width:100%;
         height:100%;
-        cursor: url('~assets/images/Coin1.jpg'),pointer;
+        cursor: url('~assets/images/coin1.jpg'),pointer;
     }
     .selectCoin{
         width: 100%;
