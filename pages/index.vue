@@ -1,5 +1,5 @@
 <template>
-<v-container class="pa-0 ma-0" fluid>
+<v-container  fluid>
 
     <div class="logo" style="margin-left:470px;">
 
@@ -8,11 +8,13 @@
         <v-row align="center" justify="center" class="pa-6">
           <v-img
             src="https://bad.src/not/valid"
-            lazy-src="https://picsum.photos/id/11/100/60"
-            aspect-ratio="1"
+            lazy-src="/banner_1.jpg"
+            aspect-ratio="1.8"
             class="grey lighten-2"
             max-width="700"
             max-height="500"
+            contain
+
           >
             <template v-slot:placeholder>
               <v-row
@@ -76,7 +78,7 @@ computed: {
         if(this.percentage < 100){
           this.percentage += .1;
         }
-        
+
         else{
           clearInterval(intval);
           this.$router.push('/roomlist')
@@ -94,6 +96,9 @@ computed: {
   font-size: 20px;
   color: white;
   background: black;
+  width: 100%;
+  height: 100%;
+  padding: 70px;
 
 }
 .playTable{

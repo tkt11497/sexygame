@@ -85,13 +85,49 @@
 
 
               <v-row no-gutters >
-              <v-col style="background:gray;" cols="8">
-                <v-img
+              <v-col style="background:gray;" cols="8" >
+                <v-card class="result-cards"
                   height="200"
+                >
+                    <img
+                    src="/card.png"
+                     style="width:3.8vw; height:12.8vh; position:absolute;left:2%;bottom:26%"/>
 
-                ></v-img>
+                    <img
+                    src="/card.png"
+                     style="width:3.8vw; height:12.8vh; position:absolute;left:12.7%;bottom:26%"/>
+                    <img
+                    src="/card.png"
+                     style="width:3.8vw; height:12.8vh; position:absolute;left:23.4%;bottom:26%"/>
+                    <div
+                    class=" d-flex justify-center align-center"
+                    style="width:13%; height:17%; position:absolute; top:78%; left:11%; background-color:blue">
+                        <span>P 01</span>
+                    </div>
+                    <div
+                    class=" d-flex justify-center align-center"
+                    style="width:28%; height:55%; position:absolute; top:17%; left:36%; background-color:red; font-size:1.8vw">
+                        <span>Banker Win</span>
+                    </div>
+                    <img
+                    src="/card.png"
+                     style="width:3.8vw; height:12.8vh; position:absolute;right:2%;bottom:26%"/>
+
+                    <img
+                    src="/card.png"
+                     style="width:3.8vw; height:12.8vh; position:absolute;right:12.7%;bottom:26%"/>
+                    <img
+                    src="/card.png"
+                     style="width:3.8vw; height:12.8vh; position:absolute;right:23.4%;bottom:26%"/>
+                   <div
+                   class=" d-flex justify-center align-center"
+                   style="width:13%; height:17%; position:absolute; right:10%; background-color:red; bottom:5%">
+                       <span>B 8</span>
+                   </div>
+
+                </v-card>
               </v-col>
-              <v-col style="background:orange;"cols="4">
+              <v-col cols="4">
                 <v-tabs class="tabform"
                 v-model="tab"
                 background-color="deep-purple accent-4"
@@ -277,7 +313,7 @@
 
               ></v-img>
             </v-col>
-            <v-col style="background:orange;"cols="4">
+            <v-col cols="4">
               <v-tabs class="tabform"
               v-model="tab"
               background-color="deep-purple accent-4"
@@ -462,7 +498,7 @@
 
             ></v-img>
           </v-col>
-          <v-col style="background:orange;"cols="4">
+          <v-col cols="4">
             <v-tabs class="tabform"
             v-model="tab"
             background-color="deep-purple accent-4"
@@ -647,7 +683,7 @@
 
           ></v-img>
         </v-col>
-        <v-col style="background:orange;"cols="4">
+        <v-col cols="4">
           <v-tabs class="tabform"
           v-model="tab"
           background-color="deep-purple accent-4"
@@ -1452,6 +1488,10 @@ data() {
   height: 9vh;
   width: 100%;
   margin-top:0.1vh;
+}
+
+.result-cards {
+  position: relative;
 }
 
 </style>
