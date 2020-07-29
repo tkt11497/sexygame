@@ -61,9 +61,7 @@
 
                                            <v-spacer></v-spacer><v-spacer></v-spacer>
                                            <v-flex mt-2 mb-1>
-
                                              <v-btn @click="favoriteshow=true"><v-icon medium color="#787878">favorite</v-icon></v-btn>
-
                                            </v-flex>
 
                                            <v-flex mt-2 mb-1>
@@ -1852,7 +1850,6 @@ data() {
     border:1px solid rgba(255,255,255, 0.3);
     color:#3470A9;
     height: 64px;
-
 
 }
 .playArea-tile-last{
