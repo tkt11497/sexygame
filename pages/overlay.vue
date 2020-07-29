@@ -4,7 +4,23 @@
       <v-row no-gutters dense>
         <dashboardCard v-for="project in projects" :key="project.name" :project="project" PropCardSize="md6"/>
 
+                  <div class="text-center">
+              <!-- <v-btn
+                color="error"
+                @click="overlay = !overlay"
+              >
+                Show Overlay
+              </v-btn> -->
 
+              <v-overlay :value="overlay">
+                <v-btn
+                  icon
+                  @click="overlay = false"
+                >
+                  <v-icon>mdi-close</v-icon>
+                </v-btn>
+              </v-overlay>
+            </div>
 
 
 
@@ -30,6 +46,7 @@ export default {
   },
 data() {
   return {
+    //overlay: false,
     projects: [
       {seri:'C01',name:'SIKEN',user: '123300', bb: '1232200', pp: '2322200',tt: '2020', status:'Dealing'},
       {seri:'C02',name:'HONGLONG',user: '5200', bb: '1232200', pp: '2322200',tt: '2020', status:'Waiting'},
