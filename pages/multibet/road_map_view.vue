@@ -1,5 +1,5 @@
 <template>
-  <v-container  class="ma-0">
+  <v-container  class="ma-0" fluid>
     <v-row >
 
       <!-- Main First Col -->
