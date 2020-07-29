@@ -7,8 +7,7 @@
 
         <v-row align="center" justify="center" class="pa-6">
           <v-img
-            src="https://bad.src/not/valid"
-            lazy-src="/banner.jpg"
+            src="/banner.jpg"
             aspect-ratio="1.8"
             class="grey lighten-2"
             max-width="700"
