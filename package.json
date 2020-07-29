@@ -2,6 +2,9 @@
   "name": "sexygame",
   "version": "1.0.0",
   "description": "My astounding Nuxt.js project",
+  "engines": {
+    "node": "12.x"
+  },
   "author": "",
   "private": true,
   "scripts": {
