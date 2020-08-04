@@ -419,113 +419,162 @@
             height="32vh" 
             dark
           >
-          <v-row style="height:80%;width:100%; margin:0;" class="table-info">
-          <v-col style="width:50%; padding:0;border-right:1px solid white ">
-            <v-row style="margin:0;" dense>
-             <v-col cols="6" class="banker"> Banker 65%</v-col>  
-             <v-col cols="6">2242532/1213</v-col>
-              <v-progress-linear
-                  v-model="progress"
-                  color="red"
-                ></v-progress-linear>
-            </v-row>
+          <v-row style="height:77%;width:100%; margin:0;" class="table-info">
+                <v-col style="width:50%; padding:0;border-right:1px solid white ">
+                  <v-row style="margin:0;" dense>
+                  <v-col cols="6" class="banker"> Banker 65%</v-col>  
+                  <v-col cols="6">2242532/1213</v-col>
+                    <v-progress-linear
+                        v-model="progress"
+                        color="red"
+                      ></v-progress-linear>
+                  </v-row>
 
-             <v-row style="margin:0;" dense>
-             <v-col cols="6" class="player"> Player 41%</v-col>  
-             <v-col cols="6">2242532/1213</v-col>
-              <v-progress-linear
-                  v-model="progress"
-                  color="blue"
-                ></v-progress-linear>
-            </v-row>
+                  <v-row style="margin:0;" dense>
+                  <v-col cols="6" class="player"> Player 41%</v-col>  
+                  <v-col cols="6">2242532/1213</v-col>
+                    <v-progress-linear
+                        v-model="progress"
+                        color="blue"
+                      ></v-progress-linear>
+                  </v-row>
 
-             <v-row style="margin:0;" dense>
-             <v-col cols="6" class="tie-text"> Tie 1%</v-col>  
-             <v-col cols="6">2242532/1213</v-col>
-              <v-progress-linear
-                  v-model="progress"
-                  color="green"
-                ></v-progress-linear>
-            </v-row>
-             <v-row style="margin:0;" dense>
-             <v-col cols="6" class="banker"> Banker Pair</v-col>  
-             <v-col cols="6">2242532/1213</v-col>
-            </v-row>
-             <v-row style="margin:0;" dense>
-             <v-col cols="6" class="player"> Player Pair</v-col>  
-             <v-col cols="6">2242532/1213</v-col>
-            </v-row>
-             <v-row style="margin:0;" dense>
-             <v-col cols="6" class="banker"> Banker Natural</v-col>  
-             <v-col cols="6">2242532/1213</v-col>
-            </v-row>
-             <v-row style="margin:0;" dense>
-             <v-col cols="6" class="player"> Player Natural</v-col>  
-             <v-col cols="6">2242532/1213</v-col>
-            </v-row>
-          </v-col>
-          <v-col style="width:50%; ;padding:0">
-              <v-row style="margin:0;" dense>
-             <v-col cols="6" > Table</v-col>  
-             <v-col cols="6">C01</v-col>
-            </v-row>
-              <v-row style="margin:0;" dense>
-             <v-col cols="6" > Dealer</v-col>  
-             <v-col cols="6">Monkey Dog</v-col>
-            </v-row>
-              <v-row style="margin:0;" dense>
-             <v-col cols="6" > Round</v-col>  
-             <v-col cols="6">3-25</v-col>
-            </v-row>
-              <v-row style="margin:0;" dense>
-             <v-col cols="6" > ID</v-col>  
-             <v-col cols="6">1291200211</v-col>
-            </v-row>
-              <v-row style="margin:0;" dense>
-             <v-col cols="6" > Table Limit</v-col>  
-             <v-col cols="6">20000</v-col>
-            </v-row>
-              <v-row style="margin:0;" dense>
-             <v-col cols="6" > Max. Limit</v-col>  
-             <v-col cols="6">5000</v-col>
-            </v-row>
-              <v-row style="margin:0;" dense>
-             <v-col cols="6" > Min. Limit</v-col>  
-             <v-col cols="6">100</v-col>
-            </v-row>
-          </v-col>
+                  <v-row style="margin:0;" dense>
+                  <v-col cols="6" class="tie-text"> Tie 1%</v-col>  
+                  <v-col cols="6">2242532/1213</v-col>
+                    <v-progress-linear
+                        v-model="progress"
+                        color="green"
+                      ></v-progress-linear>
+                  </v-row>
+                  <v-row style="margin:0;" dense>
+                  <v-col cols="6" class="banker"> Banker Pair</v-col>  
+                  <v-col cols="6">2242532/1213</v-col>
+                  </v-row>
+                  <v-row style="margin:0;" dense>
+                  <v-col cols="6" class="player"> Player Pair</v-col>  
+                  <v-col cols="6">2242532/1213</v-col>
+                  </v-row>
+                  <v-row style="margin:0;" dense>
+                  <v-col cols="6" class="banker"> Banker Natural</v-col>  
+                  <v-col cols="6">2242532/1213</v-col>
+                  </v-row>
+                  <v-row style="margin:0;" dense>
+                  <v-col cols="6" class="player"> Player Natural</v-col>  
+                  <v-col cols="6">2242532/1213</v-col>
+                  </v-row>
+                </v-col>
+                <v-col style="width:50%; ;padding:0">
+                    <v-row style="margin:0;" dense>
+                  <v-col cols="6" > Table</v-col>  
+                  <v-col cols="6">C01</v-col>
+                  </v-row>
+                    <v-row style="margin:0;" dense>
+                  <v-col cols="6" > Dealer</v-col>  
+                  <v-col cols="6">Monkey Dog</v-col>
+                  </v-row>
+                    <v-row style="margin:0;" dense>
+                  <v-col cols="6" > Round</v-col>  
+                  <v-col cols="6">3-25</v-col>
+                  </v-row>
+                    <v-row style="margin:0;" dense>
+                  <v-col cols="6" > ID</v-col>  
+                  <v-col cols="6">1291200211</v-col>
+                  </v-row>
+                    <v-row style="margin:0;" dense>
+                  <v-col cols="6" > Table Limit</v-col>  
+                  <v-col cols="6">20000</v-col>
+                  </v-row>
+                    <v-row style="margin:0;" dense>
+                  <v-col cols="6" > Max. Limit</v-col>  
+                  <v-col cols="6">5000</v-col>
+                  </v-row>
+                    <v-row style="margin:0;" dense>
+                  <v-col cols="6" > Min. Limit</v-col>  
+                  <v-col cols="6">100</v-col>
+                  </v-row>
+                </v-col>
           </v-row>
 
-           <v-row style="height:20%;width:100%; margin:0; " class="table-info">
+           <v-row style="height:19%;width:100%; margin:0; " class="table-info">
              <v-col cols="2" class="text-center">
                <span>Banker</span><br>
-               <span>5000</span>
+               <span>{{ changenumbers[betLimit].bet_limit }}</span>
              </v-col>
              <v-col  cols="2" class="text-center">
                <span>Player</span><br>
-               <span>5000</span>
+               <span>{{ changenumbers[betLimit].bet_limit }}</span>
              </v-col >
              <v-col  cols="2" class="text-center">
                <span>Tie</span><br>
-               <span>5000</span>
+               <span>{{ changenumbers[betLimit].bet_limit }}</span>
              </v-col>
              <v-col  cols="2" class="text-center">
                <span>Pair</span><br>
-               <span>500</span>
+               <span>{{ changenumbers[betLimit].bet_limit }}</span>
              </v-col>
              <v-col  cols="2" class="text-center">
                <span>Natural</span><br>
-               <span>5000</span>
+               <span>{{ changenumbers[betLimit].bet_limit }}</span>
              </v-col>
              <v-col  cols="2" class="text-center d-flex align-center justify-center" >
-            <v-btn x-small>
-               change
-            </v-btn>
+                <v-menu
+                  offset-y
+                  top
+                  close-on-content-click
+                  :nudge-width="100"
+                  left
+                  :max-width="250"
+                  >
+                  <template v-slot:activator="{ on, attrs }">
+
+                          <v-btn x-small
+                          v-bind="attrs"
+                            v-on="on">
+                              change
+                            </v-btn>
+                  </template>
+
+
+                    <v-card>
+                          <v-list
+                          dark
+
+                          color="rgba(12, 10, 6, 0.8)">
+
+                          <v-radio-group v-model="betLimit" :mandatory="false">
+                            <v-radio label="10 - 1,000" value='10-1000' on-icon="done" off-icon="" ></v-radio>
+                            <v-radio label="50 - 5,000" value='50-5000' on-icon="done" off-icon="" ></v-radio>
+                            <v-radio label="100 - 5,000" value='100-5000' on-icon="done" off-icon=""></v-radio>
+                            <v-radio label="100 - 10K" value='100-10k' on-icon="done" off-icon=""></v-radio>
+                            <v-radio label="200 - 20K" value='200-20k' on-icon="done" off-icon=""></v-radio>
+                          </v-radio-group>
+
+                      </v-list>
+                    </v-card>
+                </v-menu>
+        
              </v-col>
-            
+     
            </v-row>
+            <v-row @click="exten=!exten" style="height:4%;width:100%; margin:0; background-color:#876F4D" justify="center" >
+               <div style="width:100%;height:100%" class="d-flex justify-center algin-center">
+              <v-icon dense x-small v-show="exten">keyboard_arrow_up</v-icon>
+              <v-icon dense x-small v-show="!exten">keyboard_arrow_down</v-icon>
+              
+               </div>
+                
+            </v-row>
          </v-card>
-         
+         <v-banner v-model="exten" single-line transition="slide-y-transition">
+           <span>Lucky Six</span><br>
+               <span>{{ changenumbers[betLimit].bet_limit }}</span>
+            <!-- <template v-slot:actions="{ dismiss }">
+              <v-btn text color="primary" @click="dismiss">Dismiss</v-btn>
+              <v-btn text color="primary">Retry</v-btn>
+            </template> -->
+
+          </v-banner>
         </v-tab-item>
            <v-tab-item
           :value="'tab-' + 2"
@@ -975,6 +1024,15 @@ export default {
     },
   data () {
     return {
+      exten:false,
+      betLimit:'10-1000',
+      changenumbers: {
+      '10-1000':{bet_limit:'1,000', banker:'1,000', player:'1,000', tie:'125', pair:'90'},
+      '50-5000':{bet_limit:'5000', banker:'5,000', player:'5,000', tie:'625', pair:'454'},
+      '100-5000':{bet_limit:'600', banker:'5,000', player:'5,000', tie:'625', pair:'454'},
+      '100-10k':{bet_limit:'100', banker:'10,000', player:'10,000', tie:'1250', pair:'909'},
+      '200-20k':{bet_limit:'200', banker:'20,000', player:'20,000', tie:'2500', pair:'1818'},
+    },
       progress:50,
       window:1,
       coinMenu:false,
