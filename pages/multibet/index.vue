@@ -1642,7 +1642,7 @@ data() {
     height: 49px;
     margin-top: 5px;
     /* border: 5px solid #e5e8e7; */
-
+  
 
 
 
@@ -1695,10 +1695,9 @@ data() {
 }
 
 .result-cards {
-
+  background-color: gray;
   position: relative;
-
-
 }
+
 
 </style>
