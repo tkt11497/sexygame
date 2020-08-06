@@ -45,17 +45,17 @@ export default {
   ],
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
-    theme: {
-      options: {
-        customProperties: true,
-      },
-      themes: {
-        dark: {
-          background: 'black',
-        },
-      },
-        dark: true,
-    },
+    // theme: {
+    //   options: {
+    //     customProperties: true,
+    //   },
+    //   themes: {
+    //     dark: {
+    //       background: 'black',
+    //     },
+    //   },
+    //     dark: true,
+    // },
     // theme: {
     //  dark: true,
     //   themes: {

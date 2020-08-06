@@ -1,10 +1,10 @@
 <template>
   <v-app id="app">
-    <v-content>
+    <v-main>
 
         <nuxt />
 
-    </v-content>
+    </v-main>
   </v-app>
 </template>
 
