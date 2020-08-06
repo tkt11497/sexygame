@@ -210,7 +210,7 @@
                                 <span class="white--text">Seri {{ project.seri}}</span>
                               </v-flex><v-spacer></v-spacer><v-spacer></v-spacer><v-spacer></v-spacer><v-spacer></v-spacer><v-spacer></v-spacer><v-spacer></v-spacer><v-spacer></v-spacer><v-spacer></v-spacer><v-spacer></v-spacer><v-spacer></v-spacer><v-spacer></v-spacer>
                               <v-flex>
-                                <v-btn mt-3 style="height:6px;" text @click="favoriteshow=true"><v-icon medium color="#787878">favorite</v-icon></v-btn>
+                                <v-btn mt-3 style="height:6px;" text @click="favoriteshow=true" medium color="#787878"><v-icon>favorite</v-icon></v-btn>
                               </v-flex>
                             </v-row>
                             <v-row style="height:30px;">
