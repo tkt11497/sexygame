@@ -1,106 +1,123 @@
  <template>       
         <v-flex :md4="cardSize.md4" :md3="cardSize.md3" :md6="cardSize.md6" xs12>
-          <v-card class="ma-2" >
+          <v-card class="ma-2" elevation="24" raised outlined>
             <v-row no-gutters class="dashboard-bar" v-if="PropCardSize=='md6'">
-                  <v-flex>
-                    <span class="white--text textSize">Seri {{project.seri}}  </span>
+                  <v-flex row class=" align-center">
+                    <span class="black--text textSize ml-4">Seri {{project.seri}}  </span>
                   </v-flex>
-                    <v-flex >
-                      <div class="white--text textSize"><v-icon class="white--text ">group</v-icon>  {{project.user}} </div>
+                    <v-flex row class="align-center" >
+                      <v-icon color="#B98F38">group</v-icon>  
+                      <span class="black--text textSize">{{project.user}} </span>
                     </v-flex>
-                        <v-flex>
-                          <v-avatar color="red" size="25">
-                            <span class="white--text textSize">B</span>
-                          </v-avatar>
-                          <span class="white--text textSize">{{project.bb}}</span>
+                        <v-flex row class="align-center">
+                          <v-img  src="/icon/圓庄.png" max-height="1vw" max-width="1vw">
+                          </v-img>
+                          <span class="black--text textSize">{{project.bb}}</span>
                         </v-flex>
-                          <v-flex>
-                            <v-avatar color="blue" size="25">
-                              <span class="white--text textSize">P</span>
-                          </v-avatar>
-                              <span class="white--text textSize">{{project.pp}}</span> 
+                          <v-flex row class="align-center">
+                            <v-img  src="/icon/圓閒.png" max-height="1vw" max-width="1vw">
+                            </v-img>
+                              <span class="black--text textSize">{{project.pp}}</span> 
                           </v-flex>
-                                <v-flex>
-                                  <div class="white--text textSize">
-                                    <v-avatar color="red" size="25">
-                                      <span class="white--text textSize">T</span>
-                                    </v-avatar>
-                                    {{project.tt}}
-                                  </div>
+                                <v-flex row class="align-center">
+                                 
+                                    <v-img  src="/icon/圓和.png" max-height="1vw" max-width="1vw">
+                                   </v-img>
+                                   <span class="black--text textSize"> {{project.tt}}</span>
+                                  
                                 </v-flex>
-                                <v-flex>
-                                      <div class="white--text textSize text-center" style="background:#196260; height:30px;">
+                                <v-flex >
+                                      <div class="white--text textSize text-center" style="background:#404040; height:30px;">
                                         <span> {{project.status }}</span>
                                       </div>
                                 </v-flex>
             </v-row >
             <v-row no-gutters class="dashboard-bar" v-if="PropCardSize!='md6'">
-                <v-flex>
-                  <span class="white--text textSize">Seri {{project.seri}}  </span>
-                </v-flex>
-                  <v-flex >
-                    <div class="white--text textSize"><v-icon class="white--text ">group</v-icon>  {{project.user}} </div>
+               <v-flex row class=" align-center">
+                    <span class="black--text textSize ml-4">Seri {{project.seri}}  </span>
                   </v-flex>
-                  <v-flex>
-                                    <div class="white--text textSize text-center" style="background:#196260; height:30px;">
-                                      <span> {{project.status }}</span>
-                                    </div>
-                  </v-flex>
+                    <v-flex row class="align-center" >
+                      <v-icon color="#B98F38">group</v-icon>  
+                      <span class="black--text textSize">{{project.user}} </span>
+                    </v-flex>
+                        <v-flex row class="align-center">
+                          <v-img  src="/icon/圓庄.png" max-height="1vw" max-width="1vw">
+                          </v-img>
+                          <span class="black--text textSize">{{project.bb}}</span>
+                        </v-flex>
             </v-row >
             <v-row no-gutters class="dashboard-bar" v-if="PropCardSize!='md6'">
-                <v-flex>
-                        <v-avatar color="red" size="25">
-                          <span class="white--text textSize">B</span>
-                        </v-avatar>
-                        <span class="white--text textSize">{{project.bb}}</span>
-                      </v-flex>
-                        <v-flex>
-                          <v-avatar color="blue" size="25">
-                            <span class="white--text textSize">P</span>
-                        </v-avatar>
-                            <span class="white--text textSize">{{project.pp}}</span> 
-                        </v-flex>
-                              <v-flex>
-                                <div class="white--text textSize">
-                                  <v-avatar color="red" size="25">
-                                    <span class="white--text textSize">T</span>
-                                  </v-avatar>
-                                  {{project.tt}}
-                                </div>
-                              </v-flex>
+              <v-flex row class="align-center ml-1">
+                            <v-img  src="/icon/圓閒.png" max-height="1vw" max-width="1vw">
+                            </v-img>
+                              <span class="black--text textSize">{{project.pp}}</span> 
+                          </v-flex>
+                                <v-flex row class="align-center">
+                                 
+                                    <v-img  src="/icon/圓和.png" max-height="1vw" max-width="1vw">
+                                   </v-img>
+                                   <span class="black--text textSize"> {{project.tt}}</span>
+                                  
+                                </v-flex>
+                                <v-flex >
+                                      <div class="white--text textSize text-center" style="background:#404040; height:30px;">
+                                        <span> {{project.status }}</span>
+                                      </div>
+                                </v-flex>
             </v-row>
-                      <v-row no-gutters dense>
+                  <v-row no-gutters dense>
                         <div style="height:21vh; width:17%">
                           <v-img
                             height="100%"
                             width="100%"
-                            src="https://cdn.vuetifyjs.com/images/cards/store.jpg"
+                            src="/icon/荷官頭圖.png"
                           ></v-img>
                         </div>
                           <v-hover v-slot:default="{ hover }">
                     <!-- Start show resultimg -->
                       <div class="showing-resulting">
-                         <div style="width:100%; height:100%; background-color:#1f180e">
+                         <div :style="{width:'100%', height:'100%', 
+                          'background-image': 'url(\'/icon/'+ 
+                          `${PropCardSize=='md6'?'珠盤路單(大).png':PropCardSize=='md4'?'檯桌棋盤格.png':'檯桌棋盤格.png'}`
+                          + '\')',
+                          'background-repeat': 'no-repeat',
+                          'background-position': 'center',
+                          'background-size': '100% 100%'}">
                              <v-row no-gutters style="height:100%">
-                                    <div :style="{height:'100%', width:PropCardSize=='md3'?'100%':'40%'}"  v-if="PropCardSize=='md6'||PropCardSize=='md3'">
-                                        <previewTable :row="7" :column="15" />
+                                    <div 
+                                      :style="{height:'100%', width:PropCardSize=='md3'?'100%':'39%',}"
+                                      class="d-flex align-content-start flex-wrap"
+                                          v-if="PropCardSize=='md6'||PropCardSize=='md3'">
+                                        <!-- <previewTable :row="7" :column="15" /> -->
+                                         <v-img class="my-1" src="/icon/圓庄.png" max-height="1.2vw" max-width="1.3vw">
+                                         </v-img>
+                                         <v-img class="my-1" src="/icon/圓閒.png" max-height="1.2vw" max-width="1.3vw">
+                                         </v-img>
+                                         <v-img class="my-1" src="/icon/圓庄.png" max-height="1.2vw" max-width="1.3vw">
+                                         </v-img>
+                                         <v-img class="my-1" src="/icon/圓閒.png" max-height="1.2vw" max-width="1.3vw">
+                                         </v-img>
+                                          <v-img class="my-1"  src="/icon/圓庄.png" max-height="1.2vw" max-width="1.3vw">
+                                         </v-img>
+                                          
+                                        
                                     </div>
-                                    <div :style="{ height: '100%', width: PropCardSize=='md4'?'100%':'60%' }" v-if="PropCardSize=='md4'||PropCardSize=='md6'">
-                                        <div style="width:100%; height:45%">
-                                                <previewTable :row="6" :column="36"/>
+                                    <div :style="{ height: '100%', width: PropCardSize=='md4'?'100%':'60%', }" 
+                                    v-if="PropCardSize=='md4'||PropCardSize=='md6'">
+                                        <div style="width:100%; height:49%;">
+                                                <!-- <previewTable :row="6" :column="36"/> -->
                                             </div>
-                                            <v-divider/>
-                                            <div style="width:100%; height:27.5%">
-                                                <previewTable :row="3" :column="36"/>
+                                            <div style="width:100%; height:26.5%;">
+                                                <!-- <previewTable :row="3" :column="36"/> -->
                                             </div>
-                                            <v-divider/>
-                                        <v-row style="width:100%; height:27.5%" no-gutters>
-                                            <div style="width:49.5%; height:100%; ">
-                                            <previewTable :row="4" :column="18"/>
+                                           
+                                        <v-row style="width:100%; height:24.5%" no-gutters>
+                                            <div style="width:50%; height:100%; ">
+                                            <!-- <previewTable :row="4" :column="18"/> -->
                                             </div>
-                                            <v-divider vertical/>
-                                            <div style="width:49.5%; height:100%">
-                                                <previewTable :row="4" :column="18"/>
+                                            
+                                            <div style="width:50%; height:100%;background-color:rgba(0, 0, 102,0.5)">
+                                                <!-- <previewTable :row="4" :column="18"/> -->
                                             </div>
                                         </v-row>
                                     </div>
@@ -115,13 +132,13 @@
                     >
                     <!-- <v-input v-model="show">{{show}}</v-input> -->
 
-                    <div class=" mr-5 ">
-                        <v-btn class="white--text" large depressed color="#5f4d35"  @click="show=true">Baccarat</v-btn>
-                    </div>
+                        <div class=" mr-5 ">
+                            <v-btn class="white--text" large depressed color="#5f4d35"  @click="show=true">Baccarat</v-btn>
+                        </div>
 
-                    <div class="mr-5 " >
-                        <v-btn class="white--text"  large depressed color="#5f4d35" @click="secondshow=true">7-Seat Baccarat</v-btn>
-                    </div>
+                        <div class="mr-5 " >
+                            <v-btn class="white--text"  large depressed color="#5f4d35" @click="secondshow=true">7-Seat Baccarat</v-btn>
+                        </div>
 
 
                     </div>
@@ -261,7 +278,12 @@ position: absolute;
 width: 100%;
 }
 .dashboard-bar{
-  background:#1f180e;
+  background-image:
+  linear-gradient(
+      rgb(255, 255, 255) 63%, 
+      #B98F38
+    );
+  color:black;
 }
 .showing-resulting {
    width:83%;

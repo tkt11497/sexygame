@@ -135,7 +135,8 @@
         padless
         height="40px"
         inset
-        app
+        app 
+        elevation="20" 
     >
           <v-row  class="d-flex flex-row justify-end">
             <v-divider vertical/>
@@ -450,7 +451,7 @@ export default {
   background-image:
   linear-gradient(
       rgb(255, 255, 255) 63%, 
-      #f79952dc
+      #B98F38
     );
   color:black
 }
