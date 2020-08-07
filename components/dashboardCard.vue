@@ -66,7 +66,7 @@
                                 </v-flex>
             </v-row>
                   <v-row no-gutters dense>
-                        <div style="height:21vh; width:17%">
+                        <div :style="{height:PropCardSize=='md3'?'12vh':'21vh', width:'17%'}">
                           <v-img
                             height="100%"
                             width="100%"
@@ -75,10 +75,10 @@
                         </div>
                           <v-hover v-slot:default="{ hover }">
                     <!-- Start show resultimg -->
-                      <div class="showing-resulting">
+                      <div class="showing-resulting" :style="{height:PropCardSize=='md3'?'12vh':'21vh'}">
                          <div :style="{width:'100%', height:'100%', 
                           'background-image': 'url(\'/icon/'+ 
-                          `${PropCardSize=='md6'?'珠盤路單(大).png':PropCardSize=='md4'?'檯桌棋盤格.png':'檯桌棋盤格.png'}`
+                          `${PropCardSize=='md6'?'珠盤路單(大).png':PropCardSize=='md4'?'檯桌棋盤格.png':'珠盤路單(小).png'}`
                           + '\')',
                           'background-repeat': 'no-repeat',
                           'background-position': 'center',
@@ -89,15 +89,15 @@
                                       class="d-flex align-content-start flex-wrap"
                                           v-if="PropCardSize=='md6'||PropCardSize=='md3'">
                                         <!-- <previewTable :row="7" :column="15" /> -->
-                                         <v-img class="my-1" src="/icon/圓庄.png" max-height="1.2vw" max-width="1.3vw">
+                                         <v-img class="my-1" src="/icon/圓庄.png" :max-height="PropCardSize=='md3'?'0.8vw':'1.2vw'" :max-width="PropCardSize=='md3'?'0.75vw':'1.3vw'">
                                          </v-img>
-                                         <v-img class="my-1" src="/icon/圓閒.png" max-height="1.2vw" max-width="1.3vw">
+                                         <v-img class="my-1" src="/icon/圓閒.png" :max-height="PropCardSize=='md3'?'0.8vw':'1.2vw'" :max-width="PropCardSize=='md3'?'0.75vw':'1.3vw'">
                                          </v-img>
-                                         <v-img class="my-1" src="/icon/圓庄.png" max-height="1.2vw" max-width="1.3vw">
+                                         <v-img class="my-1" src="/icon/圓庄.png" :max-height="PropCardSize=='md3'?'0.8vw':'1.2vw'" :max-width="PropCardSize=='md3'?'0.75vw':'1.3vw'">
                                          </v-img>
-                                         <v-img class="my-1" src="/icon/圓閒.png" max-height="1.2vw" max-width="1.3vw">
+                                         <v-img class="my-1" src="/icon/圓閒.png" :max-height="PropCardSize=='md3'?'0.8vw':'1.2vw'" :max-width="PropCardSize=='md3'?'0.75vw':'1.3vw'">
                                          </v-img>
-                                          <v-img class="my-1"  src="/icon/圓庄.png" max-height="1.2vw" max-width="1.3vw">
+                                          <v-img class="my-1"  src="/icon/圓庄.png" :max-height="PropCardSize=='md3'?'0.8vw':'1.2vw'" :max-width="PropCardSize=='md3'?'0.75vw':'1.3vw'">
                                          </v-img>
                                           
                                         
@@ -113,10 +113,10 @@
                                            
                                         <v-row style="width:100%; height:24.5%" no-gutters>
                                             <div style="width:50%; height:100%; ">
-                                            <!-- <previewTable :row="4" :column="18"/> -->
+                                            <!-- <previewTable :row="4" :column="18"/> background-color:rgba(0, 0, 102,0.5)-->
                                             </div>
                                             
-                                            <div style="width:50%; height:100%;background-color:rgba(0, 0, 102,0.5)">
+                                            <div style="width:50%; height:100%;">
                                                 <!-- <previewTable :row="4" :column="18"/> -->
                                             </div>
                                         </v-row>
@@ -133,11 +133,11 @@
                     <!-- <v-input v-model="show">{{show}}</v-input> -->
 
                         <div class=" mr-5 ">
-                            <v-btn class="white--text" large depressed color="#5f4d35"  @click="show=true">Baccarat</v-btn>
+                            <v-btn class="white--text" :small="PropCardSize=='md3'" :large="!PropCardSize=='md3'" depressed color="#5f4d35"  @click="show=true">Baccarat</v-btn>
                         </div>
 
                         <div class="mr-5 " >
-                            <v-btn class="white--text"  large depressed color="#5f4d35" @click="secondshow=true">7-Seat Baccarat</v-btn>
+                            <v-btn class="white--text" :small="PropCardSize=='md3'" :large="!PropCardSize=='md3'" depressed color="#5f4d35" @click="secondshow=true">7-Seat Baccarat</v-btn>
                         </div>
 
 
@@ -153,22 +153,22 @@
                         style="height: 100%; background:gray;"
                       >
                         <div class="d-flex align-center flex-row justify-center">
-                            <v-btn class="white--text mt-9 mr-3" large depressed color="#5f4d35" link to="/betRoom">10 - 1,000</v-btn>
+                            <v-btn class="white--text mt-9 mr-3" :small="PropCardSize=='md3'" :large="!PropCardSize=='md3'" depressed color="#5f4d35" link to="/betRoom">10 - 1,000</v-btn>
 
 
 
-                            <v-btn class="white--text mt-9 mr-3"  large depressed color="#5f4d35" link to="/betRoom">50 - 5,000</v-btn>
+                            <v-btn class="white--text mt-9 mr-3" :small="PropCardSize=='md3'" :large="!PropCardSize=='md3'" depressed color="#5f4d35" link to="/betRoom">50 - 5,000</v-btn>
 
 
-                            <v-btn class="white--text mt-9 mr-3"  large depressed color="#5f4d35" link to="/betRoom">100 - 5,000</v-btn>
+                            <v-btn class="white--text mt-9 mr-3" :small="PropCardSize=='md3'" :large="!PropCardSize=='md3'" depressed color="#5f4d35" link to="/betRoom">100 - 5,000</v-btn>
                           </div>
 
                           <div class="d-flex align-center flex-row justify-center">
 
-                            <v-btn class="white--text mt-7 mr-3"  large depressed color="#5f4d35" link to="/betRoom">100 - 5,000</v-btn>
+                            <v-btn class="white--text mt-4 mr-3" :small="PropCardSize=='md3'" :large="!PropCardSize=='md3'" depressed color="#5f4d35" link to="/betRoom">100 - 5,000</v-btn>
 
 
-                            <v-btn class="white--text mt-7 mr-3"  large depressed color="#5f4d35" link to="/betRoom">100 - 5,000</v-btn>
+                            <v-btn class="white--text mt-4 mr-3" :small="PropCardSize=='md3'" :large="!PropCardSize=='md3'" depressed color="#5f4d35" link to="/betRoom">100 - 5,000</v-btn>
                           </div>
                        
 
@@ -185,22 +185,22 @@
                         style="height: 100%; background:gray;"
                       >
                         <div class="d-flex align-center flex-row justify-center">
-                            <v-btn class="white--text mt-9 mr-3" large depressed color="#5f4d35" link to="/betRoom">10 - 1,000</v-btn>
+                            <v-btn class="white--text mt-9 mr-3" :small="PropCardSize=='md3'" :large="!PropCardSize=='md3'" depressed color="#5f4d35" link to="/betRoom">10 - 1,000</v-btn>
 
 
 
-                            <v-btn class="white--text mt-9 mr-3"  large depressed color="#5f4d35" link to="/betRoom">50 - 5,000</v-btn>
+                            <v-btn class="white--text mt-9 mr-3" :small="PropCardSize=='md3'" :large="!PropCardSize=='md3'" depressed color="#5f4d35" link to="/betRoom">50 - 5,000</v-btn>
 
 
-                            <v-btn class="white--text mt-9 mr-3"  large depressed color="#5f4d35" link to="/betRoom">100 - 5,000</v-btn>
+                            <v-btn class="white--text mt-9 mr-3" :small="PropCardSize=='md3'" :large="!PropCardSize=='md3'" depressed color="#5f4d35" link to="/betRoom">100 - 5,000</v-btn>
                           </div>
 
                           <div class="d-flex align-center flex-row justify-center">
 
-                            <v-btn class="white--text mt-7 mr-3" link to="/betRoom"  large depressed color="#5f4d35">100 - 5,000</v-btn>
+                            <v-btn class="white--text mt-4 mr-3" link to="/betRoom" :small="PropCardSize=='md3'"  :large="!PropCardSize=='md3'" depressed color="#5f4d35">100 - 5,000</v-btn>
 
 
-                            <v-btn class="white--text mt-7 mr-3"  large depressed color="#5f4d35" link to="/betRoom">100 - 5,000</v-btn>
+                            <v-btn class="white--text mt-4 mr-3" :small="PropCardSize=='md3'" :large="!PropCardSize=='md3'" depressed color="#5f4d35" link to="/betRoom">100 - 5,000</v-btn>
                           </div>
 
                       </div>

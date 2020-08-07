@@ -1,12 +1,18 @@
 <template>
- <v-container class="pa-0 ma-0" fluid>
+ <v-container class="pa-0 ml-1" fluid style="background-color:black">
 <v-row class="pa-0" style="height:100vh;" no-gutters>
     <v-col class="pa-0" style="width:50% ;max-width: 50%">
         <div class="playTable"> 
            <v-btn class="mx-2"  dark small color="#4F3C2B" style="position:absolute;bottom:1%;left:0" link to="/betRoom/betRoom2">
               <v-icon dark>picture_in_picture</v-icon>
             </v-btn>
-            <div class="room-title d-flex justify-center align-center">
+            <v-btn class="mx-2"  dark small color="#4F3C2B" style="position:absolute;bottom:10%;right:0">
+              <v-icon dark>switch_video</v-icon>
+            </v-btn>
+            <v-btn class="mx-2"  dark small color="#4F3C2B" style="position:absolute;bottom:1%;right:0">
+              <v-icon dark>fullscreen</v-icon>
+            </v-btn>
+            <div class="room-title d-flex justify-center align-center white--text">
                     Baccrart C01
             </div>
               <v-avatar 
@@ -58,7 +64,7 @@
             tile
             height="30vh"
           >
-           <div class="playArea">
+           <div class="playArea" >
              <v-row style="height:55%;width:100%; margin:0">
                <v-col tile cols="4" class="playArea-tile" align="center">
                  <h1> Player</h1>
@@ -188,7 +194,7 @@
             Total BetAmount : 0.0
             
         </div>
-        <div class="selectCoin d-flex align-center white--text" >
+        <div class="selectCoin d-flex align-center white--text pa-2" >
                               
                             <v-menu
                               offset-y
@@ -196,20 +202,25 @@
                               :close-on-content-click="false"
                               v-model="coinMenu"
                               :nudge-width="450"
-                              :max-width="450"
+                              :max-width="450" 
+                              dark
                               >
                                   <template v-slot:activator="{ on, attrs }">
-                                                  <div class="text-center mt-1 ml-2"
-                                                  style="width:4vw; height:2.6vw; background-color:rgba(0,0,0,0.5)"
+                                                  <div class="text-center mt-1 mx-2"
+                                                  style="width:2.7vw;
+                                                   height:2.6vw;
+                                                    background-image:url('/icon/七人座自定UI.png');
+                                                    background-repeat: no-repeat;
+                                                    background-position: center;
+                                                    background-size: 100% 100%"
                                                   v-bind="attrs"
                                                     v-on="on" 
                                                     @click="openCoinSelect">
-                                                      <v-icon dark>monetization_on</v-icon>
-                                                      <span style="font-size:0.8vw">Custom</span>
+                                                      
 
                                                   </div>
                                   </template>
-                                  <v-card>
+                                  <v-card color='rgba(0, 0, 0, 0.7)' elevation="20">
                                     <v-card-title>
                                       <v-row no-gutters justify="center"> Please Select
                                         
@@ -217,168 +228,72 @@
                                       </v-row>
                                       </v-card-title>
                                       <v-row no-gutters justify="center"> 
-                                          
-                                            
-                                            <v-img
+                                          <v-img
+                                                v-for="(coin,n) in coinList" :key="n"
                                                 class="text-center ma-2"
-                                                max-width="3.2vw" 
+                                                max-width="3.7vw" 
                                                 max-height="2.6vw"
-                                                src="/coin1.jpg"
+                                                :src="'/coin/'+coin"
                                               >
                                                 <v-checkbox v-model="selectedCoin"
-                                                 value="coin1" 
+                                                 :value="coin" 
                                                  color="#009167"
-                                                 :disabled="disableCoinSelect?selectedCoin.includes('coin1')?false:true:false"
+                                                 :disabled="disableCoinSelect?selectedCoin.includes(coin)?false:true:false"
                                                  ></v-checkbox>
                                               </v-img>
-
-                                              <v-img
-                                                class="text-center ma-2"
-                                                max-width="3.2vw" 
-                                                max-height="2.6vw"
-                                                src="/coin2.jpg"
-                                              >
-                                                <v-checkbox v-model="selectedCoin" value="coin2" 
-                                                 color="#009167"  
-                                                :disabled="disableCoinSelect?selectedCoin.includes('coin2')?false:true:false">
-                                                </v-checkbox>
-                                              </v-img>
-                                                <v-img
-                                                class="text-center ma-2"
-                                                max-width="3.2vw" 
-                                                max-height="2.6vw"
-                                                src="/coin3.jpg"
-                                              >
-                                                <v-checkbox v-model="selectedCoin" value="coin3" 
-                                                 color="#009167"
-                                                :disabled="disableCoinSelect?selectedCoin.includes('coin3')?false:true:false"></v-checkbox>
-                                              </v-img>
-                                                <v-img
-                                                class="text-center ma-2"
-                                                max-width="3.2vw" 
-                                                max-height="2.6vw"
-                                                src="/coin4.jpg"
-                                              >
-                                                <v-checkbox v-model="selectedCoin" value="coin4" 
-                                                 color="#009167"
-                                                :disabled="disableCoinSelect?selectedCoin.includes('coin4')?false:true:false">
-                                                </v-checkbox>
-                                              </v-img>
-                                                <v-img
-                                                class="text-center ma-2"
-                                                max-width="3.2vw" 
-                                                max-height="2.6vw"
-                                                src="/coin5.jpg"
-                                              >
-                                                <v-checkbox v-model="selectedCoin" value="coin5" 
-                                                 color="#009167"
-                                                :disabled="disableCoinSelect?selectedCoin.includes('coin5')?false:true:false">
-                                                </v-checkbox>
-                                              </v-img>
-                                      </v-row>
-                                       <v-row no-gutters justify="center"> 
-                                          
                                             
-                                            <v-img
-                                                class="text-center ma-2"
-                                                max-width="3.2vw" 
-                                                max-height="2.6vw"
-                                                src="/coin2.jpg"
-                                              >
-                                                <v-checkbox v-model="selectedCoin"
-                                                 value="coin6" 
-                                                  color="#009167"
-                                                 :disabled="disableCoinSelect?selectedCoin.includes('coin6')?false:true:false"
-                                                 ></v-checkbox>
-                                              </v-img>
-
-                                              <v-img
-                                                class="text-center ma-2"
-                                                max-width="3.2vw" 
-                                                max-height="2.6vw"
-                                                src="/coin2.jpg"
-                                              >
-                                                <v-checkbox v-model="selectedCoin" value="coin7" 
-                                                 color="#009167" 
-                                                :disabled="disableCoinSelect?selectedCoin.includes('coin7')?false:true:false">
-                                                </v-checkbox>
-                                              </v-img>
-                                                <v-img
-                                                class="text-center ma-2"
-                                                max-width="3.2vw" 
-                                                max-height="2.6vw"
-                                                src="/coin2.jpg"
-                                              >
-                                                <v-checkbox v-model="selectedCoin" value="coin8" 
-                                                 color="#009167"
-                                                :disabled="disableCoinSelect?selectedCoin.includes('coin8')?false:true:false"></v-checkbox>
-                                              </v-img>
-                                                <v-img
-                                                class="text-center ma-2"
-                                                max-width="3.2vw" 
-                                                max-height="2.6vw"
-                                                src="/coin2.jpg"
-                                              >
-                                                <v-checkbox v-model="selectedCoin" value="coin9" 
-                                                 color="#009167" 
-                                                :disabled="disableCoinSelect?selectedCoin.includes('coin9')?false:true:false">
-                                                </v-checkbox>
-                                              </v-img>
-                                                <v-img
-                                                class="text-center ma-2"
-                                                max-width="3.2vw" 
-                                                max-height="2.6vw"
-                                                src="/coin2.jpg"
-                                              >
-                                                <v-checkbox v-model="selectedCoin" value="coin10" 
-                                                 color="#009167"
-                                                :disabled="disableCoinSelect?selectedCoin.includes('coin10')?false:true:false">
-                                                </v-checkbox>
-                                              </v-img>
                                       </v-row>
                                     <v-card-actions >
                                     <v-row justify="center">
-                                      <v-btn class="mx-2" fab dark color="#4f3c2b" @click="cancelCoinSelect">
-                                        <v-icon dark>cancel</v-icon>
-                                      </v-btn>
-                                      <v-btn class="mx-2" fab dark color="#4f3c2b"  @click="changeShowing">
-                                        <v-icon dark>done</v-icon>
-                                      </v-btn>
+                                      <!-- <v-btn small class="mx-2" fab dark color="#4f3c2b" @click="cancelCoinSelect"> -->
+                                        
+                                        <v-img src="/icon/萬用選擇UI.png" 
+                                        @click="cancelCoinSelect" 
+                                        class="ma-2"
+                                        max-width="2.5vw" 
+                                        max-height="2.5vw"></v-img>
+                                        
+                                      <!-- </v-btn> -->
+                                      <v-img src="/icon/萬用取消UI.png" 
+                                        @click="changeShowing"
+                                        class="ma-2"
+                                        max-width="2.5vw" 
+                                        max-height="2.5vw"></v-img>
                                         
                                     </v-row>
                                     </v-card-actions>
                                   </v-card>
                               
                             </v-menu>
-
-
-
-                            <div class="text-center mt-1"
-                            style="width:4vw; height:2.6vw; ">
-                            <img :src="'/'+showingCoin[0]+'.jpg'" style="width:3.2vw;" />
-                            </div>
-                             <div class="text-center mt-1"
-                            style="width:4vw; height:2.6vw; ">
-                            <img :src="'/'+showingCoin[1]+'.jpg'" style="width:3.2vw;" />
-                            </div>
-                             <div class="text-center mt-1"
-                            style="width:4vw; height:2.6vw; ">
-                            <img :src="'/'+showingCoin[2]+'.jpg'" style="width:3.2vw;" />
-                            </div>
-                             <div class="text-center mt-1"
-                            style="width:4vw; height:2.6vw; ">
-                            <img :src="'/'+showingCoin[3]+'.jpg'" style="width:3.2vw;" />
-                            </div>
-                              <div class="text-center mt-1"
-                            style="width:4vw; height:2.6vw; ">
-                            <img :src="'/'+showingCoin[4]+'.jpg'" style="width:3.2vw;" />
+                            <div :style="{
+                                        'background-image': 'url(\'/coin/'+ `${betCoin==coin?'籌碼發光.png':''}` + '\')',
+                                        'background-repeat': 'no-repeat',
+                                        'background-position': 'center',
+                                        'background-size': '100% 100%',
+                                        width:'4.9vw',height:'3.9vw'}" 
+                                  @click="betCoin=coin"
+                                  v-for="(coin,n) in showingCoin" 
+                                  :key="n"
+                                  class="pa-3" 
+                                  >
+                            <v-img 
+                                  max-width="3.7vw" 
+                                  max-height="2.6vw" 
+                                  :src="'/coin/'+coin" 
+                                  
+                                  >
+                            </v-img>
                             </div>
                               <div class="text-center mt-1 ml-2"
-                            style="width:4vw; height:2.6vw; background-color:rgba(0,0,0,0.5)">
-                                <v-icon dark>monetization_on</v-icon><br>
-                                <span style="font-size:0.8vw">Double</span>
+                                                    style="width:2.7vw;
+                                                    height:2.6vw;
+                                                      background-image:url('/icon/單人雙倍ui.png');
+                                                      background-repeat: no-repeat;
+                                                      background-position: center;
+                                                      background-size: 100% 100%">
+                                                        
 
-                            </div>
+                                </div>
                            
       
         </div>
@@ -1037,8 +952,10 @@ export default {
       window:1,
       coinMenu:false,
       selectedCoin:[],
-      showingCoin:['coin1','coin2','coin3','coin4','coin5']
-     
+      showingCoin:['5籌碼.png','10K籌碼.png','10籌碼.png','20K籌碼.png','50籌碼.png'],
+      coinList:['5籌碼.png','10K籌碼.png','10籌碼.png','20K籌碼.png','20籌碼.png','50籌碼.png','100籌碼.png',
+                '200籌碼.png','500籌碼.png','1000籌碼.png','2000籌碼.png','5000籌碼.png'],
+      betCoin:'5籌碼.png'
             }
             },
   methods:{
@@ -1061,7 +978,7 @@ export default {
       overflow-y: auto;
     }
     .playTable{
-        background-image: url("/table.png");
+        background-image: url("/icon/荷官暫代圖.png");
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
@@ -1102,11 +1019,11 @@ export default {
         background-color:rgb(3, 62, 29);
         width:100%;
         height:100%;
-        cursor: url('/coin1.jpg'),pointer;
+        cursor: url('/21.png') 2 2,auto
     }
     .selectCoin{
         width: 100%;
-        background-color:#4F3C2B
+        background-color:black
     }
     .table-info{
       font-size: 0.8vw;

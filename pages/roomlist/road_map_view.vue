@@ -1,5 +1,5 @@
 <template>
-  <v-container class="pa-0 ma-0" fluid>
+  <v-container class="pa-0 ma-1" fluid>
     <!-- first row -->
       <v-row no-gutters dense>
         <dashboardCard v-for="project in projects" :key="project.name" :project="project" PropCardSize="md4"/>

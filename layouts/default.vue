@@ -139,7 +139,13 @@
         elevation="20" 
     >
           <v-row  class="d-flex flex-row justify-end">
-            <v-divider vertical/>
+            
+             <div class="d-flex justify-center">
+                <v-btn icon class="pa-2 ma-1" link exact v-if="showViewList">
+               <v-img src="/icon/wifi按鈕_4.png"></v-img>
+              </v-btn>
+             </div>
+             <v-divider vertical/>
             <div class="d-flex justify-center">
                 <v-menu
                   offset-y
@@ -247,13 +253,16 @@
 
 
               <v-btn icon class="pa-2 ma-1" link  exact v-if="showViewList">
-              <v-icon class="pa-2 " color="#B98F38">hd</v-icon>
+              <v-img src="/icon/高清按鈕.png"></v-img>
               </v-btn>
               <v-btn icon class="pa-2 ma-1" link exact v-if="showViewList">
               <v-icon class="pa-2 " color="#B98F38">videocam</v-icon>
               </v-btn>
-              <v-btn icon class="pa-2 ma-1" link exact v-if="showViewList">
+              <v-btn icon class="pa-2 ma-1" link exact v-if="showViewList&&false">
               <v-icon class="pa-2 " color="#B98F38">videocam_off</v-icon>
+              </v-btn>
+               <v-btn icon class="pa-2 ma-1" link exact v-if="showViewList">
+               <v-img src="/icon/重新載入視訊按鈕.png"></v-img>
               </v-btn>
             </div>
             <v-divider vertical/>
