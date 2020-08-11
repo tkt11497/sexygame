@@ -313,7 +313,7 @@
         grow 
         height="5vh" 
         hide-slider 
-        active-class="tabActive pink--text" 
+        active-class="tabActive black--text" 
       >
         
   
@@ -725,8 +725,10 @@
     
 </v-row>
    
-      <button v-show="!drawer" class="Custombutton" style="position:absolute; top:12vh;right:0" @click="drawer=true" >
-        <p class="py-5" style="writing-mode: vertical-rl;text-orientation: upright;letter-spacing:-2px;">Green</p>
+      <button v-show="!drawer" class="Custombutton"  style="position:absolute; top:12vh;right:0" @click="drawer=true" >
+        <p class="py-5" style="writing-mode: vertical-rl;text-orientation: upright;letter-spacing:-2px;font-size:0.8vw">
+          tables
+        </p>
       </button>
     
     
@@ -902,7 +904,7 @@ export default {
       font-size: 0.8vw;
       margin: 0px 8.5px;
       cursor: pointer;
-      background-image:url('/icon/選擇桌台ui_2.png');
+      background-image:url('/icon/選擇桌台ui_1.png');
       background-repeat: no-repeat;
       background-position: center;
       background-size: 100% 100%;
