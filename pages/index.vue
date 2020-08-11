@@ -80,7 +80,7 @@ computed: {
 
         else{
           clearInterval(intval);
-          this.$router.push('/roomlist')
+          this.$router.push('/roomlist/default')
           console.log('end')
         }
     },10);

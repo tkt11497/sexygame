@@ -607,11 +607,11 @@ Custom
 </style>
 
 <script>
-import multibetindex from '@/components/multibet/multibetindex';
+
 import multibetSlite from '@/components/multibet/multibetSLite';
 export default {
   components:{
-    multibetindex,
+    
     multibetSlite
   },
 data() {

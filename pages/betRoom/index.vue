@@ -693,10 +693,8 @@
                          <div class="ml-1">
                                <v-avatar 
                                   color="#4C4331" 
-                                  size="35" 
-                                
-                                  
-                                  v-show="true">
+                                  size="2vw" 
+                                >
                                       <v-progress-circular
                                       :value="100"
                                       color="#F7A823" 
@@ -707,8 +705,8 @@
                                   </v-progress-circular>
                               </v-avatar>
                          </div> 
-                         <span>blahblah</span> 
-                         <div style="background-color:#EAEDEA;width:6vh;height:6vh" class="ma-2">
+                         <span style="font-size:0.7vw">blahblah</span> 
+                         <div style="background-color:#EAEDEA;width:3vw;height:3vw" class="ma-2">
                          </div> 
                         </v-card>
                         
@@ -720,230 +718,26 @@
     
     
     </v-col>
-
-    <!-- <v-col cols="2">
-      
-         <v-card height="50vh" >
-
-          <v-expansion-panels flat> 
-            <v-expansion-panel>
-              <v-expansion-panel-header color="black">
-                <span class="white--text">Switch Table</span>
-                  <template v-slot:actions>
-                  <v-icon color="white">clear_all</v-icon>
-                </template>
-              </v-expansion-panel-header>
-              <v-expansion-panel-content>
-                <v-row class="d-flex justify-center align-center ma-0 pa-0">
-                 <v-checkbox label="Checkbox 1"
-                  ></v-checkbox>
-                  <v-checkbox label="Checkbox 1"
-                  ></v-checkbox>
-                </v-row>
-              </v-expansion-panel-content>
-            </v-expansion-panel>
-          </v-expansion-panels>
-          <v-divider></v-divider>
-          <v-card-text style="height: 85%;" class="scroll pa-0 ma-0">
-                  <v-card height="150px" class="mb-2" color="blue">
-                    <v-system-bar
-                        color="black"
-                        dark
-                        class="ma-0 pa-0"
-                      >
-                      <span class="room-list ml-1 white--text">Baccarat C02</span>
-                            <v-spacer></v-spacer>
-
-                            <div class="d-flex justify-center align-center ma-0 pa-0"
-                            style="width:30%;height:100%;background-color:#196260">
-                              <span>20</span>
-                            </div>
-
-                          </v-system-bar>
-                          <previewTable :row="7" :column="16"/>
-                  </v-card>
-                  <v-card height="150px" class="mb-2" color="blue">
-                    <v-system-bar
-                        color="black"
-                        dark
-                        class="ma-0 pa-0"
-                      >
-                      <span class="room-list ml-1 white--text">Baccarat C02</span>
-                            <v-spacer></v-spacer>
-
-                            <div class="d-flex justify-center align-center ma-0 pa-0"
-                            style="width:30%;height:100%;background-color:#196260">
-                              <span>20</span>
-                            </div>
-
-                          </v-system-bar>
-                          <previewTable :row="7" :column="16"/>
-                  </v-card>
-                  <v-card height="150px" class="mb-2" color="blue">
-                    <v-system-bar
-                        color="black"
-                        dark
-                        class="ma-0 pa-0"
-                      >
-                      <span class="room-list ml-1 white--text">Baccarat C02</span>
-                            <v-spacer></v-spacer>
-
-                            <div class="d-flex justify-center align-center ma-0 pa-0"
-                            style="width:30%;height:100%;background-color:#196260">
-                              <span>20</span>
-                            </div>
-                          </v-system-bar>
-                        <previewTable :row="7" :column="16"/>
-                  </v-card>
-                  <v-card height="150px" class="mb-2" color="blue">
-                    <v-system-bar
-                        color="black"
-                        dark
-                        class="ma-0 pa-0"
-                      >
-                      <span class="room-list ml-1 white--text">Baccarat C02</span>
-                            <v-spacer></v-spacer>
-
-                            <div class="d-flex justify-center align-center ma-0 pa-0"
-                            style="width:30%;height:100%;background-color:#196260">
-                              <span>20</span>
-                            </div>
-
-                          </v-system-bar>
-
-                          <previewTable :row="7" :column="16"/>
-                  </v-card>
-          </v-card-text>
-        </v-card>
-
-         <v-card height="46vh" >
-           <v-system-bar
-                    color="black"
-                    dark
-                    class="ma-0 pa-0" 
-                    height="35"
-                  >
-                  <span class="room-list ml-5 white--text">Good Road</span>
-                        <v-spacer></v-spacer>
-
-                        <v-icon color="white">mdi-menu-down</v-icon>
-            </v-system-bar>
-          <v-divider></v-divider>
-          <v-card-text style="height: 85%;" class="scroll pa-0 ma-0">
-                    <v-card height="150px" class="mb-2" color="blue">
-                    <v-system-bar
-                        color="black"
-                        dark
-                        class="ma-0 pa-0"
-                      >
-                      <span class="room-list ml-1 white--text">Baccarat C02</span>
-                            <v-spacer></v-spacer>
-
-                            <div class="d-flex justify-center align-center ma-0 pa-0"
-                            style="width:30%;height:100%;background-color:#196260">
-                              <span>20</span>
-                            </div>
-
-                          </v-system-bar>
-                          <previewTable :row="7" :column="16"/>
-                  </v-card>
-                  <v-card height="150px" class="mb-2" color="blue">
-                    <v-system-bar
-                        color="black"
-                        dark
-                        class="ma-0 pa-0"
-                      >
-                      <span class="room-list ml-1 white--text">Baccarat C02</span>
-                            <v-spacer></v-spacer>
-
-                            <div class="d-flex justify-center align-center ma-0 pa-0"
-                            style="width:30%;height:100%;background-color:#196260">
-                              <span>20</span>
-                            </div>
-
-                          </v-system-bar>
-                          <previewTable :row="7" :column="16"/>
-                  </v-card>
-                  <v-card height="150px" class="mb-2" color="blue">
-                    <v-system-bar
-                        color="black"
-                        dark
-                        class="ma-0 pa-0"
-                      >
-                      <span class="room-list ml-1 white--text">Baccarat C02</span>
-                            <v-spacer></v-spacer>
-
-                            <div class="d-flex justify-center align-center ma-0 pa-0"
-                            style="width:30%;height:100%;background-color:#196260">
-                              <span>20</span>
-                            </div>
-                          </v-system-bar>
-                        <previewTable :row="7" :column="16"/>
-                  </v-card>
-                  <v-card height="150px" class="mb-2" color="blue">
-                    <v-system-bar
-                        color="black"
-                        dark
-                        class="ma-0 pa-0"
-                      >
-                      <span class="room-list ml-1 white--text">Baccarat C02</span>
-                            <v-spacer></v-spacer>
-
-                            <div class="d-flex justify-center align-center ma-0 pa-0"
-                            style="width:30%;height:100%;background-color:#196260">
-                              <span>20</span>
-                            </div>
-
-                          </v-system-bar>
-
-                          <previewTable :row="7" :column="16"/>
-                  </v-card>
-          </v-card-text>
-        </v-card>
-        
-     
-    </v-col> -->
     
 </v-row>
-   <v-navigation-drawer
-      dark 
-      absolute
-      right 
-      floating 
-      color="rgba(0,0,0,0)" 
-      height="90vh" 
-      width="30vw"
-      style="top:2%" 
-      v-model="drawer"
-    >
-    <v-row no-gutters style="width:100%;height:100%">
-      <v-col cols="1" style="height:100%;">
-        <v-row align="center" style="width:100%;height:100%;" no-gutters>
-        <button class="Custombutton" @click="drawer=false" ><p class="py-5" style="writing-mode: vertical-rl;
-    text-orientation: upright;letter-spacing:-2px;">Green</p></button>
-        </v-row>
-
-      </v-col>
-       <v-col cols="11">
-         <v-card style="
-      border:2px solid #BB9953; 
-       border-radius: 10px;" 
-       height="100%" 
-       color="rgba(0,0,0,0.5)">
-       a
-         </v-card>
-       </v-col>
-    </v-row>
-    </v-navigation-drawer> 
+   
+      <button v-show="!drawer" class="Custombutton" style="position:absolute; top:12vh;right:0" @click="drawer=true" >
+        <p class="py-5" style="writing-mode: vertical-rl;text-orientation: upright;letter-spacing:-2px;">Green</p>
+      </button>
+    
+    
+  <tableDrawer :drawer="drawer"  @close="drawer=false"/>
  </v-container>
  
 </template>
 
 <script>
 import previewTable from '@/components/previewTable';
+import tableDrawer from '@/components/tableDrawer';
 export default {
   components:{
-        previewTable
+        previewTable,
+        tableDrawer
     },
     computed:{
       disableCoinSelect(){

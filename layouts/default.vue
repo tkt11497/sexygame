@@ -27,7 +27,7 @@
           :key="i"
           :to="item.to" 
           v-slot="{ navigate, isActive }" 
-          exact
+          
         >
         
             <v-btn 
@@ -427,7 +427,7 @@ export default {
         {
           icon: 'mdi-chart-bubble',
           title: 'Other Games',
-          to: '/'
+          to: '/inspire'
         },
          {
           icon: 'mdi-chart-bubble',
@@ -437,7 +437,7 @@ export default {
          {
           icon: 'mdi-chart-bubble',
           title: 'Mobile',
-          to: '/inspire'
+          to: '#'
         }
 
       ],
