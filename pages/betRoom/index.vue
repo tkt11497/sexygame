@@ -37,23 +37,25 @@
         centered
         grow 
         height="4vh" 
-        active-class="tabActive" 
         hide-slider 
       >
         <!-- <v-tabs-slider></v-tabs-slider> -->
   
         <v-tab
-          :href="`#tab-1`"
+          :href="`#tab-1`" 
+          active-class="tabActive" 
         >
           Baccarat
         </v-tab>
         <v-tab
-          :href="`#tab-2`"
+          :href="`#tab-2`" 
+          active-class="tabActive" 
         >
           No Commission
         </v-tab>
         <v-tab
-          :href="`#tab-3`"
+          :href="`#tab-3`" 
+          active-class="tabActive" 
         >
           Cow Cow
         </v-tab>
