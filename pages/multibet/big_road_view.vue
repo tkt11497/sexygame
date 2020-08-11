@@ -60,7 +60,7 @@
 </template>
 
 <script>
-import multibetSlite from '@/components/multibet/multibetSLite';
+import multibetSlite from '@/components/multibet/multibet1';
 import multibetBigRoad from '@/components/multibet/multibetBigRoad';
 export default {
   components:{

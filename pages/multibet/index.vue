@@ -503,7 +503,7 @@
 
 <script>
 import multibetindex from '@/components/multibet/multibetindex';
-import multibetSlite from '@/components/multibet/multibetSLite';
+import multibetSlite from '@/components/multibet/multibet1';
 export default {
   components:{
     multibetindex,
