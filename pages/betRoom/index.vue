@@ -751,7 +751,7 @@ export default {
     },
   data () {
     return {
-      drawer:true,
+      drawer:false,
       exten:false,
       betLimit:'10-1000',
       changenumbers: {
