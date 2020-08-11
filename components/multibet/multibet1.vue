@@ -608,11 +608,9 @@ Custom
 
 <script>
 
-import multibetSlite from '@/components/multibet/multibetSLite';
 export default {
   components:{
-    
-    multibetSlite
+
   },
 data() {
   return {

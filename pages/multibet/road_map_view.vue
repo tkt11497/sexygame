@@ -239,7 +239,7 @@
 
 <script>
 import multibetRoadMap from '@/components/multibet/multibetRoadMap';
-import multibetSlite from '@/components/multibet/multibetSLite';
+import multibetSlite from '@/components/multibet/multibet1';
 export default {
   components:{
     multibetRoadMap,
