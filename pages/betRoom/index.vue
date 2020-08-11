@@ -33,29 +33,31 @@
         <v-tabs
         background-color="#404040"
         class="elevation-2"
-        dark
         centered
         grow 
+        dark
         height="4vh" 
         hide-slider 
+        active-class="tabActive black--text"
       >
         <!-- <v-tabs-slider></v-tabs-slider> -->
   
         <v-tab
           :href="`#tab-1`" 
-          active-class="tabActive" 
+          
+          
         >
           Baccarat
         </v-tab>
         <v-tab
           :href="`#tab-2`" 
-          active-class="tabActive" 
+          
         >
           No Commission
         </v-tab>
         <v-tab
           :href="`#tab-3`" 
-          active-class="tabActive" 
+           
         >
           Cow Cow
         </v-tab>
@@ -311,7 +313,7 @@
         grow 
         height="5vh" 
         hide-slider 
-        active-class="tabActive" 
+        active-class="tabActive pink--text" 
       >
         
   
@@ -877,7 +879,7 @@ export default {
           rgb(255, 255, 255) 63%, 
           #B98F38
         );
-      color:black
+      
     }
     .cardGradient{
       background-image:
