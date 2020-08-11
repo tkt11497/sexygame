@@ -1,7 +1,7 @@
 <template>
  <v-container class="pa-0 ml-1" fluid style="background-color:black">
 <v-row class="pa-0" style="height:100vh;" no-gutters>
-    <v-col class="pa-0" style="width:50% ;max-width: 50%">
+    <v-col class="pa-0" cols="7">
         <div class="playTable"> 
            <v-btn class="mx-2"  dark small color="#4F3C2B" style="position:absolute;bottom:1%;left:0" link to="/betRoom/betRoom2">
               <v-icon dark>picture_in_picture</v-icon>
@@ -31,14 +31,16 @@
         </div>
        
         <v-tabs
-        background-color="rgba(0, 0, 0, 0.7)"
+        background-color="#404040"
         class="elevation-2"
         dark
         centered
         grow 
-        height="5vh"
+        height="4vh" 
+        active-class="tabActive" 
+        hide-slider 
       >
-        <v-tabs-slider></v-tabs-slider>
+        <!-- <v-tabs-slider></v-tabs-slider> -->
   
         <v-tab
           :href="`#tab-1`"
@@ -298,16 +300,18 @@
       
         </div>
     </v-col>
-    <v-col cols="4" class="pa-0">
+    <v-col cols="5" class="pa-0">
       <v-tabs
         background-color="rgba(0, 0, 0, 1)"
         class="elevation-2"
         dark
         centered
         grow 
-        height="5vh"
+        height="5vh" 
+        hide-slider 
+        active-class="tabActive" 
       >
-        <v-tabs-slider></v-tabs-slider>
+        
   
         <v-tab
           :href="`#tab-1`"
@@ -332,7 +336,8 @@
             flat
             tile
             height="32vh" 
-            dark
+            dark 
+            color="#2E2E2E"
           >
           <v-row style="height:77%;width:100%; margin:0;" class="table-info">
                 <v-col style="width:50%; padding:0;border-right:1px solid white ">
@@ -379,7 +384,7 @@
                   <v-col cols="6">2242532/1213</v-col>
                   </v-row>
                 </v-col>
-                <v-col style="width:50%; ;padding:0">
+                <v-col style="width:50%; ;padding:0;color:#E7CAA0">
                     <v-row style="margin:0;" dense>
                   <v-col cols="6" > Table</v-col>  
                   <v-col cols="6">C01</v-col>
@@ -411,25 +416,25 @@
                 </v-col>
           </v-row>
 
-           <v-row style="height:19%;width:100%; margin:0; " class="table-info">
+           <v-row style="height:19%;width:100%; margin:0;background-color:black "  class="table-info">
              <v-col cols="2" class="text-center">
-               <span>Banker</span><br>
+               <span style="color:#E7CAA0">Banker</span><br>
                <span>{{ changenumbers[betLimit].bet_limit }}</span>
              </v-col>
              <v-col  cols="2" class="text-center">
-               <span>Player</span><br>
+               <span style="color:#E7CAA0">Player</span><br>
                <span>{{ changenumbers[betLimit].bet_limit }}</span>
              </v-col >
              <v-col  cols="2" class="text-center">
-               <span>Tie</span><br>
+               <span style="color:#E7CAA0">Tie</span><br>
                <span>{{ changenumbers[betLimit].bet_limit }}</span>
              </v-col>
              <v-col  cols="2" class="text-center">
-               <span>Pair</span><br>
+               <span style="color:#E7CAA0">Pair</span><br>
                <span>{{ changenumbers[betLimit].bet_limit }}</span>
              </v-col>
              <v-col  cols="2" class="text-center">
-               <span>Natural</span><br>
+               <span style="color:#E7CAA0">Natural</span><br>
                <span>{{ changenumbers[betLimit].bet_limit }}</span>
              </v-col>
              <v-col  cols="2" class="text-center d-flex align-center justify-center" >
@@ -443,19 +448,21 @@
                   >
                   <template v-slot:activator="{ on, attrs }">
 
-                          <v-btn x-small
+                          <v-btn small
                           v-bind="attrs"
-                            v-on="on">
-                              change
+                            v-on="on" 
+                            color="white" 
+                            elevation="24">
+                              <span style="color:black">change</span>
                             </v-btn>
                   </template>
 
 
-                    <v-card>
+                    <v-card color='rgba(0, 0, 0, 0.7)'>
                           <v-list
                           dark
 
-                          color="rgba(12, 10, 6, 0.8)">
+                          color='rgba(0, 0, 0, 0.5)'>
 
                           <v-radio-group v-model="betLimit" :mandatory="false">
                             <v-radio label="10 - 1,000" value='10-1000' on-icon="done" off-icon="" ></v-radio>
@@ -472,7 +479,7 @@
              </v-col>
      
            </v-row>
-            <v-row @click="exten=!exten" style="height:4%;width:100%; margin:0; background-color:#876F4D" justify="center" >
+            <v-row @click="exten=!exten" style="height:5%;width:100%; margin:0; background-color:#876F4D" justify="center" >
                <div style="width:100%;height:100%" class="d-flex justify-center algin-center">
               <v-icon dense x-small v-show="exten">keyboard_arrow_up</v-icon>
               <v-icon dense x-small v-show="!exten">keyboard_arrow_down</v-icon>
@@ -481,8 +488,8 @@
                 
             </v-row>
          </v-card>
-         <v-banner v-model="exten" single-line transition="slide-y-transition">
-           <span>Lucky Six</span><br>
+         <v-banner dark color="black" v-model="exten" single-line transition="slide-y-transition">
+           <span style="color:#E7CAA0">Lucky Six</span><br>
                <span>{{ changenumbers[betLimit].bet_limit }}</span>
             <!-- <template v-slot:actions="{ dismiss }">
               <v-btn text color="primary" @click="dismiss">Dismiss</v-btn>
@@ -516,7 +523,7 @@
                 <div class="result-cards"> 
                     <img 
                     src="/card.png" 
-                     style="width:20%; height:42%; position:absolute;left:15%;top:0; transform: rotate(-90deg);"/>
+                     style="width:20%; height:42%; position:absolute;left:15%;top:5%; transform: rotate(-90deg);"/>
                     <img 
                     src="/card.png" 
                      style="width:20%; height:42%; position:absolute;left:5%;bottom:18%"/>
@@ -530,13 +537,13 @@
                     </div>
                       <img 
                     src="/card.png" 
-                     style="width:20%; height:42%; position:absolute;right:15%;top:0; transform: rotate(-90deg);"/>
+                     style="width:19%; height:42%; position:absolute;right:15%;top:5%; transform: rotate(-90deg);"/>
                     <img 
                     src="/card.png" 
-                     style="width:20%; height:42%; position:absolute;right:5%;bottom:18%"/>
+                     style="width:19%; height:42%; position:absolute;right:5%;bottom:18%"/>
                      <img 
                     src="/card.png" 
-                     style="width:20%; height:42%; position:absolute;right:27%;bottom:18%"/>
+                     style="width:19%; height:42%; position:absolute;right:27%;bottom:18%"/>
                     <div 
                     class=" d-flex justify-center align-center"
                     style="width:42%; height:10%; position:absolute; top:85%; right:5%; background-color:red"> 
@@ -547,194 +554,174 @@
           </v-card>
         </v-tab-item>
       </v-tabs>
-  <div style="height:13% ;background-color:black" >
-     <v-row style="height:50%;width:100%; margin:0;" >
-       <div style="width:12.5%;" class="d-flex justify-center align-center">
-         <v-card height="80%" width="80%"  color="secondary" dark 
-         class="d-flex justify-center align-center room-list" 
-         @click="window=1">C01</v-card>
-       </div>
-        <div style="width:12.5%;" class="d-flex justify-center align-center">
-          <v-card height="80%" width="80%"  color="secondary" dark 
-          class="d-flex justify-center align-center room-list" 
-          @click="window=2">C02</v-card>
-       </div>
-        <div style="width:12.5%;" class="d-flex justify-center align-center">
-          <v-card height="80%" width="80%"  color="secondary" dark 
-          class="d-flex justify-center align-center room-list" 
-          @click="window=3">C03</v-card>
-       </div>
-        <div style="width:12.5%;" class="d-flex justify-center align-center">
-          <v-card height="80%" width="80%"  color="secondary" dark 
-          class="d-flex justify-center align-center room-list" 
-          @click="window=1">C06</v-card>
-       </div>
-        <div style="width:12.5%;" class="d-flex justify-center align-center">
-          <v-card height="80%" width="80%"  color="secondary" dark 
-          class="d-flex justify-center align-center room-list" 
-          @click="window=1">C07</v-card>
-       </div>
-        <div style="width:12.5%;" class="d-flex justify-center align-center">
-          <v-card height="80%" width="80%"  color="secondary" dark 
-          class="d-flex justify-center align-center room-list" 
-          @click="window=1">P01</v-card>
-       </div>
-        <div style="width:12.5%;" class="d-flex justify-center align-center">
-          <v-card height="80%" width="80%"  color="secondary" dark 
-          class="d-flex justify-center align-center room-list" 
-          @click="window=3">P02</v-card>
-       </div>
-        <div style="width:12.5%;" class="d-flex justify-center align-center">
-          <v-card height="80%" width="80%"  color="secondary" dark 
-          class="d-flex justify-center align-center room-list"
-          @click="window=2">P03</v-card>
-       </div>
-     </v-row>
-      <v-row style="height:50%;width:100%; margin:0;">
-       <div style="width:12.5%;" class="d-flex justify-center align-center">
-         <v-card height="80%" width="80%"  color="secondary" dark 
-         class="d-flex justify-center align-center room-list"
-         @click="window=2" >C01</v-card>
-       </div>
-        <div style="width:12.5%;" class="d-flex justify-center align-center">
-          <v-card height="80%" width="80%"  color="secondary" dark 
-          class="d-flex justify-center align-center room-list" 
-          @click="window=1">C02</v-card>
-       </div>
-        <div style="width:12.5%;" class="d-flex justify-center align-center">
-          <v-card height="80%" width="80%"  color="secondary" dark 
-          class="d-flex justify-center align-center room-list" 
-          @click="window=1">C03</v-card>
-       </div>
-        <div style="width:12.5%;" class="d-flex justify-center align-center">
-          <v-card height="80%" width="80%"  color="secondary" dark 
-          class="d-flex justify-center align-center room-list" 
-          @click="window=1">C06</v-card>
-       </div>
-        <div style="width:12.5%;" class="d-flex justify-center align-center">
-          <v-card height="80%" width="80%"  color="secondary" dark 
-          class="d-flex justify-center align-center room-list" 
-          @click="window=1">C07</v-card>
-       </div>
-        <div style="width:12.5%;" class="d-flex justify-center align-center">
-          <v-card height="80%" width="80%"  color="secondary" dark 
-          class="d-flex justify-center align-center room-list"
-          @click="window=1">P01</v-card>
-       </div>
-        <div style="width:12.5%;" class="d-flex justify-center align-center">
-          <v-card height="80%" width="80%"  color="secondary" dark 
-          class="d-flex justify-center align-center room-list"
-          @click="window=2">P02</v-card>
-       </div>
-        <div style="width:12.5%;" class="d-flex justify-center align-center">
-          <v-card  height="80%" width="80%" color="secondary" dark 
-          class="d-flex justify-center align-center room-list"
-          @click="window=3">P03</v-card>
-       </div>
-     </v-row>
-      
-  </div>
+  <v-row no-gutters>
+    <v-col cols="9">
+      <div style="height:13vh;width:100%; background-color:#2E2E2E" >
+        <v-row style="height:100%;width:100%; margin:0;" no-gutters justify="left" >
+          <div style="height:50%;width:12.5%;" 
+          class="d-flex justify-center align-center" 
+          v-for="n in 3" :key="n">
+            <v-card height="80%" width="80%"   dark 
+            class="d-flex justify-center align-center room-list" 
+            @click="window=n" 
+            :class="{ 'windowActive': window==n }">C0{{n}}</v-card>
+          </div>
+           
+           
+       
+        </v-row>
+          
+      </div>
     <v-window v-model="window">
-        <v-window-item :value="1">
-           <div class="text-center" style="height:46vh; width:100%;background-color:black">
-            <div style="width:100%; height:30%">
-             <previewTable :row="6" :column="36"/>
-            </div>
-            <v-divider/>
-            <div style="width:100%; height:10%">
-              <previewTable :row="3" :column="36"/>
-            </div>
-            <v-divider/>
-            <v-row style="width:100%; height:10%" no-gutters>
-              <div style="width:49.7%; height:100%; ">
-               <previewTable :row="3" :column="16"/>
+            <v-window-item :value="1">
+              <div class="text-center" style="height:46vh; width:100%;background-color:black">
+                <div style="width:100%; height:30%">
+                <previewTable :row="6" :column="36"/>
+                </div>
+                <v-divider/>
+                <div style="width:100%; height:10%">
+                  <previewTable :row="3" :column="36"/>
+                </div>
+                <v-divider/>
+                <v-row style="width:100%; height:10%" no-gutters>
+                  <div style="width:49.7%; height:100%; ">
+                  <previewTable :row="3" :column="16"/>
+                  </div>
+                  <v-divider vertical/>
+                  <div style="width:50%; height:100%">
+                    <previewTable :row="3" :column="16"/>
+                  </div>
+                </v-row>
+                <v-divider/>
+                <div style="width:100%; height:40%">
+                  <previewTable :row="6" :column="18"/>
+                </div>
+                <v-row no-gutters style="width:100%; height:10%">
+                  <div class="d-flex align-center justify-left room-list" style="width:50%; height:100%; background-color:black">
+                    <span class="font-weight-bold red--text ml-1">庄</span>
+                    <span class="font-weight-bold white--text ml-1">13</span>
+                    <span class="font-weight-bold blue--text ml-1">圓</span>
+                    <span class="font-weight-bold white--text ml-1">123</span>
+                    <span class="font-weight-bold green--text ml-1">和</span>
+                    <span class="font-weight-bold white--text ml-1">13</span>
+                    <span class="font-weight-bold red--text ml-1">庄庄</span>
+                    <span class="font-weight-bold white--text ml-1">13</span>
+                    <span class="font-weight-bold blue--text ml-1">和和</span>
+                    <span class="font-weight-bold white--text ml-1">133</span>
+                  </div>
+                  <div class="d-flex align-center justify-left room-list" style="width:50%; height:100%; background-color:black">
+                      <v-btn small color="#c70000" class="ml-1"> <span class="white--text">庄問路</span></v-btn>
+                      <v-img
+                                          max-width="1vw"
+                                          max-height="1vw"
+                                          src="/icon/大紅圈.png"
+                                        />
+                      <v-avatar color="#c70000" class="ml-1" size="15">
+                        
+                      </v-avatar>
+                      <span class="font-weight-bold red--text ml-1 mr-5  ">/</span>
+                      <v-btn small color="#2d30b1" class="ml-1"><span class="white--text"> 閒問路</span></v-btn>
+                       <v-img
+                                          max-width="1vw"
+                                          max-height="1vw"
+                                          src="/icon/大藍圈.png"
+                                        />
+                      <v-avatar color="#2d30b1" class="ml-1" size="15">
+                        
+                      </v-avatar>
+                      <span class="font-weight-bold ml-1" style="color:#2d30b1">/</span>
+                  </div>
+                </v-row>
               </div>
-              <v-divider vertical/>
-              <div style="width:50%; height:100%">
-                 <previewTable :row="3" :column="16"/>
-              </div>
-            </v-row>
-            <v-divider/>
-            <div style="width:100%; height:40%">
-              <previewTable :row="6" :column="18"/>
-            </div>
-            <v-row no-gutters style="width:100%; height:10%">
-            <div class="d-flex align-center justify-left room-list" style="width:50%; height:100%; background-color:black">
-              <span class="font-weight-bold red--text ml-1">B</span>
-              <span class="font-weight-bold white--text ml-1">13</span>
-              <span class="font-weight-bold blue--text ml-1">P</span>
-              <span class="font-weight-bold white--text ml-1">123</span>
-              <span class="font-weight-bold green--text ml-1">T</span>
-              <span class="font-weight-bold white--text ml-1">13</span>
-              <span class="font-weight-bold red--text ml-1">BP</span>
-              <span class="font-weight-bold white--text ml-1">13</span>
-              <span class="font-weight-bold blue--text ml-1">PP</span>
-              <span class="font-weight-bold white--text ml-1">133</span>
-            </div>
-             <div class="d-flex align-center justify-left room-list" style="width:50%; height:100%; background-color:black">
-                <v-btn x-small color="red" class="ml-1"> <span class="white--text"> Ask B.</span></v-btn>
-                <v-progress-circular 
-                :value="100"  
-                width="3" 
-                color="blue"
-                class="ml-1" 
-                size="15"
-                ></v-progress-circular>
-                <v-avatar color="blue" class="ml-1" size="15">
-                  
-                </v-avatar>
-                <span class="font-weight-bold red--text ml-1 mr-5  ">/</span>
-                 <v-btn x-small color="blue" class="ml-1"><span class="white--text"> Ask P.</span></v-btn>
-                <v-progress-circular 
-                :value="100"  
-                width="3" 
-                color="red"
-                class="ml-1" 
-                size="15"
-                ></v-progress-circular>
-                <v-avatar color="red" class="ml-1" size="15">
-                  
-                </v-avatar>
-                <span class="font-weight-bold blue--text ml-1">/</span>
-             </div>
-            </v-row>
-          </div>
-        </v-window-item>
+            </v-window-item>
   
-        <v-window-item :value="2">
-         <div class="pa-4 text-center" style="height:100%; width:100%;background-color:black">
-            <v-text-field
-              label="Password"
-              type="password"
-            ></v-text-field>
-            <v-text-field
-              label="Confirm Password"
-              type="password"
-            ></v-text-field>
-            <span class="caption grey--text text--darken-1">
-              Please enter a password for your account
-            </span>
-          </div>
-        </v-window-item>
-  
-        <v-window-item :value="3">
-          <div class="pa-4 text-center" style="height:100%; width:100%;background-color:black">
-            <v-img
-              class="mb-4"
-              contain
-              height="128"
-              src="https://cdn.vuetifyjs.com/images/logos/v.svg"
-            ></v-img>
-            <h3 class="title font-weight-light mb-2">Welcome to Vuetify</h3>
-            <span class="caption grey--text">Thanks for signing up!</span>
-          </div>
-        </v-window-item>
-      </v-window> 
+                <v-window-item :value="2">
+                <div class="pa-4 text-center" style="height:100%; width:100%;background-color:black">
+                    <v-text-field
+                      label="Password"
+                      type="password"
+                    ></v-text-field>
+                    <v-text-field
+                      label="Confirm Password"
+                      type="password"
+                    ></v-text-field>
+                    <span class="caption grey--text text--darken-1">
+                      Please enter a password for your account
+                    </span>
+                  </div>
+                </v-window-item>
+          
+                <v-window-item :value="3">
+                  <div class="pa-4 text-center" style="height:100%; width:100%;background-color:black">
+                    <v-img
+                      class="mb-4"
+                      contain
+                      height="128"
+                      src="https://cdn.vuetifyjs.com/images/logos/v.svg"
+                    ></v-img>
+                    <h3 class="title font-weight-light mb-2">Welcome to Vuetify</h3>
+                    <span class="caption grey--text">Thanks for signing up!</span>
+                  </div>
+                </v-window-item>
+    </v-window> 
+    </v-col>
+    <v-col cols="3">
+      
+                  <v-card height="53vh" class="my-3 mx-1 cardGradient" >
+                    <v-system-bar
+                        color="#AA8647"
+                        dark
+                        class="ma-0 pa-0"
+                      >
+                        <span class="room-list ml-1 black--text">Baccarat C02</span>
+                            <v-spacer></v-spacer>
+                            <div class="d-flex justify-center align-center ma-0 pa-0"
+                            style="width:30%;height:100%;">
+                             <v-btn icon small>
+                              <v-icon>settings</v-icon>
+                             </v-btn>
+                            </div>
+
+                    </v-system-bar>
+                      <v-card
+                          color="rgba(255,2555,255,0)"
+                          height="8vh" 
+                          class="d-flex align-center justify-space-between " 
+                          v-for="n in 6" 
+                          :key="n"
+                        >
+                         <div class="ml-1">
+                               <v-avatar 
+                                  color="#4C4331" 
+                                  size="35" 
+                                
+                                  
+                                  v-show="true">
+                                      <v-progress-circular
+                                      :value="100"
+                                      color="#F7A823" 
+                                      size="30" 
+                                      width="2"
+                                      >
+                                 
+                                  </v-progress-circular>
+                              </v-avatar>
+                         </div> 
+                         <span>blahblah</span> 
+                         <div style="background-color:#EAEDEA;width:6vh;height:6vh" class="ma-2">
+                         </div> 
+                        </v-card>
+                        
+                  </v-card>
+                
+    </v-col>
+  </v-row>
     
     
     
     </v-col>
-    <v-col cols="2">
+
+    <!-- <v-col cols="2">
       
          <v-card height="50vh" >
 
@@ -915,10 +902,41 @@
         </v-card>
         
      
-    </v-col>
-</v-row>
+    </v-col> -->
     
+</v-row>
+   <v-navigation-drawer
+      dark 
+      absolute
+      right 
+      floating 
+      color="rgba(0,0,0,0)" 
+      height="90vh" 
+      width="30vw"
+      style="top:2%" 
+      v-model="drawer"
+    >
+    <v-row no-gutters style="width:100%;height:100%">
+      <v-col cols="1" style="height:100%;">
+        <v-row align="center" style="width:100%;height:100%;" no-gutters>
+        <button class="Custombutton" @click="drawer=false" ><p class="py-5" style="writing-mode: vertical-rl;
+    text-orientation: upright;letter-spacing:-2px;">Green</p></button>
+        </v-row>
+
+      </v-col>
+       <v-col cols="11">
+         <v-card style="
+      border:2px solid #BB9953; 
+       border-radius: 10px;" 
+       height="100%" 
+       color="rgba(0,0,0,0.5)">
+       a
+         </v-card>
+       </v-col>
+    </v-row>
+    </v-navigation-drawer> 
  </v-container>
+ 
 </template>
 
 <script>
@@ -939,6 +957,7 @@ export default {
     },
   data () {
     return {
+      drawer:true,
       exten:false,
       betLimit:'10-1000',
       changenumbers: {
@@ -955,7 +974,12 @@ export default {
       showingCoin:['5籌碼.png','10K籌碼.png','10籌碼.png','20K籌碼.png','50籌碼.png'],
       coinList:['5籌碼.png','10K籌碼.png','10籌碼.png','20K籌碼.png','20籌碼.png','50籌碼.png','100籌碼.png',
                 '200籌碼.png','500籌碼.png','1000籌碼.png','2000籌碼.png','5000籌碼.png'],
-      betCoin:'5籌碼.png'
+      betCoin:'5籌碼.png',
+      items: [
+          { title: 'Dashboard', icon: 'dashboard' },
+          { title: 'Account', icon: 'account_box' },
+          { title: 'Admin', icon: 'gavel' },
+        ],
             }
             },
   methods:{
@@ -1046,9 +1070,50 @@ export default {
         left:5%;
     }
     .result-cards{
-        background-color:rgba(0, 0, 0, 0.5);
+        background-color:rgba(0, 0, 0,0.8);
          position: relative;;
         width:100%; 
         height:100%
     }
+    .tabActive{
+      background-image:
+      linear-gradient(
+          rgb(255, 255, 255) 63%, 
+          #B98F38
+        );
+      color:black
+    }
+    .cardGradient{
+      background-image:
+      linear-gradient(
+          rgb(255, 255, 255) 23%, 
+          #B98F38
+        );
+    }
+    .windowActive{
+      background-color:#AA8647 ;
+      
+    }
+    .Custombutton {
+      border: none;
+      color: white;
+      padding: 9px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 0.8vw;
+      margin: 0px 8.5px;
+      cursor: pointer;
+      background-image:url('/icon/選擇桌台ui_2.png');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 100% 100%;
+      letter-spacing:20px;
+      
+    }
+    .Custombutton:focus {
+    outline: 1px solid #F7D8A8;
+    outline-offset: -4px;
+}
+  
 </style>
