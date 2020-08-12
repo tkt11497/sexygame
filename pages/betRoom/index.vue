@@ -580,25 +580,25 @@
             <v-window-item :value="1">
               <div class="text-center" style="height:46vh; width:100%;background-color:black">
                 <div style="width:100%; height:30%">
-                <previewTable :row="6" :column="36"/>
+                <PreviewTable :row="6" :column="36"/>
                 </div>
                 <v-divider/>
                 <div style="width:100%; height:10%">
-                  <previewTable :row="3" :column="36"/>
+                  <PreviewTable :row="3" :column="36"/>
                 </div>
                 <v-divider/>
                 <v-row style="width:100%; height:10%" no-gutters>
                   <div style="width:49.7%; height:100%; ">
-                  <previewTable :row="3" :column="16"/>
+                  <PreviewTable :row="3" :column="16"/>
                   </div>
                   <v-divider vertical/>
                   <div style="width:50%; height:100%">
-                    <previewTable :row="3" :column="16"/>
+                    <PreviewTable :row="3" :column="16"/>
                   </div>
                 </v-row>
                 <v-divider/>
                 <div style="width:100%; height:40%">
-                  <previewTable :row="6" :column="18"/>
+                  <PreviewTable :row="6" :column="18"/>
                 </div>
                 <v-row no-gutters style="width:100%; height:10%">
                   <div class="d-flex align-center justify-left room-list" style="width:50%; height:100%; background-color:black">
@@ -732,19 +732,19 @@
       </button>
     
     
-  <tableDrawer :drawer="drawer"  @close="drawer=false"/>
+  <TableDrawer :drawer="drawer"  @close="drawer=false"/>
  </v-container>
  
 </template>
 
 <script>
-import previewTable from '@/components/previewTable';
-import tableDrawer from '@/components/tableDrawer';
+// import previewTable from '@/components/previewTable';
+// import tableDrawer from '@/components/tableDrawer';
 export default {
-  components:{
-        previewTable,
-        tableDrawer
-    },
+  // components:{
+  //       previewTable,
+  //       tableDrawer
+  //   },
     computed:{
       disableCoinSelect(){
         if(this.selectedCoin.length==5){

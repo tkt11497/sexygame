@@ -227,7 +227,7 @@
         </v-flex>
 </template>
 <script>
-import previewTable from './previewTable';
+import previewTable from './PreviewTable';
 export default {
     props:['room','PropCardSize'],
       components:{

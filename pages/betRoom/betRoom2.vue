@@ -541,7 +541,7 @@
 </template>
 
 <script>
-import previewTable from '@/components/previewTable';
+import previewTable from '@/components/PreviewTable';
 export default {
   components:{
         previewTable

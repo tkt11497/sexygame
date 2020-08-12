@@ -35,6 +35,7 @@ export default {
   /*
   ** Nuxt.js dev-modules
   */
+ components: true,
   buildModules: [
     '@nuxtjs/vuetify',
   ],
@@ -43,6 +44,7 @@ export default {
   */
   modules: [
   ],
+  
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     // theme: {
