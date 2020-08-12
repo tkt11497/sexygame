@@ -237,24 +237,24 @@
         class="pa-0 ma-0"
         >
           <div style="height:100%;  width:30%">
-              <previewTable :row="7" :column="15" />
+              <PreviewTable :row="7" :column="15" />
           </div>
           <div style="height:100%;  width:30%">
                <div style="width:100%; height:45%">
-                    <previewTable :row="6" :column="36"/>
+                    <PreviewTable :row="6" :column="36"/>
                 </div>
                 <v-divider/>
                 <div style="width:100%; height:27.5%">
-                    <previewTable :row="3" :column="36"/>
+                    <PreviewTable :row="3" :column="36"/>
                 </div>
                 <v-divider/>
             <v-row style="width:100%; height:27.5%" no-gutters>
                 <div style="width:49.7%; height:100%; ">
-                <previewTable :row="4" :column="18"/>
+                <PreviewTable :row="4" :column="18"/>
                 </div>
                 <v-divider vertical/>
                 <div style="width:50%; height:100%">
-                    <previewTable :row="4" :column="18"/>
+                    <PreviewTable :row="4" :column="18"/>
                 </div>
             </v-row>
           </div>
@@ -392,7 +392,7 @@
                             </div>
 
                           </v-system-bar>
-                          <previewTable :row="7" :column="16"/>
+                          <PreviewTable :row="7" :column="16"/>
                   </v-card>
                   <v-card height="150px" class="mb-2" color="blue">
                     <v-system-bar
@@ -409,7 +409,7 @@
                             </div>
 
                           </v-system-bar>
-                          <previewTable :row="7" :column="16"/>
+                          <PreviewTable :row="7" :column="16"/>
                   </v-card>
                   <v-card height="150px" class="mb-2" color="blue">
                     <v-system-bar
@@ -425,7 +425,7 @@
                               <span>20</span>
                             </div>
                           </v-system-bar>
-                        <previewTable :row="7" :column="16"/>
+                        <PreviewTable :row="7" :column="16"/>
                   </v-card>
                   <v-card height="150px" class="mb-2" color="blue">
                     <v-system-bar
@@ -443,7 +443,7 @@
 
                           </v-system-bar>
 
-                          <previewTable :row="7" :column="16"/>
+                          <PreviewTable :row="7" :column="16"/>
                   </v-card>
           </v-card-text>
         </v-card>
@@ -477,7 +477,7 @@
                             </div>
 
                           </v-system-bar>
-                          <previewTable :row="7" :column="16"/>
+                          <PreviewTable :row="7" :column="16"/>
                   </v-card>
                   <v-card height="150px" class="mb-2" color="blue">
                     <v-system-bar
@@ -494,7 +494,7 @@
                             </div>
 
                           </v-system-bar>
-                          <previewTable :row="7" :column="16"/>
+                          <PreviewTable :row="7" :column="16"/>
                   </v-card>
                   <v-card height="150px" class="mb-2" color="blue">
                     <v-system-bar
@@ -510,7 +510,7 @@
                               <span>20</span>
                             </div>
                           </v-system-bar>
-                        <previewTable :row="7" :column="16"/>
+                        <PreviewTable :row="7" :column="16"/>
                   </v-card>
                   <v-card height="150px" class="mb-2" color="blue">
                     <v-system-bar
@@ -528,7 +528,7 @@
 
                           </v-system-bar>
 
-                          <previewTable :row="7" :column="16"/>
+                          <PreviewTable :row="7" :column="16"/>
                   </v-card>
           </v-card-text>
         </v-card>
@@ -541,11 +541,11 @@
 </template>
 
 <script>
-import previewTable from '@/components/PreviewTable';
+// import previewTable from '@/components/PreviewTable';
 export default {
-  components:{
-        previewTable
-    },
+  // components:{
+  //       previewTable
+  //   },
   data () {
     return {
       progress:50,
