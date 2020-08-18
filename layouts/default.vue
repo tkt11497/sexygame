@@ -44,23 +44,9 @@
               
             </v-btn>
         </router-link>
-          <!-- <v-btn block
-          >{{item.title}}</v-btn> -->
+        
       <template v-slot:append>
            <v-list>
-        <!-- <v-list-item
-          v-for="(item, i) in items"
-          :key="i"
-          :to="item.to"
-          router
-          exact
-          class="red--text text-center"
-        >
-          <v-list-item-content >
-            <v-list-item-title ><v-icon>{{ item.icon }}</v-icon> {{item.title}}</v-list-item-title>
-          </v-list-item-content>
-
-        </v-list-item> -->
         <v-divider/>
         <v-list-item
           link

@@ -6,7 +6,7 @@
       </v-row>
 
 
-      {{$route.params.viewType}}
+      
   </v-container>
 </template>
 
