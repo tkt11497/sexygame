@@ -148,7 +148,6 @@
                          <v-card
                             flat
                             tile
-
                           >
                           <div class="playArea">
                             <v-row style="margin:0;">
@@ -170,7 +169,6 @@
                               <v-col tile cols="2" class="playArea-tile banker" align="center">
                                  <h3>B.Pair</h3>
                               </v-col>
-
                             </v-row>
                           </div>
                          </v-card>
@@ -195,7 +193,6 @@
 
                                <v-col tile cols="4" class="playArea-tile-last banker" align="center">
                                  <h2> Banker</h2>
-
                                </v-col>
                              </v-row>
                            </div>

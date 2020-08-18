@@ -2,7 +2,7 @@
  <v-container class="pa-0 ml-1" fluid style="background-color:black">
 <v-row class="pa-0" style="height:100vh;" no-gutters>
     <v-col class="pa-0" cols="7">
-        <div class="playTable"> 
+        <div class="playTable">
            <v-btn class="mx-2"  dark small color="#4F3C2B" style="position:absolute;bottom:1%;left:0" link to="/betRoom/betRoom2">
               <v-icon dark>picture_in_picture</v-icon>
             </v-btn>
@@ -15,53 +15,53 @@
             <div class="room-title d-flex justify-center align-center white--text">
                     Baccrart C01
             </div>
-              <v-avatar 
-                    color="rgba(0,0,0,0.5)" 
-                    size="130" 
-                    class="gameCountDown" 
+              <v-avatar
+                    color="rgba(0,0,0,0.5)"
+                    size="130"
+                    class="gameCountDown"
                     v-show="true">
                         <v-progress-circular
                         :value="70"
-                        color="red" 
+                        color="red"
                         size="100"
                         >
                     <span> 60</span>
                     </v-progress-circular>
                 </v-avatar>
         </div>
-       
+
         <v-tabs
         background-color="#404040"
         class="elevation-2"
         centered
-        grow 
+        grow
         dark
-        height="4vh" 
-        hide-slider 
+        height="4vh"
+        hide-slider
         active-class="tabActive black--text"
       >
         <!-- <v-tabs-slider></v-tabs-slider> -->
-  
+
         <v-tab
-          :href="`#tab-1`" 
-          
-          
+          :href="`#tab-1`"
+
+
         >
           Baccarat
         </v-tab>
         <v-tab
-          :href="`#tab-2`" 
-          
+          :href="`#tab-2`"
+
         >
           No Commission
         </v-tab>
         <v-tab
-          :href="`#tab-3`" 
-           
+          :href="`#tab-3`"
+
         >
           Cow Cow
         </v-tab>
-  
+
         <v-tab-item
           :value="'tab-' + 1"
         >
@@ -111,7 +111,7 @@
              </v-row>
            </div>
          </v-card>
-         
+
         </v-tab-item>
            <v-tab-item
           :value="'tab-' + 2"
@@ -178,10 +178,10 @@
                       <h2>1:1</h2>
                   </v-col>
                   <v-col tile cols="4" class="playArea-tile" align="center">
-                  
+
                       <h2> Tie</h2>
                       <h2>8:1</h2>
-                    
+
                   </v-col>
                   <v-col tile cols="4" class="playArea-tile banker" align="center">
                     <h1> Banker</h1>
@@ -192,23 +192,23 @@
           </v-card>
         </v-tab-item>
       </v-tabs>
-       
-          <div 
+
+          <div
         style="height:4vh ;background-color:#023016"
         class="d-flex justify-center align-center white--text"
         >
             Total BetAmount : 0.0
-            
+
         </div>
         <div class="selectCoin d-flex align-center white--text pa-2" >
-                              
+
                             <v-menu
                               offset-y
-                              top 
+                              top
                               :close-on-content-click="false"
                               v-model="coinMenu"
                               :nudge-width="450"
-                              :max-width="450" 
+                              :max-width="450"
                               dark
                               >
                                   <template v-slot:activator="{ on, attrs }">
@@ -220,73 +220,73 @@
                                                     background-position: center;
                                                     background-size: 100% 100%"
                                                   v-bind="attrs"
-                                                    v-on="on" 
+                                                    v-on="on"
                                                     @click="openCoinSelect">
-                                                      
+
 
                                                   </div>
                                   </template>
                                   <v-card color='rgba(0, 0, 0, 0.7)' elevation="20">
                                     <v-card-title>
                                       <v-row no-gutters justify="center"> Please Select
-                                        
-                                       
+
+
                                       </v-row>
                                       </v-card-title>
-                                      <v-row no-gutters justify="center"> 
+                                      <v-row no-gutters justify="center">
                                           <v-img
                                                 v-for="(coin,n) in coinList" :key="n"
                                                 class="text-center ma-2"
-                                                max-width="3.7vw" 
+                                                max-width="3.7vw"
                                                 max-height="2.6vw"
                                                 :src="'/coin/'+coin"
                                               >
                                                 <v-checkbox v-model="selectedCoin"
-                                                 :value="coin" 
+                                                 :value="coin"
                                                  color="#009167"
                                                  :disabled="disableCoinSelect?selectedCoin.includes(coin)?false:true:false"
                                                  ></v-checkbox>
                                               </v-img>
-                                            
+
                                       </v-row>
                                     <v-card-actions >
                                     <v-row justify="center">
                                       <!-- <v-btn small class="mx-2" fab dark color="#4f3c2b" @click="cancelCoinSelect"> -->
-                                        
-                                        <v-img src="/icon/萬用選擇UI.png" 
-                                        @click="cancelCoinSelect" 
+
+                                        <v-img src="/icon/萬用選擇UI.png"
+                                        @click="cancelCoinSelect"
                                         class="ma-2"
-                                        max-width="2.5vw" 
+                                        max-width="2.5vw"
                                         max-height="2.5vw"></v-img>
-                                        
+
                                       <!-- </v-btn> -->
-                                      <v-img src="/icon/萬用取消UI.png" 
+                                      <v-img src="/icon/萬用取消UI.png"
                                         @click="changeShowing"
                                         class="ma-2"
-                                        max-width="2.5vw" 
+                                        max-width="2.5vw"
                                         max-height="2.5vw"></v-img>
-                                        
+
                                     </v-row>
                                     </v-card-actions>
                                   </v-card>
-                              
+
                             </v-menu>
                             <div :style="{
                                         'background-image': 'url(\'/coin/'+ `${betCoin==coin?'籌碼發光.png':''}` + '\')',
                                         'background-repeat': 'no-repeat',
                                         'background-position': 'center',
                                         'background-size': '100% 100%',
-                                        width:'4.9vw',height:'3.9vw'}" 
+                                        width:'4.9vw',height:'3.9vw'}"
                                   @click="betCoin=coin"
-                                  v-for="(coin,n) in showingCoin" 
+                                  v-for="(coin,n) in showingCoin"
                                   :key="n"
-                                  class="pa-3" 
+                                  class="pa-3"
                                   >
-                            <v-img 
-                                  max-width="3.7vw" 
-                                  max-height="2.6vw" 
-                                  :src="'/coin/'+coin" 
-                                  
+                            <v-img
+                                  max-width="3.7vw"
+                                  max-height="2.6vw"
+                                  :src="'/coin/'+coin"
+
                                   >
                             </v-img>
                             </div>
@@ -297,11 +297,11 @@
                                                       background-repeat: no-repeat;
                                                       background-position: center;
                                                       background-size: 100% 100%">
-                                                        
+
 
                                 </div>
-                           
-      
+
+
         </div>
     </v-col>
     <v-col cols="5" class="pa-0">
@@ -310,13 +310,13 @@
         class="elevation-2"
         dark
         centered
-        grow 
-        height="5vh" 
-        hide-slider 
-        active-class="tabActive black--text" 
+        grow
+        height="5vh"
+        hide-slider
+        active-class="tabActive black--text"
       >
-        
-  
+
+
         <v-tab
           :href="`#tab-1`"
         >
@@ -332,21 +332,21 @@
         >
           Cards
         </v-tab>
-  
+
         <v-tab-item
           :value="'tab-' + 1"
         >
          <v-card
             flat
             tile
-            height="32vh" 
-            dark 
+            height="32vh"
+            dark
             color="#2E2E2E"
           >
           <v-row style="height:77%;width:100%; margin:0;" class="table-info">
                 <v-col style="width:50%; padding:0;border-right:1px solid white ">
                   <v-row style="margin:0;" dense>
-                  <v-col cols="6" class="banker"> Banker 65%</v-col>  
+                  <v-col cols="6" class="banker"> Banker 65%</v-col>
                   <v-col cols="6">2242532/1213</v-col>
                     <v-progress-linear
                         v-model="progress"
@@ -355,7 +355,7 @@
                   </v-row>
 
                   <v-row style="margin:0;" dense>
-                  <v-col cols="6" class="player"> Player 41%</v-col>  
+                  <v-col cols="6" class="player"> Player 41%</v-col>
                   <v-col cols="6">2242532/1213</v-col>
                     <v-progress-linear
                         v-model="progress"
@@ -364,7 +364,7 @@
                   </v-row>
 
                   <v-row style="margin:0;" dense>
-                  <v-col cols="6" class="tie-text"> Tie 1%</v-col>  
+                  <v-col cols="6" class="tie-text"> Tie 1%</v-col>
                   <v-col cols="6">2242532/1213</v-col>
                     <v-progress-linear
                         v-model="progress"
@@ -372,49 +372,49 @@
                       ></v-progress-linear>
                   </v-row>
                   <v-row style="margin:0;" dense>
-                  <v-col cols="6" class="banker"> Banker Pair</v-col>  
+                  <v-col cols="6" class="banker"> Banker Pair</v-col>
                   <v-col cols="6">2242532/1213</v-col>
                   </v-row>
                   <v-row style="margin:0;" dense>
-                  <v-col cols="6" class="player"> Player Pair</v-col>  
+                  <v-col cols="6" class="player"> Player Pair</v-col>
                   <v-col cols="6">2242532/1213</v-col>
                   </v-row>
                   <v-row style="margin:0;" dense>
-                  <v-col cols="6" class="banker"> Banker Natural</v-col>  
+                  <v-col cols="6" class="banker"> Banker Natural</v-col>
                   <v-col cols="6">2242532/1213</v-col>
                   </v-row>
                   <v-row style="margin:0;" dense>
-                  <v-col cols="6" class="player"> Player Natural</v-col>  
+                  <v-col cols="6" class="player"> Player Natural</v-col>
                   <v-col cols="6">2242532/1213</v-col>
                   </v-row>
                 </v-col>
                 <v-col style="width:50%; ;padding:0;color:#E7CAA0">
                     <v-row style="margin:0;" dense>
-                  <v-col cols="6" > Table</v-col>  
+                  <v-col cols="6" > Table</v-col>
                   <v-col cols="6">C01</v-col>
                   </v-row>
                     <v-row style="margin:0;" dense>
-                  <v-col cols="6" > Dealer</v-col>  
+                  <v-col cols="6" > Dealer</v-col>
                   <v-col cols="6">Monkey Dog</v-col>
                   </v-row>
                     <v-row style="margin:0;" dense>
-                  <v-col cols="6" > Round</v-col>  
+                  <v-col cols="6" > Round</v-col>
                   <v-col cols="6">3-25</v-col>
                   </v-row>
                     <v-row style="margin:0;" dense>
-                  <v-col cols="6" > ID</v-col>  
+                  <v-col cols="6" > ID</v-col>
                   <v-col cols="6">1291200211</v-col>
                   </v-row>
                     <v-row style="margin:0;" dense>
-                  <v-col cols="6" > Table Limit</v-col>  
+                  <v-col cols="6" > Table Limit</v-col>
                   <v-col cols="6">20000</v-col>
                   </v-row>
                     <v-row style="margin:0;" dense>
-                  <v-col cols="6" > Max. Limit</v-col>  
+                  <v-col cols="6" > Max. Limit</v-col>
                   <v-col cols="6">5000</v-col>
                   </v-row>
                     <v-row style="margin:0;" dense>
-                  <v-col cols="6" > Min. Limit</v-col>  
+                  <v-col cols="6" > Min. Limit</v-col>
                   <v-col cols="6">100</v-col>
                   </v-row>
                 </v-col>
@@ -454,8 +454,8 @@
 
                           <v-btn small
                           v-bind="attrs"
-                            v-on="on" 
-                            color="white" 
+                            v-on="on"
+                            color="white"
                             elevation="24">
                               <span style="color:black">change</span>
                             </v-btn>
@@ -479,17 +479,17 @@
                       </v-list>
                     </v-card>
                 </v-menu>
-        
+
              </v-col>
-     
+
            </v-row>
             <v-row @click="exten=!exten" style="height:5%;width:100%; margin:0; background-color:#876F4D" justify="center" >
                <div style="width:100%;height:100%" class="d-flex justify-center algin-center">
               <v-icon dense x-small v-show="exten">keyboard_arrow_up</v-icon>
               <v-icon dense x-small v-show="!exten">keyboard_arrow_down</v-icon>
-              
+
                </div>
-                
+
             </v-row>
          </v-card>
          <v-banner dark color="black" v-model="exten" single-line transition="slide-y-transition">
@@ -523,38 +523,38 @@
             tile
             height="32vh"
           >
-          
-                <div class="result-cards"> 
-                    <img 
-                    src="/card.png" 
+
+                <div class="result-cards">
+                    <img
+                    src="/card.png"
                      style="width:20%; height:42%; position:absolute;left:15%;top:5%; transform: rotate(-90deg);"/>
-                    <img 
-                    src="/card.png" 
+                    <img
+                    src="/card.png"
                      style="width:20%; height:42%; position:absolute;left:5%;bottom:18%"/>
-                     <img 
-                    src="/card.png" 
+                     <img
+                    src="/card.png"
                      style="width:20%; height:42%; position:absolute;left:27%;bottom:18%"/>
-                    <div 
+                    <div
                     class=" d-flex justify-center align-center"
-                    style="width:42%; height:10%; position:absolute; top:85%; left:5%; background-color:blue"> 
+                    style="width:42%; height:10%; position:absolute; top:85%; left:5%; background-color:blue">
                         <span>P 6</span>
                     </div>
-                      <img 
-                    src="/card.png" 
+                      <img
+                    src="/card.png"
                      style="width:19%; height:42%; position:absolute;right:15%;top:5%; transform: rotate(-90deg);"/>
-                    <img 
-                    src="/card.png" 
+                    <img
+                    src="/card.png"
                      style="width:19%; height:42%; position:absolute;right:5%;bottom:18%"/>
-                     <img 
-                    src="/card.png" 
+                     <img
+                    src="/card.png"
                      style="width:19%; height:42%; position:absolute;right:27%;bottom:18%"/>
-                    <div 
+                    <div
                     class=" d-flex justify-center align-center"
-                    style="width:42%; height:10%; position:absolute; top:85%; right:5%; background-color:red"> 
+                    style="width:42%; height:10%; position:absolute; top:85%; right:5%; background-color:red">
                         <span>B 5</span>
                     </div>
                 </div>
-           
+
           </v-card>
         </v-tab-item>
       </v-tabs>
@@ -562,19 +562,19 @@
     <v-col cols="9">
       <div style="height:13vh;width:100%; background-color:#2E2E2E" >
         <v-row style="height:100%;width:100%; margin:0;" no-gutters justify="left" >
-          <div style="height:50%;width:12.5%;" 
-          class="d-flex justify-center align-center" 
+          <div style="height:50%;width:12.5%;"
+          class="d-flex justify-center align-center"
           v-for="n in 3" :key="n">
-            <v-card height="80%" width="80%"   dark 
-            class="d-flex justify-center align-center room-list" 
-            @click="window=n" 
+            <v-card height="80%" width="80%"   dark
+            class="d-flex justify-center align-center room-list"
+            @click="window=n"
             :class="{ 'windowActive': window==n }">C0{{n}}</v-card>
           </div>
-           
-           
-       
+
+
+
         </v-row>
-          
+
       </div>
     <v-window v-model="window">
             <v-window-item :value="1">
@@ -621,7 +621,7 @@
                                           src="/icon/大紅圈.png"
                                         />
                       <v-avatar color="#c70000" class="ml-1" size="15">
-                        
+
                       </v-avatar>
                       <span class="font-weight-bold red--text ml-1 mr-5  ">/</span>
                       <v-btn small color="#2d30b1" class="ml-1"><span class="white--text"> 閒問路</span></v-btn>
@@ -631,14 +631,14 @@
                                           src="/icon/大藍圈.png"
                                         />
                       <v-avatar color="#2d30b1" class="ml-1" size="15">
-                        
+
                       </v-avatar>
                       <span class="font-weight-bold ml-1" style="color:#2d30b1">/</span>
                   </div>
                 </v-row>
               </div>
             </v-window-item>
-  
+
                 <v-window-item :value="2">
                 <div class="pa-4 text-center" style="height:100%; width:100%;background-color:black">
                     <v-text-field
@@ -654,7 +654,7 @@
                     </span>
                   </div>
                 </v-window-item>
-          
+
                 <v-window-item :value="3">
                   <div class="pa-4 text-center" style="height:100%; width:100%;background-color:black">
                     <v-img
@@ -667,10 +667,10 @@
                     <span class="caption grey--text">Thanks for signing up!</span>
                   </div>
                 </v-window-item>
-    </v-window> 
+    </v-window>
     </v-col>
     <v-col cols="3">
-      
+
                   <v-card height="53vh" class="my-3 mx-1 cardGradient" >
                     <v-system-bar
                         color="#AA8647"
@@ -689,52 +689,52 @@
                     </v-system-bar>
                       <v-card
                           color="rgba(255,2555,255,0)"
-                          height="8vh" 
-                          class="d-flex align-center justify-space-between " 
-                          v-for="n in 6" 
+                          height="8vh"
+                          class="d-flex align-center justify-space-between "
+                          v-for="n in 6"
                           :key="n"
                         >
                          <div class="ml-1">
-                               <v-avatar 
-                                  color="#4C4331" 
-                                  size="2vw" 
+                               <v-avatar
+                                  color="#4C4331"
+                                  size="2vw"
                                 >
                                       <v-progress-circular
                                       :value="100"
-                                      color="#F7A823" 
-                                      size="30" 
+                                      color="#F7A823"
+                                      size="30"
                                       width="2"
                                       >
-                                 
+
                                   </v-progress-circular>
                               </v-avatar>
-                         </div> 
-                         <span style="font-size:0.7vw">blahblah</span> 
+                         </div>
+                         <span style="font-size:0.7vw">blahblah</span>
                          <div style="background-color:#EAEDEA;width:3vw;height:3vw" class="ma-2">
-                         </div> 
+                         </div>
                         </v-card>
-                        
+
                   </v-card>
-                
+
     </v-col>
   </v-row>
-    
-    
-    
+
+
+
     </v-col>
-    
+
 </v-row>
-   
+
       <button v-show="!drawer" class="Custombutton"  style="position:absolute; top:12vh;right:0" @click="drawer=true" >
         <p class="py-5" style="writing-mode: vertical-rl;text-orientation: upright;letter-spacing:-2px;font-size:0.8vw">
           tables
         </p>
       </button>
-    
-    
+
+
   <tableDrawer :drawer="drawer"  @close="drawer=false"/>
  </v-container>
- 
+
 </template>
 
 <script>
@@ -753,7 +753,7 @@ export default {
         return false
          }
       }
-       
+
     },
   data () {
     return {
@@ -831,7 +831,7 @@ export default {
     }
     .tie{
       height:50%;
-      width:100%; 
+      width:100%;
       margin:0;
       color:#0C930A;
        font-size:0.75vw ;
@@ -858,41 +858,41 @@ export default {
     .room-title{
         width:20%;
         height:5vh;
-        position:absolute; 
+        position:absolute;
         top:0;
-        left:0; 
+        left:0;
         background-color:rgba(0,0,0,0.5);
         font-size: 1vw;
     }
     .gameCountDown{
-        position:absolute; 
+        position:absolute;
         top:10%;
         left:5%;
     }
     .result-cards{
         background-color:rgba(0, 0, 0,0.8);
          position: relative;;
-        width:100%; 
+        width:100%;
         height:100%
     }
     .tabActive{
       background-image:
       linear-gradient(
-          rgb(255, 255, 255) 63%, 
+          rgb(255, 255, 255) 63%,
           #B98F38
         );
-      
+
     }
     .cardGradient{
       background-image:
       linear-gradient(
-          rgb(255, 255, 255) 23%, 
+          rgb(255, 255, 255) 23%,
           #B98F38
         );
     }
     .windowActive{
       background-color:#AA8647 ;
-      
+
     }
     .Custombutton {
       border: none;
@@ -909,11 +909,11 @@ export default {
       background-position: center;
       background-size: 100% 100%;
       letter-spacing:20px;
-      
+
     }
     .Custombutton:focus {
     outline: 1px solid #F7D8A8;
     outline-offset: -4px;
 }
-  
+
 </style>
