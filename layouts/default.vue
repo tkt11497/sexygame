@@ -44,23 +44,9 @@
               
             </v-btn>
         </router-link>
-          <!-- <v-btn block
-          >{{item.title}}</v-btn> -->
+        
       <template v-slot:append>
            <v-list>
-        <!-- <v-list-item
-          v-for="(item, i) in items"
-          :key="i"
-          :to="item.to"
-          router
-          exact
-          class="red--text text-center"
-        >
-          <v-list-item-content >
-            <v-list-item-title ><v-icon>{{ item.icon }}</v-icon> {{item.title}}</v-list-item-title>
-          </v-list-item-content>
-
-        </v-list-item> -->
         <v-divider/>
         <v-list-item
           link
@@ -135,6 +121,7 @@
         padless
         height="40px"
         inset
+        fixed 
         app 
         elevation="20" 
     >
@@ -241,7 +228,7 @@
                         </v-row>
                       </v-card>
               </v-menu>
-              <v-btn icon class="pa-2 ma-1" link :to="toRouteName" exact v-if="!showViewList">
+              <v-btn icon class="pa-2 ma-1" link :to="toRouteName+'/default'" exact v-if="!showViewList">
               <v-icon class="pa-2 " color="#B98F38">view_list</v-icon>
               </v-btn>
               <v-btn icon class="pa-2 ma-1" link :to="toRouteName+'/road_map_view'" exact v-if="!showViewList">
@@ -390,7 +377,7 @@ export default {
     computed: {
    
     toRouteName() {
-        let routeArr= this.$route.name.split('-')
+        let routeArr=  this.$route.name.split('-')
         if(routeArr.includes("multibet")){
           return '/multibet'
         }else{
@@ -422,7 +409,7 @@ export default {
         {
           icon: 'mdi-apps',
           title: 'BACCARAT',
-          to: '/roomlist'
+          to: '/roomlist/default'
         },
         {
           icon: 'mdi-chart-bubble',
@@ -432,7 +419,7 @@ export default {
          {
           icon: 'mdi-chart-bubble',
           title: 'MULTI-BET',
-          to: '/multibet'
+          to: '/multibet/default'
         },
          {
           icon: 'mdi-chart-bubble',

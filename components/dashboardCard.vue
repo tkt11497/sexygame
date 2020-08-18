@@ -98,18 +98,28 @@
                                   <v-row no-gutters style="height:100%">
                                           <div
                                             :style="{height:'100%', width:PropCardSize=='md3'?'100%':'39%',}"
-                                            class="d-flex align-content-start flex-wrap"
+                                            class="d-flex align-content-start flex-wrap flex-column"
                                                 v-if="PropCardSize=='md6'||PropCardSize=='md3'">
-                                              <!-- <previewTable :row="7" :column="15" /> -->
-                                              <v-img class="my-1" src="/icon/圓庄.png" :max-height="PropCardSize=='md3'?'0.8vw':'1.2vw'" :max-width="PropCardSize=='md3'?'0.75vw':'1.3vw'">
+                      
+                                              <v-img class="mt-1" src="/icon/圓庄.png" :max-height="PropCardSize=='md3'?'0.8vw':'1.4vw'" :max-width="PropCardSize=='md3'?'0.75vw':'1.3vw'">
                                               </v-img>
-                                              <v-img class="my-1" src="/icon/圓閒.png" :max-height="PropCardSize=='md3'?'0.8vw':'1.2vw'" :max-width="PropCardSize=='md3'?'0.75vw':'1.3vw'">
+                                              <v-img class="mt-1" src="/icon/圓閒.png" :max-height="PropCardSize=='md3'?'0.8vw':'1.4vw'" :max-width="PropCardSize=='md3'?'0.75vw':'1.3vw'">
                                               </v-img>
-                                              <v-img class="my-1" src="/icon/圓庄.png" :max-height="PropCardSize=='md3'?'0.8vw':'1.2vw'" :max-width="PropCardSize=='md3'?'0.75vw':'1.3vw'">
+                                              <v-img class="mt-1" src="/icon/圓庄.png" :max-height="PropCardSize=='md3'?'0.8vw':'1.4vw'" :max-width="PropCardSize=='md3'?'0.75vw':'1.3vw'">
                                               </v-img>
-                                              <v-img class="my-1" src="/icon/圓閒.png" :max-height="PropCardSize=='md3'?'0.8vw':'1.2vw'" :max-width="PropCardSize=='md3'?'0.75vw':'1.3vw'">
+                                              <v-img class="mt-1" src="/icon/圓閒.png" :max-height="PropCardSize=='md3'?'0.8vw':'1.4vw'" :max-width="PropCardSize=='md3'?'0.75vw':'1.3vw'">
                                               </v-img>
-                                                <v-img class="my-1"  src="/icon/圓庄.png" :max-height="PropCardSize=='md3'?'0.8vw':'1.2vw'" :max-width="PropCardSize=='md3'?'0.75vw':'1.3vw'">
+                                                <v-img class="mt-1"  src="/icon/圓庄.png" :max-height="PropCardSize=='md3'?'0.8vw':'1.4vw'" :max-width="PropCardSize=='md3'?'0.75vw':'1.3vw'">
+                                              </v-img>
+                                              <v-img class="mt-1"  src="/icon/圓庄.png" :max-height="PropCardSize=='md3'?'0.8vw':'1.4vw'" :max-width="PropCardSize=='md3'?'0.75vw':'1.3vw'">
+                                              </v-img>
+                                              <v-img class="mt-1"  src="/icon/圓庄.png" :max-height="PropCardSize=='md3'?'0.8vw':'1.4vw'" :max-width="PropCardSize=='md3'?'0.75vw':'1.3vw'">
+                                              </v-img>
+                                              <v-img class="mt-1"  src="/icon/圓庄.png" :max-height="PropCardSize=='md3'?'0.8vw':'1.4vw'" :max-width="PropCardSize=='md3'?'0.75vw':'1.3vw'">
+                                              </v-img>
+                                              <v-img class="mt-1"  src="/icon/圓庄.png" :max-height="PropCardSize=='md3'?'0.8vw':'1.4vw'" :max-width="PropCardSize=='md3'?'0.75vw':'1.3vw'">
+                                              </v-img>
+                                              <v-img class="mt-1"  src="/icon/圓庄.png" :max-height="PropCardSize=='md3'?'0.8vw':'1.4vw'" :max-width="PropCardSize=='md3'?'0.75vw':'1.3vw'">
                                               </v-img>
 
 
@@ -227,12 +237,12 @@
         </v-flex>
 </template>
 <script>
-import previewTable from './previewTable';
+
 export default {
     props:['room','PropCardSize'],
-      components:{
-        previewTable
-    },
+    //   components:{
+    //     previewTable
+    // },
     data() {
 
     return {
