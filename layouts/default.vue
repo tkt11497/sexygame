@@ -83,9 +83,9 @@
       <v-toolbar-title v-text="title" />
       <v-spacer />
     </v-app-bar> -->
-    <v-main>
+    <v-main >
 
-        <nuxt />
+        <nuxt  />
 
     </v-main>
     <v-dialog
@@ -122,7 +122,7 @@
         height="40px"
         inset
         fixed 
-        app 
+         
         elevation="20" 
     >
           <v-row  class="d-flex flex-row justify-end">
@@ -149,21 +149,22 @@
                       <v-icon class="pa-2" v-show="!soundOn" color="#B98F38">music_off</v-icon>
                     </v-btn>
                   </template>
-                      <v-card>
+                      <v-card color="rgba(34, 34, 34,0.9)">
                         <v-row no-gutters>
                             <v-col cols="3" class="text-center">
-                              <p style="color:#876f4d" class="mt-4">Music</p>
+                              <p style="color:#C4A76E" class="mt-4">Music</p>
                             </v-col>
                     
                             <v-col cols="9" class="text-center">
                             <v-row no-gutters dense >
-                                <v-btn icon color="#876f4d" class="mt-2">
+                                <v-btn icon color="#C4A76E" class="mt-2">
                                 <v-icon>volume_up</v-icon>
                                 <!-- <v-icon>volume_off</v-icon> -->
                                 </v-btn>
                                 <v-slider
                                     v-model="music" 
                                     class="mt-3" 
+                                    color="#196260"
                                 ></v-slider>
                             </v-row>
                         </v-col>
@@ -189,39 +190,41 @@
                       <v-icon class="pa-2 " color="#B98F38">volume_up</v-icon>
                       </v-btn>
                   </template>
-                  <v-card>
+                  <v-card color="rgba(34, 34, 34,0.9)">
                         <v-row no-gutters>
                             <v-col cols="4" class="text-center">
-                              <p style="color:#876f4d" class="mt-4">Studio Sound</p>
+                              <p style="color:#C4A76E" class="mt-4">Studio Sound</p>
                             </v-col>
                     
                             <v-col cols="8" class="text-center">
                             <v-row no-gutters dense >
-                                <v-btn icon color="#876f4d" class="mt-2">
+                                <v-btn icon color="#C4A76E" class="mt-2">
                                 <v-icon>volume_up</v-icon>
                                 <!-- <v-icon>volume_off</v-icon> -->
                                 </v-btn>
                                 <v-slider
                                     v-model="studioSound" 
                                     class="mt-3" 
+                                    color="#196260"
                                 ></v-slider>
                             </v-row>
                         </v-col>
                         </v-row>
                         <v-row no-gutters>
                             <v-col cols="4" class="text-center">
-                                  <p style="color:#876f4d" class="mt-4">Game Volume</p>
+                                  <p style="color:#C4A76E" class="mt-4">Game Volume</p>
                             </v-col>
                     
                             <v-col cols="8" class="text-center">
                                 <v-row no-gutters dense >
-                                    <v-btn icon color="#876f4d" class="mt-2">
+                                    <v-btn icon color="#C4A76E" class="mt-2">
                                     <v-icon>volume_up</v-icon>
                                     <!-- <v-icon>volume_off</v-icon> -->
                                     </v-btn>
                                     <v-slider
                                         v-model="gameVolume" 
                                         class="mt-3" 
+                                        color="#196260" 
                                     ></v-slider>
                                 </v-row>
                             </v-col>

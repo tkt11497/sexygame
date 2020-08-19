@@ -1,13 +1,13 @@
 <template>
-      <v-card min-height="360">
-        <v-toolbar dark color="#7A6445">
+      <v-card min-height="360" dark color="rgba(34, 34, 34,0.8)">
+        <v-toolbar dark class="Appbar">
             <v-toolbar-title>
-              <v-icon>text_snippet</v-icon>
+              <v-icon color="black">text_snippet</v-icon>
               Member Report
               </v-toolbar-title>
             <v-spacer></v-spacer>
             <v-btn icon dark @click="close">
-              <v-icon>mdi-close</v-icon>
+              <v-icon color="black">mdi-close</v-icon>
             </v-btn>
           </v-toolbar>
         <v-row no-gutters dense>
@@ -78,7 +78,7 @@
                 filled
                 label="Game Type"
                 dense 
-                background-color="#7A6445" 
+                background-color="#C4A76E" 
                 color="white" 
                 full-width 
                 rounded
@@ -88,14 +88,14 @@
         </v-col>
         <v-col cols="2"/>
         <v-col cols="4">
-            <v-btn block rounded color="#7A6445" class="mt-3"> Search</v-btn>
+            <v-btn block rounded color="#C4A76E" class="mt-3"> Search</v-btn>
         </v-col>
         <v-col cols="1"/>
         </v-row>
         <v-divider/>
         <v-row no-gutters dense>
            <v-col cols="2"  class="text-right">
-                <p style="color:#876f4d" class="mt-4">Turnover</p>
+                <p style="color:#C4A76E" class="mt-4">Turnover</p>
             </v-col>
             <v-col cols="3">
                 <v-card
@@ -103,11 +103,11 @@
                     height="40" 
                     color="#424242"
                     >
-                   0.00
+                  <span style="color:#C4A76E"> 0.00</span>
                 </v-card>
             </v-col>
             <v-col cols="3" class="text-right">
-                 <p style="color:#876f4d" class="mt-4">Rolling Amount</p>
+                 <p style="color:#C4A76E" class="mt-4">Rolling Amount</p>
             </v-col>
             <v-col cols="3">
                  <v-card
@@ -115,7 +115,7 @@
                     height="40" 
                     color="#424242"
                     >
-                   0.00
+                  <span style="color:#C4A76E"> 0.00</span>
                 </v-card>
             </v-col>
         
@@ -123,7 +123,7 @@
          <v-divider/>
            <v-row no-gutters dense>
            <v-col cols="2"  class="text-right">
-                <p style="color:#876f4d" class="mt-4">Win/Lose Amount</p>
+                <p style="color:#C4A76E" class="mt-4">Win/Lose Amount</p>
             </v-col>
             <v-col cols="3">
                 <v-card
@@ -131,11 +131,11 @@
                     height="40" 
                     color="#424242"
                     >
-                   0.00
+                  <span style="color:#C4A76E"> 0.00</span>
                 </v-card>
             </v-col>
             <v-col cols="3" class="text-right">
-                 <p style="color:#876f4d" class="mt-4">Total Amount</p>
+                 <p style="color:#C4A76E" class="mt-4">Total Amount</p>
             </v-col>
             <v-col cols="3">
                  <v-card
@@ -143,7 +143,7 @@
                     height="40" 
                     color="#424242"
                     >
-                   0.00
+                  <span style="color:#C4A76E"> 0.00</span>
                 </v-card>
             </v-col>
         
@@ -170,3 +170,13 @@ export default {
     },
 }
 </script>
+<style scoped>
+.Appbar{
+  background-image:
+  linear-gradient(
+      rgb(255, 255, 255) 63%, 
+      #B98F38
+    );
+    color:black
+}
+</style>

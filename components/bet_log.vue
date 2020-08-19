@@ -1,17 +1,20 @@
 <template>
-      <v-card>
-        <v-toolbar dark color="#7A6445">
+      <v-card dark color="rgba(0, 0, 0,0)">
+        <v-toolbar  class="Appbar">
             <v-toolbar-title>
-              <v-icon>history</v-icon>
+              <v-icon color="black">history</v-icon>
               Bet Log
               </v-toolbar-title>
             <v-spacer></v-spacer>
-            <v-btn icon dark @click="close">
+            <v-btn icon @click="close" color="black">
               <v-icon>mdi-close</v-icon>
             </v-btn>
           </v-toolbar>
 
-    <v-data-table :headers="headers" disable-sort :items-per-page="5" :items="[1,2,33,45,6,1321,9,90,7,8,6,0,97]">
+    <v-data-table 
+    dark
+    style="background-color:rgb(34, 34, 34,0.95)"
+    :headers="headers" disable-sort :items-per-page="5" :items="[1,2,33,45,6,1321,9,90,7,8,6,0,97]">
         <template v-slot:body="{items}">
           <tbody>
         <tr v-for="n in items" :key="n">
@@ -20,7 +23,16 @@
           <td>1sdsad</td>
           <td>asd</td>
           <td>1sdsad</td>
-          <td>asd</td>
+          <td>
+            <v-row no-gutters align="center">
+                <span class="mr-1">  開 </span>
+            <v-img v-for="n in 3" :key="n" max-height="4vh" max-width="1vw" class="mr-1"
+                    contain  src="/smallcard/小方塊2.png"></v-img>
+                <span class="mr-1">     庄 </span>
+                 <v-img v-for="n in 3" :key="n" max-height="4vh" max-width="1vw" class="mr-1"
+                    contain  src="/smallcard/小黑桃10.png"></v-img>
+            </v-row>
+          </td>
           <td>1sdsad</td>
           <td>asd</td>
         </tr>
@@ -28,8 +40,8 @@
     </template>
   </v-data-table>
 
-        <v-card-actions>
-        <v-row no-gutters>
+        <v-card-actions style="background-color:rgba(34, 34, 34,0.95)">
+        <v-row no-gutters >
         <v-col cols="3">
             <v-menu
                     ref="from_menu"
@@ -68,13 +80,15 @@
                 min-width="290px"
                 >
                 <template v-slot:activator="{ on, attrs }">
+                  
                     <v-text-field
                     v-model="to_date"
                     label="To Date"
                     prepend-icon="event"
                     readonly
                     v-bind="attrs"
-                    v-on="on"
+                    v-on="on" 
+                    
                     ></v-text-field>
                 </template>
           <v-date-picker v-model="to_date" no-title scrollable>
@@ -85,7 +99,9 @@
         </v-menu>
         </v-col>
         <v-col cols="1">
-             <v-btn small color="#7A6445" class="ml-4 mt-4">Query</v-btn>
+             <v-btn small color="white" class="ml-4 mt-4" elevation="23">
+               <span style="color:black">Query</span>
+              </v-btn>
         </v-col>
         </v-row>
         </v-card-actions>
@@ -126,3 +142,13 @@ export default {
     },
 }
 </script>
+<style scoped>
+.Appbar{
+  background-image:
+  linear-gradient(
+      rgb(255, 255, 255) 63%, 
+      #B98F38
+    );
+    color:black
+}
+</style>

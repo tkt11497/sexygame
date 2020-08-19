@@ -1,12 +1,12 @@
 <template>
-      <v-card min-height="360"> 
-        <v-toolbar dark color="#7A6445">
+      <v-card min-height="360" dark color="rgba(34, 34, 34,0.9)"> 
+        <v-toolbar dark class="AppBar">
             <v-toolbar-title>
               Game Agreement
               </v-toolbar-title>
             <v-spacer></v-spacer>
             <v-btn icon dark @click="close">
-              <v-icon>mdi-close</v-icon>
+              <v-icon color="black">mdi-close</v-icon>
             </v-btn>
           </v-toolbar>
         <v-card-text>Lorem ipsum dolor sit amet, semper quis, sapien id natoque elit. Nostra urna at, magna at neque sed sed ante imperdiet, dolor mauris cursus velit, velit non, sem nec. Volutpat sem ridiculus placerat leo, augue in, duis erat proin condimentum in a eget, sed fermentum sed vestibulum varius ac, vestibulum volutpat orci ut elit eget tortor. Ultrices nascetur nulla gravida ante arcu. Pharetra rhoncus morbi ipsum, nunc tempor debitis, ipsum pellentesque, vitae id quam ut mauris dui tempor, aptent non. Quisque turpis. Phasellus quis lectus luctus orci eget rhoncus. Amet donec vestibulum mattis commodo, nulla aliquet, nibh praesent, elementum nulla. Sit lacus pharetra tempus magna neque pellentesque, nulla vel erat.
@@ -28,6 +28,16 @@
       
       </v-card>
 </template>
+<style scoped>
+.AppBar{
+  background-image:
+  linear-gradient(
+      rgb(255, 255, 255) 63%, 
+      #B98F38
+    );
+    color:black
+}
+</style>
 <script>
 export default {
     data(){

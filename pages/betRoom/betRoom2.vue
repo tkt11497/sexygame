@@ -66,7 +66,114 @@
                 </div>
               <BetRoom2Tableinfo/>
 
+               <div class="selectCoin d-flex align-center justify-end white--text pa-2" >
 
+                            <v-menu
+                              offset-y
+                              top
+                              :close-on-content-click="false"
+                              v-model="coinMenu"
+                              :nudge-width="450"
+                              :max-width="450"
+                              dark
+                              >
+                                  <template v-slot:activator="{ on, attrs }">
+                                                  <div class="text-center mt-1 mx-2"
+                                                  style="width:2.7vw;
+                                                   height:2.6vw;
+                                                    background-image:url('/icon/七人座自定UI.png');
+                                                    background-repeat: no-repeat;
+                                                    background-position: center;
+                                                    background-size: 100% 100%"
+                                                  v-bind="attrs"
+                                                    v-on="on"
+                                                    @click="openCoinSelect">
+
+
+                                                  </div>
+                                  </template>
+                                  <v-card color='rgba(0, 0, 0, 0.7)' elevation="20">
+                                    <v-card-title>
+                                      <v-row no-gutters justify="center"> Please Select
+
+
+                                      </v-row>
+                                      </v-card-title>
+                                      <v-row no-gutters justify="center">
+                                          <v-img
+                                                v-for="(coin,n) in coinList" :key="n"
+                                                class="text-center ma-2"
+                                                max-width="3.7vw"
+                                                max-height="2.6vw"
+                                                :src="'/coin/'+coin"
+                                              >
+                                                <v-checkbox v-model="selectedCoin"
+                                                 :value="coin"
+                                                 color="#009167"
+                                                 :disabled="disableCoinSelect?selectedCoin.includes(coin)?false:true:false"
+                                                 ></v-checkbox>
+                                              </v-img>
+
+                                      </v-row>
+                                    <v-card-actions >
+                                    <v-row justify="center">
+                                      <!-- <v-btn small class="mx-2" fab dark color="#4f3c2b" @click="cancelCoinSelect"> -->
+
+                                        <v-img src="/icon/萬用選擇UI.png"
+                                        @click="cancelCoinSelect"
+                                        class="ma-2"
+                                        max-width="2.5vw"
+                                        max-height="2.5vw"></v-img>
+
+                                      <!-- </v-btn> -->
+                                      <v-img src="/icon/萬用取消UI.png"
+                                        @click="changeShowing"
+                                        class="ma-2"
+                                        max-width="2.5vw"
+                                        max-height="2.5vw"></v-img>
+
+                                    </v-row>
+                                    </v-card-actions>
+                                  </v-card>
+
+                            </v-menu>
+                            <v-img :src="betCoin==coin?'/coin/籌碼發光.png':''"
+                                  @click="betCoin=coin"
+                                  v-for="(coin,n) in showingCoin"
+                                  :key="n"
+                                  max-width='4.9vw'
+                                  height='3.9vw'
+                                  >
+
+                                      <v-row
+                                        class="fill-height ma-0"
+                                        align="center"
+                                        justify="center"
+                                      >
+                                        <v-img
+                                              max-width="3.7vw"
+                                              max-height="2.6vw"
+                                              :src="'/coin/'+coin"
+
+
+                                              >
+                                        </v-img>
+                                      </v-row>
+
+                            </v-img>
+                              <div class="text-center mt-1 ml-2"
+                                                    style="width:2.7vw;
+                                                    height:2.6vw;
+                                                      background-image:url('/icon/單人雙倍ui.png');
+                                                      background-repeat: no-repeat;
+                                                      background-position: center;
+                                                      background-size: 100% 100%">
+
+
+                                </div>
+
+
+        </div>
         </div>
         <v-row
         style="height:20vh;width:100%"
@@ -101,9 +208,38 @@ export default {
   //   },
   data () {
     return {
-      drawer:false
+      drawer:false,
+      coinMenu:false,
+      selectedCoin:[],
+      showingCoin:['5籌碼.png','10K籌碼.png','10籌碼.png','20K籌碼.png','50籌碼.png'],
+      coinList:['5籌碼.png','10K籌碼.png','10籌碼.png','20K籌碼.png','20籌碼.png','50籌碼.png','100籌碼.png',
+                '200籌碼.png','500籌碼.png','1000籌碼.png','2000籌碼.png','5000籌碼.png'],
+      betCoin:'5籌碼.png',
             }
-            }
+            },
+  computed:{
+      disableCoinSelect(){
+        if(this.selectedCoin.length==5){
+          return true
+        }else{
+        return false
+         }
+      }
+
+    },
+  methods:{
+      changeShowing(){
+          this.showingCoin=[...this.selectedCoin]
+          this.coinMenu=false
+        },
+      openCoinSelect(){
+        this.selectedCoin=[...this.showingCoin]
+      },
+      cancelCoinSelect(){
+        this.selectedCoin=[]
+        this.coinMenu=false
+      }
+  }
 }
 </script>
 <style scoped>
@@ -149,9 +285,6 @@ export default {
       border-bottom: 1px solid  rgba(255,255,255, 0.3);
     }
 
-    .selectCoin{
-        width: 100%;
-    }
     .room-list{
         font-size: 0.8vw;
     }
@@ -199,4 +332,11 @@ export default {
     outline: 1px solid #F7D8A8;
     outline-offset: -4px;
 }
+.selectCoin{
+        /* background-color: rgba(0,0,0,0.5); */
+        width:32vw;
+        position: absolute;
+        right:0;
+        bottom: 0;
+    }
 </style>

@@ -1,7 +1,7 @@
 <template>
-  <v-container class="pa-0 ma-1" fluid>
+  <v-container class="pa-0 ml-1 mt-0" fluid >
     <!-- first row -->
-      <v-row no-gutters dense>
+      <v-row no-gutters dense class="viewList" >
         <dashboardCard v-for="room in roomList" :key="room.roomId" :room="room" :PropCardSize="PropCardSize"/>
       </v-row>
 
@@ -54,7 +54,30 @@ data() {
 </script>
 
 <style scoped>
-
+.viewList{
+  overflow-y: auto;
+  height: 96vh;
+  background-color:#444444;
+}
+.viewList::-webkit-scrollbar {
+    width: 13px;
+}
+ 
+/* Track */
+.viewList::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(245, 223, 178, 0.2);
+}
+ 
+/* Handle */
+.viewList::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background:#AA8647; 
+    /* -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,1);  */
+}
 
 
 </style>

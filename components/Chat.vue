@@ -12,67 +12,72 @@
               </div>
         </div>
           
-        <v-row  no-gutters class="typer" align="center">
-           <v-col cols="1">
-           <v-menu
-                  offset-y
-                  top
-                  close-on-content-click
-                  :nudge-width="100"
-                  right
-                  :max-width="250" 
-                  >
-              <template v-slot:activator="{ on, attrs }">
-                 <v-btn 
-                 icon 
-                 class="white--text" 
-                 v-bind="attrs"
-                  v-on="on">
-                    <v-icon>mdi-emoticon-outline</v-icon>
-                  </v-btn>
-              </template>
+        <div  class="typer d-flex flex-row">
+           <div style="height:100%;width:10%;" class="d-flex align-center">
+              <v-menu
+                      offset-y
+                      top
+                      close-on-content-click
+                      :nudge-width="100"
+                      right
+                      :max-width="250" 
+                      >
+                  <template v-slot:activator="{ on, attrs }">
+                    <v-btn 
+                    icon 
+                    class="white--text" 
+                    v-bind="attrs"
+                      v-on="on">
+                        <v-icon>mdi-emoticon-outline</v-icon>
+                      </v-btn>
+                  </template>
 
 
-                
-                  <v-card height="300px" class="emoji-picker" color="rgba(0,0,0,0.8)" >
-                     <v-card-subtitle class="pl-2 pb-0 pt-1 white--text" style="background-color:#AA8647">Emojis</v-card-subtitle>
-                    <v-card-text class="emoji-content">
-                      
-                          <span v-for="emoji in emojis"  :key="emoji.key" @click="addEmoji(emoji.character)">{{emoji.character}}</span>
-                      
-                    </v-card-text>
-                  </v-card>
-               
-          </v-menu>
-           </v-col>
+                    
+                      <v-card height="300px" class="emoji-picker" color="rgba(0,0,0,0.8)" >
+                        <v-card-subtitle class="pl-2 pb-0 pt-1 white--text" style="background-color:#AA8647">Emojis</v-card-subtitle>
+                        <v-card-text class="emoji-content">
+                          
+                              <span v-for="emoji in emojis"  :key="emoji.key" @click="addEmoji(emoji.character)">{{emoji.character}}</span>
+                          
+                        </v-card-text>
+                      </v-card>
+                  
+              </v-menu>
+           </div>
           
-          <v-col cols="9">
+            <div style="height:100%; width:70%" class="d-flex align-center" >
               <!-- <v-text-field
                 label="Type Here" 
-                style="font-size:0.8vw" 
                 color="#AA8647"
                 solo
                 dense 
                 flat 
                 clearable 
                 v-model="content"  
-                v-on:keyup.enter="sendMessage"
+                v-on:keyup.enter="sendMessage" 
               ></v-text-field> -->
               <input type="text" placeholder="Type here..." v-on:keyup.enter="sendMessage" v-model="content">
-            
-          </v-col>
-          <v-col cols="2">
-            <v-row no-gutters>
-             <div class="sendButton d-flex justify-center">
+            </div>
+            <div style="height:100%; width:20%;" class="d-flex align-center"  >
+             <!-- <div class="sendButton d-flex justify-center">
                     <v-icon>arrow_drop_up</v-icon>
              </div>
              <div class="sendletter d-flex justify-center align-center">
                     Send
-             </div>
-            </v-row>
+             </div> -->
+               <v-btn 
+                    icon 
+                    class="white--text" 
+                    @click="sendMessage">
+                        <v-icon>send</v-icon>
+                </v-btn>
+             <v-btn small style="font-size:0.6vw;padding:3px"
+             @click="sendMessage">Send</v-btn>
+            </div>
+        </div> 
           
-          </v-col>
-        </v-row>
+         
       
     </v-row>
  
@@ -107,6 +112,17 @@
         this.content=this.content+emoji
 
       },
+      sendMessage(){
+        this.messages.push({content:this.content,date:'aad',user:'mgmg'})
+        this.content=''
+        this.scrollToEnd()
+      },
+       scrollToEnd () {
+        this.$nextTick(() => {
+          var container = this.$el.querySelector('.chat-container')
+          container.scrollTop = container.scrollHeight
+        })
+      },
 
     }
   }
@@ -118,19 +134,19 @@
     height: 90vh;
   }
   .typer{
-    height: 21%;
+    height: 25%;
     width: 100%;
     background-color: #AA8647; 
     font-size: 0.8vw;
   }
    .typer input[type=text]{
     width: 100%; 
-    padding: 4px;
+    padding: 2px;
     background-color: white;
     border: none;
     outline: none;
     border-radius: 5px;
-    font-size: 1vw;
+    font-size: 0.8vw;
   }
   .chat-container{
     box-sizing: border-box;
