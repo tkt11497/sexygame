@@ -211,7 +211,7 @@
                    tile
 
                  >
-                 <v-row style="height:100%; width:100%;" class="pa-0" no-gutters>
+                 <v-row style="width:100%;" class="pa-0 scrollbar" no-gutters>
 
                      <multibetRoadMap v-for="project in projects" :key="project.name" :project="project">
 
@@ -350,6 +350,11 @@ data() {
 
 .tabform{
   height: 42px;
+}
+
+.scrollbar {
+   height: 97vh;
+  overflow-y: scroll;
 }
 
 </style>

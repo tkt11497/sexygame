@@ -471,14 +471,15 @@
 
               </v-row>
 
+
       </v-card>
 
             <!-- end card panel -->
-
-
+              <div class="scrollbar ">
                 <multibetindex v-for="project in projects" :key="project.name" :project="project">
 
                 </multibetindex>
+              </div>
             </v-tab-item>
           </v-tabs>
       </v-col>
@@ -545,6 +546,14 @@ data() {
   background-color: gray;
   position: relative;
 }
+
+.scrollbar {
+   /* margin-left: 1vw; */
+   height: 70vh;
+  overflow-y: scroll;
+}
+
+
 
 
 </style>

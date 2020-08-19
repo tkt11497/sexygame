@@ -1,4 +1,5 @@
 <template>
+
   <!-- card panel -->
     <v-card class="mt-3">
       <div class="dashboard-card" >
@@ -281,4 +282,6 @@
 .tile{
   color:green
 }
+
+
 </style>
