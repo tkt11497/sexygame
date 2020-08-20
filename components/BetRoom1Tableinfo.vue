@@ -166,11 +166,11 @@
                           color='rgba(0, 0, 0, 0.5)'>
 
                           <v-radio-group v-model="betLimit" :mandatory="false">
-                            <v-radio label="10 - 1,000" value='10-1000' on-icon="done" off-icon="" ></v-radio>
-                            <v-radio label="50 - 5,000" value='50-5000' on-icon="done" off-icon="" ></v-radio>
-                            <v-radio label="100 - 5,000" value='100-5000' on-icon="done" off-icon=""></v-radio>
-                            <v-radio label="100 - 10K" value='100-10k' on-icon="done" off-icon=""></v-radio>
-                            <v-radio label="200 - 20K" value='200-20k' on-icon="done" off-icon=""></v-radio>
+                            <v-radio label="10 - 1,000" value='10-1000' on-icon="done" color="#B48A33" off-icon="" ></v-radio>
+                            <v-radio label="50 - 5,000" value='50-5000' on-icon="done" color="#B48A33" off-icon="" ></v-radio>
+                            <v-radio label="100 - 5,000" value='100-5000' on-icon="done" color="#B48A33" off-icon=""></v-radio>
+                            <v-radio label="100 - 10K" value='100-10k' on-icon="done" color="#B48A33" off-icon=""></v-radio>
+                            <v-radio label="200 - 20K" value='200-20k' on-icon="done" color="#B48A33" off-icon=""></v-radio>
                           </v-radio-group>
 
                       </v-list>

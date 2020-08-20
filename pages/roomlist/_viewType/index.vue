@@ -1,7 +1,7 @@
 <template>
-  <v-container class="pa-0 ml-1 mt-0" fluid >
+  <v-container class="pa-0 ml-2 mt-0 viewList" fluid>
     <!-- first row -->
-      <v-row no-gutters dense class="viewList" >
+      <v-row no-gutters dense >
         <dashboardCard v-for="room in roomList" :key="room.roomId" :room="room" :PropCardSize="PropCardSize"/>
       </v-row>
 
@@ -56,8 +56,10 @@ data() {
 <style scoped>
 .viewList{
   overflow-y: auto;
+  overflow-x: hidden;
   height: 96vh;
   background-color:#444444;
+  width:100%;
 }
 .viewList::-webkit-scrollbar {
     width: 13px;

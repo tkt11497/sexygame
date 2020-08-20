@@ -1,6 +1,6 @@
  <template>
         <v-flex :md4="cardSize.md4" :md3="cardSize.md3" :md6="cardSize.md6" xs12>
-          <v-card class="ma-2" elevation="24" raised outlined>
+          <v-card class="ma-1" elevation="24" raised outlined>
             <!-- Card bar for 2 cloumn view -->
             <v-row no-gutters class="dashboard-bar" v-if="PropCardSize=='md6'">
                   <v-flex row class=" align-center">

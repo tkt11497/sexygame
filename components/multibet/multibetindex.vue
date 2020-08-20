@@ -1,7 +1,7 @@
 <template>
 
   <!-- card panel -->
-    <v-card class="mt-3">
+    <v-card class="mt-2">
       <div class="dashboard-card" >
           <v-layout>
             <v-flex mt-3 mb-2 ml-5>
