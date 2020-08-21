@@ -18,7 +18,7 @@
       </div>
     <v-window v-model="window">
             <v-window-item :value="1">
-              <div class="text-center" style="height:46vh; width:100%;background-color:black">
+              <div class="text-center" style="height:45vh; width:100%;background-color:black">
                 <div style="width:100%; height:30%">
                 <PreviewTable :row="6" :column="36"/>
                 </div>

@@ -5,7 +5,7 @@
         dark
         centered
         grow 
-        height="5vh" 
+        height="4vh" 
         hide-slider 
         active-class="tabActive black--text" 
       >
@@ -15,19 +15,19 @@
           :href="`#tab-1`" 
           style="color:#BC8F31;"
         >
-          Table Info
+         <span style="font-size:0.8vw"> Table Info</span>
         </v-tab>
         <v-tab
           :href="`#tab-2`" 
           style="color:#BC8F31;"
         >
-          Video
+         <span style="font-size:0.8vw">  Video</span>
         </v-tab>
         <v-tab
           :href="`#tab-3`" 
           style="color:#BC8F31;"
         >
-          Cards
+         <span style="font-size:0.8vw">  Cards</span>
         </v-tab>
   
         <v-tab-item
@@ -41,7 +41,7 @@
             color="#2E2E2E"
           >
           <v-row style="height:77%;width:100%; margin:0;" class="table-info">
-                <v-col style="width:50%; padding:0;border-right:1px solid white ">
+                <v-col style="width:50%;height:100%; padding:0;border-right:1px solid white ">
                   <v-row style="margin:0;" dense>
                   <v-col cols="6" class="banker"> Banker 65%</v-col>  
                   <v-col cols="6">2242532/1213</v-col>
@@ -85,32 +85,32 @@
                   <v-col cols="6">2242532/1213</v-col>
                   </v-row>
                 </v-col>
-                <v-col style="width:50%; ;padding:0;color:#E7CAA0">
-                    <v-row style="margin:0;" dense>
-                  <v-col cols="6" > Table</v-col>  
-                  <v-col cols="6">C01</v-col>
-                  </v-row>
-                    <v-row style="margin:0;" dense>
+                <v-col style="width:50%;height:100% ;padding:0;color:#E7CAA0">
+                    <v-row style="margin:0;padding:0" dense>
+                      <v-col cols="6" > Table</v-col>  
+                      <v-col cols="6">C01</v-col>
+                    </v-row>
+                    <v-row style="margin:0;padding:0" dense>
                   <v-col cols="6" > Dealer</v-col>  
                   <v-col cols="6">Monkey Dog</v-col>
                   </v-row>
-                    <v-row style="margin:0;" dense>
+                    <v-row style="margin:0;padding:0" dense>
                   <v-col cols="6" > Round</v-col>  
                   <v-col cols="6">3-25</v-col>
                   </v-row>
-                    <v-row style="margin:0;" dense>
+                    <v-row style="margin:0;padding:0" dense>
                   <v-col cols="6" > ID</v-col>  
                   <v-col cols="6">1291200211</v-col>
                   </v-row>
-                    <v-row style="margin:0;" dense>
+                    <v-row style="margin:0;padding:0" dense>
                   <v-col cols="6" > Table Limit</v-col>  
                   <v-col cols="6">20000</v-col>
                   </v-row>
-                    <v-row style="margin:0;" dense>
+                    <v-row style="margin:0;padding:0" dense>
                   <v-col cols="6" > Max. Limit</v-col>  
                   <v-col cols="6">5000</v-col>
                   </v-row>
-                    <v-row style="margin:0;" dense>
+                    <v-row style="margin:0;padding:0" dense>
                   <v-col cols="6" > Min. Limit</v-col>  
                   <v-col cols="6">100</v-col>
                   </v-row>
@@ -154,7 +154,7 @@
                             v-on="on" 
                             color="white" 
                             elevation="24">
-                              <span style="color:black">change</span>
+                              <span style="color:black;font-size:0.7vw">change</span>
                             </v-btn>
                   </template>
 
@@ -190,8 +190,10 @@
             </v-row>
          </v-card>
          <v-banner dark color="black" v-model="exten" single-line transition="slide-y-transition">
-           <span style="color:#E7CAA0">Lucky Six</span><br>
-               <span>{{ changenumbers[betLimit].bet_limit }}</span>
+          
+           <span style="color:#E7CAA0" class="table-info">Lucky Six</span><br>
+               <span class="table-info">{{ changenumbers[betLimit].bet_limit }}</span>
+          
             <!-- <template v-slot:actions="{ dismiss }">
               <v-btn text color="primary" @click="dismiss">Dismiss</v-btn>
               <v-btn text color="primary">Retry</v-btn>
@@ -295,7 +297,7 @@ export default {
         );
     }
     .table-info{
-      font-size: 0.8vw;
+      font-size: 0.7vw;
     }
      .player{
       color:#3470A9

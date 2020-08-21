@@ -171,6 +171,11 @@
   export default {
     props: ['project'],
     favoriteshow:false,
+    data(){
+      return{
+        tab:null
+      }
+    }
   }
 </script>
 

@@ -238,6 +238,11 @@
   export default {
     props: ['project'],
     // favoriteshow: false,
+    data(){
+      return{
+        tab:null
+      }
+    },
     methods: {
       favoritecatch() {
         this.$emit('favoriteshow')

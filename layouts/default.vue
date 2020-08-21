@@ -157,9 +157,9 @@
                     
                             <v-col cols="9" class="text-center">
                             <v-row no-gutters dense >
-                                <v-btn icon color="#C4A76E" class="mt-2">
-                                <v-icon>volume_up</v-icon>
-                                <!-- <v-icon>volume_off</v-icon> -->
+                                <v-btn icon color="#C4A76E" class="mt-2" @click="music==0?music=50:music=0">
+                                <v-icon v-show="music!=0">volume_up</v-icon>
+                                <v-icon v-show="music==0">volume_off</v-icon>
                                 </v-btn>
                                 <v-slider
                                     v-model="music" 
@@ -198,9 +198,9 @@
                     
                             <v-col cols="8" class="text-center">
                             <v-row no-gutters dense >
-                                <v-btn icon color="#C4A76E" class="mt-2">
-                                <v-icon>volume_up</v-icon>
-                                <!-- <v-icon>volume_off</v-icon> -->
+                                <v-btn icon color="#C4A76E" class="mt-2" @click="studioSound==0?studioSound=50:studioSound=0">
+                                <v-icon v-show="studioSound!=0">volume_up</v-icon>
+                                <v-icon v-show="studioSound==0">volume_off</v-icon>
                                 </v-btn>
                                 <v-slider
                                     v-model="studioSound" 
@@ -217,9 +217,9 @@
                     
                             <v-col cols="8" class="text-center">
                                 <v-row no-gutters dense >
-                                    <v-btn icon color="#C4A76E" class="mt-2">
-                                    <v-icon>volume_up</v-icon>
-                                    <!-- <v-icon>volume_off</v-icon> -->
+                                    <v-btn icon color="#C4A76E" class="mt-2" @click="gameVolume==0?gameVolume=50:gameVolume=0">
+                                    <v-icon v-show="gameVolume!=0">volume_up</v-icon>
+                                    <v-icon v-show="gameVolume==0">volume_off</v-icon>
                                     </v-btn>
                                     <v-slider
                                         v-model="gameVolume" 

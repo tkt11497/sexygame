@@ -269,6 +269,7 @@
 export default {
     data(){
         return {
+            tab:null,
             tableInfoShow:false,
             betPoolShow:false,
             progress:50,

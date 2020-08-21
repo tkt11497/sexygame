@@ -62,7 +62,7 @@ data() {
   width:100%;
 }
 .viewList::-webkit-scrollbar {
-    width: 13px;
+    width: 14px;
 }
  
 /* Track */

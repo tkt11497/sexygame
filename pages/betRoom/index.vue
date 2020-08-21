@@ -1,6 +1,6 @@
 <template>
  <v-container class="pa-0 ml-1" fluid style="background-color:black">
-<v-row class="pa-0" style="height:100vh;" no-gutters>
+<v-row class="pa-0" style="height:96vh;" no-gutters>
     <v-col class="pa-0" cols="7">
         <div class="playTable">
            <v-btn class="mx-2"  dark small color="#4F3C2B" style="position:absolute;bottom:1%;left:0" link to="/betRoom/betRoom2">
@@ -47,19 +47,19 @@
                 style="color:#F7D9AB;"
 
               >
-                Baccarat
+               <span style="font-size:0.8vw"> Baccarat</span>
               </v-tab>
               <v-tab
                 :href="`#tab-2`"
                 style="color:#F7D9AB;"
               >
-                No Commission
+                <span style="font-size:0.8vw">  No Commission</span>
               </v-tab>
               <v-tab
                 :href="`#tab-3`"
                 style="color:#F7D9AB;"
               >
-                Cow Cow
+                <span style="font-size:0.8vw">  Cow Cow</span>
               </v-tab>
 
               <v-tab-item

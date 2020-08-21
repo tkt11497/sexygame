@@ -1,43 +1,53 @@
 <template>
-  <v-container class=" ml-2" fluid>
-    <v-row >
+   <v-container class="pa-0 ml-2 mt-0" fluid >
+    <v-row no-gutters style=" height: 96vh;background-color:#1C1C1C;">
       <!-- Main First Col -->
       <v-col cols="8" style="padding:0;" >
 
             <v-tabs
               fixed-tabs
-              background-color=#1c170e
+              background-color=#404040
               dark
-              active-class="brown darken-4 text--accent-4"
+              active-class="tabActive black--text" 
+              hide-slider 
+              height="5vh" 
             >
-              <v-tab href="#navtab-1" style="color:#b5a182;border-right:3px solid black;" v-if="favoriteshow">
-                  My favorite
-              </v-tab>
-              <v-tab href="#navtab-2">
-                All Games
-              </v-tab>
-              <v-tab>
-                All Baccarat
-              </v-tab>
-              <v-tab>
-                Special Baccarat
-              </v-tab>
-              <v-tab>
-                Other Games
+              <v-tab href="#navtab-1" style="color:#b5a182;border-right:3px solid black;" v-if="favoriteTab">
+                <span style="font-size:0.8vw">My favorite <v-icon color="red">favorite</v-icon></span> 
               </v-tab>
 
+              <v-tab href="#navtab-2" style="color:#b5a182;border-right:3px solid black;">
+                  <span style="font-size:0.8vw">All Games</span>
+              </v-tab>
+
+              <v-tab style="color:#b5a182; border-right:3px solid black;">
+                <span style="font-size:0.8vw">All Baccarat</span>
+              </v-tab>
+
+              <v-tab style="color:#b5a182; border-right:3px solid black;">
+                <span style="font-size:0.8vw">Special Baccarat</span>
+              </v-tab>
+
+              <v-tab style="color:#b5a182;">
+                <span style="font-size:0.8vw">Other Games</span>
+              </v-tab>
+         <v-tab-item :value="'navtab-' + 1">
+           <v-row class="scrollbar " no-gutters >
+             <multibetBigRoad v-for="project in projects" :key="project.name" :project="project" 
+             @addFav="AddingFav(project)"
+             v-if="project.isFavourite"/>
+
+            
+            </v-row>
+         </v-tab-item>
 
 
-              <!-- <v-row>
-                <v-col cols="3">card1</v-col>
-                <v-col cols="3">card2</v-col>
-                <v-col cols="3">card3</v-col>
-                <v-col cols="3">card4</v-col>
-              </v-row> -->
+              
         <v-tab-item :value="'navtab-' + 2">
-          <v-row style="width:100%;" class="pa-0" no-gutters>
+          <v-row class="scrollbar " no-gutters >
 
-            <multibetBigRoad v-for="project in projects" :key="project.name" :project="project">
+            <multibetBigRoad v-for="project in projects" :key="project.name" :project="project" 
+            @addFav="AddingFav(project)">
 
             </multibetBigRoad>
 
@@ -67,21 +77,34 @@ export default {
     multibetSlite,
     multibetBigRoad
   },
+  methods:{
+    AddingFav(project){
+      project.isFavourite=!project.isFavourite
+    }
+  },
+  computed:{
+    favoriteTab(){
+      if(this.projects.filter(project=>project.isFavourite==true).length==0){
+        return false
+      }else{
+        return true
+      }
+    }
+  },
 data() {
   return {
     betLimit:'10-1000',
-    favoriteshow: false,
     projects: [
-      {seri:'C01',name:'SIKEN',user: '12', bb: '12', pp: '23',tt: '220', status:'Dealing'},
-      {seri:'C02',name:'HONGLONG',user: '52', bb: '123', pp: '20',tt: '220', status:'Waiting'},
-      {seri:'C03',name:'KUNHEAR',user: '20', bb: '12', pp: '230',tt: '2020', status:'12'},
-      {seri:'C04',name:'CHEA_C',user: '22', bb: '12', pp: '232',tt: '220', status:'Player Win'},
-      {seri:'C05',name:'MAkara',user: '22', bb: '123', pp: '230',tt: '220', status:'Shuffling'},
-      {seri:'C06',name:'HEAT_S',user: '220', bb: '123', pp: '230',tt: '220', status:'Waiting'},
-      {seri:'C07',name:'SVEYNAR',user: '22', bb: '123', pp: '230',tt: '220', status:'12'},
-      {seri:'C08',name:'CHANDA',user: '220', bb: '120', pp: '2',tt: '202', status:'Shuffling'},
-      {seri:'C09',name:'YORNNEN',user: '22', bb: '123', pp: '20',tt: '220', status:'Dealing'},
-      {seri:'C10',name:'PHALLA',user: '22', bb: '200', pp: '230',tt: '200', status:'Waiting'},
+      {seri:'C01',name:'SIKEN',user: '12', bb: '12', pp: '23',tt: '220', status:'Dealing',isFavourite:false},
+      {seri:'C02',name:'HONGLONG',user: '52', bb: '123', pp: '20',tt: '220', status:'Waiting',isFavourite:false},
+      {seri:'C03',name:'KUNHEAR',user: '20', bb: '12', pp: '230',tt: '2020', status:'12',isFavourite:false},
+      {seri:'C04',name:'CHEA_C',user: '22', bb: '12', pp: '232',tt: '220', status:'Player Win',isFavourite:false},
+      {seri:'C05',name:'MAkara',user: '22', bb: '123', pp: '230',tt: '220', status:'Shuffling',isFavourite:false},
+      {seri:'C06',name:'HEAT_S',user: '220', bb: '123', pp: '230',tt: '220', status:'Waiting',isFavourite:false},
+      {seri:'C07',name:'SVEYNAR',user: '22', bb: '123', pp: '230',tt: '220', status:'12',isFavourite:false},
+      {seri:'C08',name:'CHANDA',user: '220', bb: '120', pp: '2',tt: '202', status:'Shuffling',isFavourite:false},
+      {seri:'C09',name:'YORNNEN',user: '22', bb: '123', pp: '20',tt: '220', status:'Dealing',isFavourite:false},
+      {seri:'C10',name:'PHALLA',user: '22', bb: '200', pp: '230',tt: '200', status:'Waiting',isFavourite:false},
 
     ],
     changenumbers: {
@@ -163,6 +186,21 @@ data() {
   height: 9vh;
   width: 100%;
   margin-top:0.1vh;
+}
+.tabActive{
+      background-image:
+      linear-gradient(
+          rgb(255, 255, 255) 63%,
+          #B98F38
+        );
+
+    }
+.scrollbar {
+  
+  overflow-y: auto;
+  height: 90vh;
+  background-color:#444444;
+  overflow-x:hidden;
 }
 
 

@@ -1,7 +1,9 @@
 <template>
   <div>
                 <div class="playTable">
-
+                    <div class="room-title d-flex justify-left align-center black--text">
+                      Baccrart C01
+                    </div>
                 </div>
           <!-- start slite -->
 
@@ -9,7 +11,8 @@
                           <v-sheet
                             class="d-flex justify-center "
                             elevation="8">
-                                  <v-slide-group style="height:5vh;width:24vw" class="d-flex justify-center align-center">
+                                  <v-slide-group center-active 
+                                  style="height:5vh;width:24vw" class="d-flex justify-center align-center">
                                   
                                         <v-slide-item
                                             v-slot:default="{ active, toggle }" 
@@ -264,6 +267,7 @@
     height: 30vh;
     margin: 0;
     padding: 0;
+    position: relative;
 }
 .tableBackground{
   background-image:
@@ -282,6 +286,17 @@
 .selectCoin{
         width: 100%;
         
+    }
+.room-title{
+        width:30%;
+        height:5vh;
+        position:absolute;
+        top:0;
+        left:0;
+        font-size: 1vw;
+        background-image:linear-gradient(to right, rgb(255, 255, 255) 13%, #B98F38);
+        opacity: 0.9;
+          
     }
 </style>
 

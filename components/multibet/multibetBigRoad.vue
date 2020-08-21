@@ -10,7 +10,9 @@
                       <span class="ml-1 mt-1">Seri {{ project.seri}}</span>
                     <v-spacer></v-spacer><v-spacer></v-spacer><v-spacer></v-spacer><v-spacer></v-spacer><v-spacer></v-spacer><v-spacer></v-spacer><v-spacer></v-spacer><v-spacer></v-spacer><v-spacer></v-spacer><v-spacer></v-spacer><v-spacer></v-spacer>
 
-                      <v-btn @click="favoriteshow=true" text icon medium color="#787878"><v-icon>favorite</v-icon></v-btn>
+                      <v-btn @click="addFav" text icon medium color="#787878">
+                        <v-icon :color="project.isFavourite?'red':''">favorite</v-icon>
+                      </v-btn>
                     </v-flex>
 
                   <v-row style="height:30px;">
@@ -177,7 +179,21 @@
 
 <script>
   export default {
-    props: ['project']
+    props: ['project'],
+    data(){
+      return{
+        isFav:false,
+        tab:null
+      }
+    },
+    methods:{
+      addFav(){
+        // this.isFav=!this.isFav
+        
+          this.$emit('addFav')
+        
+    }
+  }
   }
 </script>
 
