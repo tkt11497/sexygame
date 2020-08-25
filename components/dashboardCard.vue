@@ -91,6 +91,7 @@
                               <div :style="{width:'100%', height:'100%', 
                                 'background-image': 'url(\'/icon/'+ 
                                 `${PropCardSize=='md6'?'珠盤路單(大).png':PropCardSize=='md4'?'檯桌棋盤格.png':'珠盤路單(小).png'}`
+                                //chaing background image based on card size and column views
                                 + '\')',
                                 'background-repeat': 'no-repeat',
                                 'background-position': 'center',

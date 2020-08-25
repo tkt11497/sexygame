@@ -1,12 +1,11 @@
 <template>
    <v-container class="pa-0 ml-2 mt-0" fluid >
-    <v-row no-gutters style=" height: 96vh;background-color:#1C1C1C;">
+    <v-row no-gutters style=" height: 96.5vh;background-color:#1C1C1C;">
       <!-- Main First Col -->
       <v-col cols="8" style="padding:0;" >
-
             <v-tabs
               fixed-tabs
-              background-color=#404040
+              background-color='#404040'
               dark
               active-class="tabActive black--text" 
               hide-slider 
@@ -32,7 +31,7 @@
                 <span style="font-size:0.8vw">Other Games</span>
               </v-tab>
          <v-tab-item :value="'navtab-' + 1">
-           <v-row class="scrollbar " no-gutters >
+           <v-row class="scrollbar " no-gutters dense align="start" >
              <multibetBigRoad v-for="project in projects" :key="project.name" :project="project" 
              @addFav="AddingFav(project)"
              v-if="project.isFavourite"/>
@@ -43,18 +42,19 @@
 
 
               
-        <v-tab-item :value="'navtab-' + 2">
-          <v-row class="scrollbar " no-gutters >
+            <v-tab-item :value="'navtab-' + 2">
+              <v-row class="scrollbar " no-gutters dense align="start">
 
-            <multibetBigRoad v-for="project in projects" :key="project.name" :project="project" 
-            @addFav="AddingFav(project)">
+                <multibetBigRoad v-for="project in projects" :key="project.name" :project="project" 
+                @addFav="AddingFav(project)">
 
-            </multibetBigRoad>
+                </multibetBigRoad>
 
-          </v-row>
+              </v-row>
 
-        </v-tab-item>
+            </v-tab-item>
           </v-tabs>
+        
       </v-col>
 <!-- End Main First Col -->
 
@@ -98,13 +98,16 @@ data() {
       {seri:'C01',name:'SIKEN',user: '12', bb: '12', pp: '23',tt: '220', status:'Dealing',isFavourite:false},
       {seri:'C02',name:'HONGLONG',user: '52', bb: '123', pp: '20',tt: '220', status:'Waiting',isFavourite:false},
       {seri:'C03',name:'KUNHEAR',user: '20', bb: '12', pp: '230',tt: '2020', status:'12',isFavourite:false},
-      {seri:'C04',name:'CHEA_C',user: '22', bb: '12', pp: '232',tt: '220', status:'Player Win',isFavourite:false},
+      {seri:'C04',name:'CHEA_C',user: '22', bb: '12', pp: '232',tt: '220', status:'PlayerWin',isFavourite:false},
       {seri:'C05',name:'MAkara',user: '22', bb: '123', pp: '230',tt: '220', status:'Shuffling',isFavourite:false},
       {seri:'C06',name:'HEAT_S',user: '220', bb: '123', pp: '230',tt: '220', status:'Waiting',isFavourite:false},
       {seri:'C07',name:'SVEYNAR',user: '22', bb: '123', pp: '230',tt: '220', status:'12',isFavourite:false},
       {seri:'C08',name:'CHANDA',user: '220', bb: '120', pp: '2',tt: '202', status:'Shuffling',isFavourite:false},
       {seri:'C09',name:'YORNNEN',user: '22', bb: '123', pp: '20',tt: '220', status:'Dealing',isFavourite:false},
       {seri:'C10',name:'PHALLA',user: '22', bb: '200', pp: '230',tt: '200', status:'Waiting',isFavourite:false},
+       {seri:'C10',name:'PHALLA',user: '22', bb: '200', pp: '230',tt: '200', status:'Waiting',isFavourite:false},
+        {seri:'C10',name:'PHALLA',user: '22', bb: '200', pp: '230',tt: '200', status:'Waiting',isFavourite:false},
+         {seri:'C10',name:'PHALLA',user: '22', bb: '200', pp: '230',tt: '200', status:'Waiting',isFavourite:false},
 
     ],
     changenumbers: {
@@ -198,7 +201,7 @@ data() {
 .scrollbar {
   
   overflow-y: auto;
-  height: 90vh;
+  height: 90.5vh;
   background-color:#444444;
   overflow-x:hidden;
 }

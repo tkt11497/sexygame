@@ -12,8 +12,8 @@
           hide-slider 
           height="5vh"
         >
-              <v-tab href="#navtab-1" style="color:#b5a182;border-right:3px solid black;" v-if="favoriteshow">
-                <span style="font-size:0.8vw">My favorite</span>
+              <v-tab href="#navtab-1" style="color:#b5a182;border-right:3px solid black;" v-if="favoriteTab">
+                <span style="font-size:0.8vw">My favorite <v-icon color="red">favorite</v-icon></span> 
               </v-tab>
 
               <v-tab href="#navtab-2" style="color:#b5a182;border-right:3px solid black;">
@@ -34,10 +34,15 @@
 
 
             <!-- Start favorite  -->
-            <v-tab-item :value="'navtab-' + 1">
-            
-            </v-tab-item>
+             <v-tab-item :value="'navtab-' + 1">
+                  <v-row class="scrollbar " no-gutters >
+                            <multibetindex v-for="project in projects" :key="project.name" :project="project"
+                             @addFav="AddingFav(project)"
+                              v-if="project.isFavourite" />
 
+                        
+                  </v-row>
+              </v-tab-item>
 
              
   <!-- End Favorite -->
@@ -46,7 +51,8 @@
     <!-- card panel -->
                 <v-tab-item :value="'navtab-' + 2">
                           <v-row class="scrollbar " no-gutters >
-                            <multibetindex v-for="project in projects" :key="project.name" :project="project" />
+                            <multibetindex v-for="project in projects" :key="project.name" :project="project" 
+                            @addFav="AddingFav(project)" />
 
                         
                           </v-row>
@@ -77,19 +83,34 @@ export default {
     multibetindex,
     multibetSlite
   },
+  methods:{
+    AddingFav(project){
+      console.log('sadsad')
+      project.isFavourite=!project.isFavourite
+    }
+  },
+  computed:{
+    favoriteTab(){
+      if(this.projects.filter(project=>project.isFavourite==true).length==0){
+        return false
+      }else{
+        return true
+      }
+    }
+  },
 data() {
   return {
     projects: [
-      {seri:'C01',name:'SIKEN',user: '123300', bb: '123', pp: '2322200',tt: '2020', status:'Dealing'},
-      {seri:'C02',name:'HONGLONG',user: '5200', bb: '123', pp: '2322200',tt: '2020', status:'Waiting'},
-      {seri:'C03',name:'KUNHEAR',user: '2200', bb: '123', pp: '2322200',tt: '2020', status:'12'},
-      {seri:'C04',name:'CHEA_C',user: '2200', bb: '123', pp: '2322200',tt: '2020', status:'Player Win'},
-      {seri:'C05',name:'MAkara',user: '2200', bb: '123', pp: '2322200',tt: '2020', status:'Shuffling'},
-      {seri:'C06',name:'HEAT_S',user: '2200', bb: '1232', pp: '2322200',tt: '2020', status:'Waiting'},
-      {seri:'C07',name:'SVEYNAR',user: '2200', bb: '322', pp: '2322200',tt: '2020', status:'12'},
-      {seri:'C08',name:'CHANDA',user: '2200', bb: '1232', pp: '2322200',tt: '2020', status:'Shuffling'},
-      {seri:'C09',name:'YORNNEN',user: '2200', bb: '123', pp: '2322200',tt: '2020', status:'Dealing'},
-      {seri:'C10',name:'PHALLA',user: '2200', bb: '1232', pp: '2322200',tt: '2020', status:'Waiting'},
+      {seri:'C01',name:'SIKEN',user: '123300', bb: '123', pp: '2322200',tt: '2020', status:'Dealing',isFavourite:false},
+      {seri:'C02',name:'HONGLONG',user: '5200', bb: '123', pp: '2322200',tt: '2020', status:'Waiting',isFavourite:false},
+      {seri:'C03',name:'KUNHEAR',user: '2200', bb: '123', pp: '2322200',tt: '2020', status:'12',isFavourite:false},
+      {seri:'C04',name:'CHEA_C',user: '2200', bb: '123', pp: '2322200',tt: '2020', status:'Player Win',isFavourite:false},
+      {seri:'C05',name:'MAkara',user: '2200', bb: '123', pp: '2322200',tt: '2020', status:'Shuffling',isFavourite:false},
+      {seri:'C06',name:'HEAT_S',user: '2200', bb: '1232', pp: '2322200',tt: '2020', status:'Waiting',isFavourite:false},
+      {seri:'C07',name:'SVEYNAR',user: '2200', bb: '322', pp: '2322200',tt: '2020', status:'12',isFavourite:false},
+      {seri:'C08',name:'CHANDA',user: '2200', bb: '1232', pp: '2322200',tt: '2020', status:'Shuffling',isFavourite:false},
+      {seri:'C09',name:'YORNNEN',user: '2200', bb: '123', pp: '2322200',tt: '2020', status:'Dealing',isFavourite:false},
+      {seri:'C10',name:'PHALLA',user: '2200', bb: '1232', pp: '2322200',tt: '2020', status:'Waiting',isFavourite:false},
 
     ],
      favoriteshow: false,
@@ -121,7 +142,7 @@ data() {
   
   overflow-y: auto;
   height: 90vh;
-  background-color:#444444;
+  background-color:#1C1C1C;
    
 }
  .tabActive{

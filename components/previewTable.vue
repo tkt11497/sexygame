@@ -15,15 +15,24 @@
         :width="`${100/column}%`"
         :height="`${100/row}%`" 
       >
-        <hoverPreviewResult v-if="n<chance"/>
+        <HoverPreviewResult v-if="n<chance">
+          <template v-slot:item="slotProps" >
+                 <v-avatar color="indigo" size="16" 
+                    v-bind="slotProps.activate.attrs"
+                    v-on="slotProps.activate.on">
+                    <span class="white--text" style="font-size:0.5vw">P</span>
+                 </v-avatar>
+          </template>
+           
+        </HoverPreviewResult>
       </v-card>
     </v-card>
 </template>
 <script>
-import hoverPreviewResult from '@/components/hoverPreviewResult';
+import HoverPreviewResult from '@/components/HoverPreviewResult';
   export default {
     components:{
-        hoverPreviewResult
+        HoverPreviewResult
     },
      props: ['row','column','tiles'],
 data(){

@@ -57,7 +57,7 @@ data() {
 .viewList{
   overflow-y: auto;
   overflow-x: hidden;
-  height: 96vh;
+  height: 95.5vh;
   background-color:#444444;
   width:100%;
 }

@@ -1,5 +1,5 @@
 <template>
-  <v-container  class="pa-0 ml-1 mt-0" fluid>
+  <v-container  class="pa-0 ml-2 mt-0" fluid>
     <v-row no-gutters style=" height: 96vh;background-color:#1C1C1C;">
 
       <!-- Main First Col -->
@@ -13,9 +13,9 @@
               hide-slider 
               height="5vh"
             >
-            <v-tab href="#navtab-1" style="color:#b5a182;border-right:3px solid black;" v-if="favoriteshow">
-                  <span style="font-size:0.8vw">My favorite</span>
-            </v-tab>
+            <v-tab href="#navtab-1" style="color:#b5a182;border-right:3px solid black;" v-if="favoriteTab">
+                <span style="font-size:0.8vw">My favorite <v-icon color="red">favorite</v-icon></span> 
+              </v-tab>
               <v-tab href="#navtab-2" style="color:#b5a182;border-right:3px solid black;">
                   <span style="font-size:0.8vw">All Games</span>
               </v-tab>
@@ -31,7 +31,13 @@
 
           <!-- Start favorite  -->
           <v-tab-item :value="'navtab-' + 1">
-       
+             <v-row  class="scrollbar" no-gutters>
+                 <multibetRoadMap v-for="project in projects" :key="project.name" :project="project" 
+                    @addFav="AddingFav(project)"
+                    v-if="project.isFavourite" >
+
+                     </multibetRoadMap>
+             </v-row>
           </v-tab-item>
 <!-- End Favorite -->
 
@@ -40,7 +46,8 @@
                 
                  <v-row  class="scrollbar" no-gutters>
 
-                     <multibetRoadMap v-for="project in projects" :key="project.name" :project="project">
+                     <multibetRoadMap v-for="project in projects" :key="project.name" :project="project" 
+                     @addFav="AddingFav(project)">
 
                      </multibetRoadMap>
 
@@ -72,20 +79,35 @@ export default {
     multibetRoadMap,
     multibetSlite
   },
+  methods:{
+    AddingFav(project){
+      console.log('sadsad')
+      project.isFavourite=!project.isFavourite
+    }
+  },
+  computed:{
+    favoriteTab(){
+      if(this.projects.filter(project=>project.isFavourite==true).length==0){
+        return false
+      }else{
+        return true
+      }
+    }
+  },
 data() {
   return {
     betLimit:'10-1000',
     projects: [
-      {seri:'C01',name:'SIKEN',user: '123300', bb: '123', pp: '2300',tt: '2020', status:'Dealing'},
-      {seri:'C02',name:'HONGLONG',user: '5200', bb: '123', pp: '20',tt: '2020', status:'Waiting'},
-      {seri:'C03',name:'KUNHEAR',user: '2200', bb: '123', pp: '2320',tt: '2020', status:'12'},
-      {seri:'C04',name:'CHEA_C',user: '2200', bb: '2200', pp: '2300',tt: '2020', status:'Player Win'},
-      {seri:'C05',name:'MAkara',user: '2200', bb: '200', pp: '2320',tt: '2020', status:'Shuffling'},
-      {seri:'C06',name:'HEAT_S',user: '2200', bb: '200', pp: '200',tt: '2020', status:'Waiting'},
-      {seri:'C07',name:'SVEYNAR',user: '2200', bb: '1232', pp: '23220',tt: '2020', status:'12'},
-      {seri:'C08',name:'CHANDA',user: '2200', bb: '12300', pp: '23',tt: '2020', status:'Shuffling'},
-      {seri:'C09',name:'YORNNEN',user: '2200', bb: '1200', pp: '23200',tt: '2020', status:'Dealing'},
-      {seri:'C10',name:'PHALLA',user: '2200', bb: '1200', pp: '23200',tt: '2020', status:'Waiting'},
+      {seri:'C01',name:'SIKEN',user: '123300', bb: '123', pp: '2300',tt: '2020', status:'Dealing',isFavourite:false},
+      {seri:'C02',name:'HONGLONG',user: '5200', bb: '123', pp: '20',tt: '2020', status:'Waiting',isFavourite:false},
+      {seri:'C03',name:'KUNHEAR',user: '2200', bb: '123', pp: '2320',tt: '2020', status:'12',isFavourite:false},
+      {seri:'C04',name:'CHEA_C',user: '2200', bb: '2200', pp: '2300',tt: '2020', status:'PlayerWin',isFavourite:false},
+      {seri:'C05',name:'MAkara',user: '2200', bb: '200', pp: '2320',tt: '2020', status:'Shuffling',isFavourite:false},
+      {seri:'C06',name:'HEAT_S',user: '2200', bb: '200', pp: '200',tt: '2020', status:'Waiting',isFavourite:false},
+      {seri:'C07',name:'SVEYNAR',user: '2200', bb: '1232', pp: '23220',tt: '2020', status:'12',isFavourite:false},
+      {seri:'C08',name:'CHANDA',user: '2200', bb: '12300', pp: '23',tt: '2020', status:'Shuffling',isFavourite:false},
+      {seri:'C09',name:'YORNNEN',user: '2200', bb: '1200', pp: '23200',tt: '2020', status:'Dealing',isFavourite:false},
+      {seri:'C10',name:'PHALLA',user: '2200', bb: '1200', pp: '23200',tt: '2020', status:'Waiting',isFavourite:false},
 
     ],
     changenumbers: {
@@ -95,7 +117,6 @@ data() {
       '100-10k':{bet_limit:'100 - 10K', banker:'10,000', player:'10,000', tie:'1250', pair:'909'},
       '200-20k':{bet_limit:'200 - 20K', banker:'20,000', player:'20,000', tie:'2500', pair:'1818'},
     },
-    favoriteshow: false,
     doneresult:false,
     headers: [
         {

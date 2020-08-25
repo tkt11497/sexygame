@@ -18,64 +18,78 @@
       </div>
     <v-window v-model="window">
             <v-window-item :value="1">
-              <div class="text-center" style="height:45vh; width:100%;background-color:black">
-                <div style="width:100%; height:30%">
-                <PreviewTable :row="6" :column="36"/>
-                </div>
-                <v-divider/>
-                <div style="width:100%; height:10%">
-                  <PreviewTable :row="3" :column="36"/>
-                </div>
-                <v-divider/>
-                <v-row style="width:100%; height:10%" no-gutters>
-                  <div style="width:49.7%; height:100%; ">
-                  <PreviewTable :row="3" :column="16"/>
-                  </div>
-                  <v-divider vertical/>
-                  <div style="width:50%; height:100%">
-                    <PreviewTable :row="3" :column="16"/>
-                  </div>
-                </v-row>
-                <v-divider/>
-                <div style="width:100%; height:40%">
-                  <PreviewTable :row="6" :column="18"/>
-                </div>
-                <v-row no-gutters style="width:100%; height:10%">
-                  <div class="d-flex align-center justify-left room-list" style="width:50%; height:100%; background-color:black">
-                    <span class="font-weight-bold red--text ml-1">庄</span>
-                    <span class="font-weight-bold white--text ml-1">13</span>
-                    <span class="font-weight-bold blue--text ml-1">圓</span>
-                    <span class="font-weight-bold white--text ml-1">123</span>
-                    <span class="font-weight-bold green--text ml-1">和</span>
-                    <span class="font-weight-bold white--text ml-1">13</span>
-                    <span class="font-weight-bold red--text ml-1">庄庄</span>
-                    <span class="font-weight-bold white--text ml-1">13</span>
-                    <span class="font-weight-bold blue--text ml-1">和和</span>
-                    <span class="font-weight-bold white--text ml-1">133</span>
-                  </div>
-                  <div class="d-flex align-center justify-left room-list" style="width:50%; height:100%; background-color:black">
-                      <v-btn small color="#c70000" class="ml-1"> <span class="white--text">庄問路</span></v-btn>
-                      <v-img
-                                          max-width="1vw"
-                                          max-height="1vw"
-                                          src="/icon/大紅圈.png"
-                                        />
-                      <v-avatar color="#c70000" class="ml-1" size="15">
+              <div style="height:45vh;width:100%">
+                    <div class="text-center tableBg" >
+                      <div style="width:100%; height:25%;">
                         
-                      </v-avatar>
-                      <span class="font-weight-bold red--text ml-1 mr-5  ">/</span>
-                      <v-btn small color="#2d30b1" class="ml-1"><span class="white--text"> 閒問路</span></v-btn>
-                       <v-img
-                                          max-width="1vw"
-                                          max-height="1vw"
-                                          src="/icon/大藍圈.png"
-                                        />
-                      <v-avatar color="#2d30b1" class="ml-1" size="15">
+                      </div>
+                      
+                      <div style="width:100%; height:12.5%;">
+                      
+                      </div>
+                    
+                      <v-row style="width:100%; height:12.7%" no-gutters>
+                        <div style="width:50%; height:100%; ">
                         
-                      </v-avatar>
-                      <span class="font-weight-bold ml-1" style="color:#2d30b1">/</span>
-                  </div>
-                </v-row>
+                        </div>
+                        
+                        <div style="width:50%; height:100%;">
+                          
+                        </div>
+                      </v-row>
+                    
+                      <div style="width:100%; height:50%;" class="d-flex align-content-start flex-wrap flex-column">
+                          <HoverPreviewResult v-for="n in 12" :key="n">
+                              <template v-slot:item="slotProps" >
+                                    <v-img src="/icon/圓庄.png" 
+                                      max-height="1.6vw" 
+                                      max-width='1.6vw' 
+                                      v-bind="slotProps.activate.attrs"
+                                      v-on="slotProps.activate.on"
+                                      />
+                              </template>
+                              
+                          </HoverPreviewResult>
+
+                      </div>
+                    
+                    </div>
+                    <v-row no-gutters style="width:100%; height:10%">
+                        <div class="d-flex align-center justify-left room-list" style="width:50%; height:100%; background-color:black">
+                          <span class="font-weight-bold red--text ml-1">庄</span>
+                          <span class="font-weight-bold white--text ml-1">13</span>
+                          <span class="font-weight-bold blue--text ml-1">圓</span>
+                          <span class="font-weight-bold white--text ml-1">123</span>
+                          <span class="font-weight-bold green--text ml-1">和</span>
+                          <span class="font-weight-bold white--text ml-1">13</span>
+                          <span class="font-weight-bold red--text ml-1">庄庄</span>
+                          <span class="font-weight-bold white--text ml-1">13</span>
+                          <span class="font-weight-bold blue--text ml-1">和和</span>
+                          <span class="font-weight-bold white--text ml-1">133</span>
+                        </div>
+                        <div class="d-flex align-center justify-left room-list" style="width:50%; height:100%; background-color:black">
+                            <v-btn small color="#c70000" class="ml-1"> <span class="white--text">庄問路</span></v-btn>
+                            <v-img
+                                                max-width="1vw"
+                                                max-height="1vw"
+                                                src="/icon/大紅圈.png"
+                                              />
+                            <v-avatar color="#c70000" class="ml-1" size="15">
+                              
+                            </v-avatar>
+                            <span class="font-weight-bold red--text ml-1 mr-5  ">/</span>
+                            <v-btn small color="#2d30b1" class="ml-1"><span class="white--text"> 閒問路</span></v-btn>
+                            <v-img
+                                                max-width="1vw"
+                                                max-height="1vw"
+                                                src="/icon/大藍圈.png"
+                                              />
+                            <v-avatar color="#2d30b1" class="ml-1" size="15">
+                              
+                            </v-avatar>
+                            <span class="font-weight-bold ml-1" style="color:#2d30b1">/</span>
+                        </div>
+                      </v-row>
               </div>
             </v-window-item>
   
@@ -120,6 +134,15 @@ export default {
 }
 </script>
 <style scoped>
+.tableBg{
+  height:90%; 
+  width:100%;
+  background-color:#2E2E2E;
+  background-image: url('/icon/單人棋盤格.png');
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size: 100% 100%
+}
  .windowActive{
       background-color:#AA8647 ;
       
