@@ -183,7 +183,9 @@
                 active-class="tabActive black--text"
                 dark
                 hide-slider  
-                centered
+                centered 
+                show-arrows 
+                center-active
           >
 
               <v-tab href="#tab-1" style="color:#b5a182; font-size:0.55vw;width:33.33%"   >

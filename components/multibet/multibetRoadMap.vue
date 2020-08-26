@@ -3,7 +3,7 @@
   <v-flex md6 >
   <!-- Start card -->
     <v-card class="ma-1" elevation="24" raised  >
-        <v-row style="height:3.5vh;" no-gutters class="text-size" align="center">
+        <v-row  no-gutters class="text-size" align="center">
              <v-flex  class="align-center ml-1" >
                <span class="black--text">Seri {{ project.seri}}</span>
              </v-flex>

@@ -145,8 +145,8 @@
                     <v-btn icon class="pa-2 ma-1"  
                     v-bind="attrs"
                     v-on="on">
-                      <v-icon class="pa-2" v-show="soundOn" color="#B98F38">audiotrack</v-icon>
-                      <v-icon class="pa-2" v-show="!soundOn" color="#B98F38">music_off</v-icon>
+                      <v-icon class="pa-2" v-show="music!=0" color="#B98F38">audiotrack</v-icon>
+                      <v-icon class="pa-2" v-show="music==0" color="#B98F38">music_off</v-icon>
                     </v-btn>
                   </template>
                       <v-card color="rgba(34, 34, 34,0.9)">

@@ -63,7 +63,7 @@
 
                                 </v-flex>
                                 <v-flex >
-                                      <div class="white--text textSize text-center" style="background:#404040; height:30px;">
+                                      <div class="d-flex white--text textSize justify-center align-center" style="background:#404040; height:30px;">
                                         <span> {{room.status }}</span>
                                       </div>
                                 </v-flex>

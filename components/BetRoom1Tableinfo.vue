@@ -117,7 +117,7 @@
                 </v-col>
           </v-row>
 
-           <v-row style="height:19%;width:100%; margin:0;background-color:black "  class="table-info">
+           <v-row style="height:19%;width:100%; margin:0;background-color:black;z-index:22"  class="table-info">
              <v-col cols="2" class="text-center">
                <span style="color:#E7CAA0">Banker</span><br>
                <span>{{ changenumbers[betLimit].bet_limit }}</span>
@@ -154,7 +154,7 @@
                             v-on="on" 
                             color="white" 
                             elevation="24">
-                              <span style="color:black;font-size:0.7vw">change</span>
+                              <span style="color:black;font-size:0.7vw;">change</span>
                             </v-btn>
                   </template>
 

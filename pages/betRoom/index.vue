@@ -1,8 +1,14 @@
 <template>
  <v-container class="pa-0 ml-1" fluid style="background-color:black">
+   
+    <v-tour name="myTour" :steps="steps"></v-tour>
+  
 <v-row class="pa-0" style="height:96vh;" no-gutters>
+  <!-- <div style="width:100%;height:100%;background-color:black;opacity:0.8;position:absolute;z-index:20">
+     a
+   </div> -->
     <v-col class="pa-0" cols="7">
-        <div class="playTable">
+        <div class="playTable" id="v-step-0">
            <v-btn class="mx-2"  dark small color="#4F3C2B" style="position:absolute;bottom:1%;left:0" link to="/betRoom/betRoom2">
               <v-icon dark>picture_in_picture</v-icon>
             </v-btn>
@@ -38,7 +44,7 @@
         dark
         height="4vh"
         hide-slider
-        active-class="tabActive black--text"
+        active-class="tabActive black--text" 
       >
 
 
@@ -194,7 +200,7 @@
       </v-tabs>
        <!--total bet amount-->
           <div
-            style="height:4vh ;background-color:#023016"
+            style="height:4vh ;background-color:#023016;"
             class="d-flex justify-center align-center white--text"
             >
                 Total BetAmount : 0.0
@@ -219,7 +225,7 @@
                                                     background-image:url('/icon/七人座自定UI.png');
                                                     background-repeat: no-repeat;
                                                     background-position: center;
-                                                    background-size: 100% 100%"
+                                                    background-size: 100% 100%;"
                                                   v-bind="attrs"
                                                     v-on="on"
                                                     @click="openCoinSelect">
@@ -312,14 +318,14 @@
     </v-col>
     <!--betroom detail-->
     <v-col cols="5" class="pa-0">
-     <BetRoom1Tableinfo/>
+     <BetRoom1Tableinfo />
   <v-row no-gutters>
     <v-col cols="9">
       <!--betroom history and other betrooms history-->
-      <BetHistory/>
+      <BetHistory id="v-step-1" />
     </v-col>
     <v-col cols="3">
-      <BetRoom1SideTable/>
+      <BetRoom1SideTable  id="v-step-2"  />
 
     </v-col>
   </v-row>
@@ -330,7 +336,7 @@
 
 </v-row>
 
-      <button v-show="!drawer" class="Custombutton"  style="position:absolute; top:12vh;right:0" @click="drawer=true" >
+      <button v-show="!drawer" class="Custombutton"  style="position:absolute; top:12vh;right:0;" @click="drawer=true" >
         <p class="py-5" style="writing-mode: vertical-rl;text-orientation: upright;letter-spacing:-2px;font-size:0.8vw">
           tables
         </p>
@@ -350,6 +356,9 @@ export default {
   //       previewTable,
   //       tableDrawer
   //   },
+   mounted () {
+      this.$tours['myTour'].start()
+    },
     computed:{
       disableCoinSelect(){
         if(this.selectedCoin.length==5){
@@ -362,6 +371,23 @@ export default {
     },
   data () {
     return {
+      steps: [
+          {
+            target: '#v-step-0',  // We're using document.querySelector() under the hood
+            content: `Discover <strong>Vue Tour</strong>!`
+          },
+          {
+            target: '#v-step-1',
+            content: 'An awesome plugin made with Vue.js!'
+          },
+          {
+            target: '#v-step-2',
+            content: 'Try it, you\'ll love it!<br>You can put HTML in the steps and completely customize the DOM to suit your needs.',
+            params: {
+              placement: 'top'
+            }
+          }
+        ],
       drawer:false,
       coinMenu:false,
       selectedCoin:[],
@@ -432,7 +458,8 @@ export default {
         background-color:rgb(3, 62, 29);
         width:100%;
         height:100%;
-        cursor: url('/21.png') 2 2,auto
+        cursor: url('/21.png') 2 2,auto;
+        z-index: 10
     }
     .selectCoin{
         width: 100%;
