@@ -1,5 +1,5 @@
 <template>
-<span>
+<div>
     <div style="height:13vh;width:100%; background-color:#2E2E2E" >
         <v-row style="height:100%;width:100%; margin:0;" no-gutters justify="left" >
           <div style="height:50%;width:12.5%;" 
@@ -122,7 +122,7 @@
                   </div>
                 </v-window-item>
     </v-window> 
-</span>
+</div>
 </template>
 <script>
 export default {

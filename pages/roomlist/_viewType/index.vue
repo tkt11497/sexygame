@@ -1,5 +1,6 @@
 <template>
   <v-container class="pa-0 ml-2 mt-0 viewList" fluid>
+    <!-- <Tutorialroomlist  @close="tutorial=false" v-if="tutorial"/> -->
     <!-- first row -->
       <v-row no-gutters dense >
         <dashboardCard v-for="room in roomList" :key="room.roomId" :room="room" :PropCardSize="PropCardSize"/>
@@ -35,6 +36,7 @@ export default {
    },
 data() {
   return {
+    tutorial:true,
     roomList: [
       {roomId:'C01',name:'SIKEN',user: '123300', bb: '1232200', pp: '2322200',tt: '2020', status:'Dealing'},
       {roomId:'C02',name:'HONGLONG',user: '5200', bb: '1232200', pp: '2322200',tt: '2020', status:'Waiting'},

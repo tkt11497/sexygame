@@ -1,12 +1,10 @@
 <template>
  <v-container class="pa-0 ml-1" fluid style="background-color:black">
    
-    <v-tour name="myTour" :steps="steps"></v-tour>
+   
   
 <v-row class="pa-0" style="height:96vh;" no-gutters>
-  <!-- <div style="width:100%;height:100%;background-color:black;opacity:0.8;position:absolute;z-index:20">
-     a
-   </div> -->
+  <TutorialBetroom1 @close="tutorial=false" v-if="tutorial"/>
     <v-col class="pa-0" cols="7">
         <div class="playTable" id="v-step-0">
            <v-btn class="mx-2"  dark small color="#4F3C2B" style="position:absolute;bottom:1%;left:0" link to="/betRoom/betRoom2">
@@ -322,10 +320,10 @@
   <v-row no-gutters>
     <v-col cols="9">
       <!--betroom history and other betrooms history-->
-      <BetHistory id="v-step-1" />
+      <BetHistory />
     </v-col>
     <v-col cols="3">
-      <BetRoom1SideTable  id="v-step-2"  />
+      <BetRoom1SideTable  />
 
     </v-col>
   </v-row>
@@ -357,7 +355,7 @@ export default {
   //       tableDrawer
   //   },
    mounted () {
-      this.$tours['myTour'].start()
+      
     },
     computed:{
       disableCoinSelect(){
@@ -371,23 +369,7 @@ export default {
     },
   data () {
     return {
-      steps: [
-          {
-            target: '#v-step-0',  // We're using document.querySelector() under the hood
-            content: `Discover <strong>Vue Tour</strong>!`
-          },
-          {
-            target: '#v-step-1',
-            content: 'An awesome plugin made with Vue.js!'
-          },
-          {
-            target: '#v-step-2',
-            content: 'Try it, you\'ll love it!<br>You can put HTML in the steps and completely customize the DOM to suit your needs.',
-            params: {
-              placement: 'top'
-            }
-          }
-        ],
+      tutorial:true,
       drawer:false,
       coinMenu:false,
       selectedCoin:[],
@@ -413,6 +395,7 @@ export default {
 }
 </script>
 <style scoped>
+
  .scroll {
       overflow-y: auto;
     }

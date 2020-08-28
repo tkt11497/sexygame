@@ -117,7 +117,7 @@
                 </v-col>
           </v-row>
 
-           <v-row style="height:19%;width:100%; margin:0;background-color:black;z-index:22"  class="table-info">
+           <v-row style="height:19%;width:100%; margin:0;background-color:black;"  class="table-info">
              <v-col cols="2" class="text-center">
                <span style="color:#E7CAA0">Banker</span><br>
                <span>{{ changenumbers[betLimit].bet_limit }}</span>
@@ -193,11 +193,6 @@
           
            <span style="color:#E7CAA0" class="table-info">Lucky Six</span><br>
                <span class="table-info">{{ changenumbers[betLimit].bet_limit }}</span>
-          
-            <!-- <template v-slot:actions="{ dismiss }">
-              <v-btn text color="primary" @click="dismiss">Dismiss</v-btn>
-              <v-btn text color="primary">Retry</v-btn>
-            </template> -->
 
           </v-banner>
         </v-tab-item>
