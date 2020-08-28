@@ -3,7 +3,7 @@
         <v-toolbar  class="Appbar">
             <v-toolbar-title>
               <v-icon color="black">history</v-icon>
-              Bet Log
+                  <span class="black--text">Bet Log</span>
               </v-toolbar-title>
             <v-spacer></v-spacer>
             <v-btn icon @click="close" color="black">

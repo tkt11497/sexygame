@@ -1,5 +1,5 @@
 <template>
-    <div style="width:100%;height:100%;background-color:rgba(0,0,0,0.8);position:absolute;z-index:20">
+    <div style="width:100%;height:100%;background-color:rgba(0,0,0,0.75);position:absolute;z-index:20">
         
          <v-col cols="5"  class="pa-0" offset="7" style="position:relative">
           <v-row no-gutters style="width:100%;height:4vh" v-if="step==1"/>

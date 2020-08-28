@@ -175,7 +175,7 @@
             </div>
 
             <v-divider vertical/>
-            <div class="d-flex" style="width:175px">
+            <div class="d-flex justify-center align-center" style="width:10vw">
               <v-menu
                   offset-y
                   top 
@@ -184,7 +184,7 @@
                   :max-width="350"
                   >
                   <template v-slot:activator="{ on, attrs }">
-                      <v-btn icon class="pa-2 ma-1"
+                      <v-btn icon 
                       v-bind="attrs"
                         v-on="on">
                       <v-icon class="pa-2 " color="#B98F38">volume_up</v-icon>
@@ -231,13 +231,13 @@
                         </v-row>
                       </v-card>
               </v-menu>
-              <v-btn icon class="pa-2 ma-1" link :to="toRouteName+'/default'" exact v-if="!showViewList">
+              <v-btn icon  link :to="toRouteName+'/default'" exact v-if="!showViewList">
               <v-icon class="pa-2 " color="#B98F38">view_list</v-icon>
               </v-btn>
-              <v-btn icon class="pa-2 ma-1" link :to="toRouteName+'/road_map_view'" exact v-if="!showViewList">
+              <v-btn icon  link :to="toRouteName+'/road_map_view'" exact v-if="!showViewList">
               <v-icon class="pa-2 " color="#B98F38">view_module</v-icon>
               </v-btn>
-              <v-btn icon class="pa-2 ma-1" link :to="toRouteName+'/big_road_view'" exact v-if="!showViewList">
+              <v-btn icon  link :to="toRouteName+'/big_road_view'" exact v-if="!showViewList">
               <v-icon class="pa-2 " color="#B98F38">view_column</v-icon>
               </v-btn>
 
@@ -256,40 +256,36 @@
               </v-btn>
             </div>
             <v-divider vertical/>
-            <div class="d-flex" style="width:165px">
-              <div style="width:40px" class="pa-2">
+            <div class="d-flex justify-center align-center footer-size" style="width:8vw">
+              
 
-                <v-icon color="#B98F38">attach_money</v-icon>
+                <v-icon color="#B98F38" class="mr-2">attach_money</v-icon>
 
-              </div>
-
-              <div  class="pa-2" style="width:75px">
+             
                 5,00000
-              </div>
-
-              <div class=" pa-2" >
-                  <v-icon small color="#B98F38">autorenew</v-icon>
-              </div>
+            
+                  <v-icon small color="#B98F38" class="ml-2">autorenew</v-icon>
+             
 
 
             </div>
             <v-divider vertical/>
-            <div class="d-flex" style="width:180px">
-                <div style="width:40px" class="pa-2">
-                <v-icon color="#B98F38">account_circle</v-icon>
-                </div>
-              <div class="pa-2" style="width:75px">
+            <div class="d-flex justify-center align-center footer-size" style="width:10vw">
+                
+                <v-icon class="mr-1" color="#B98F38">account_circle</v-icon>
+               
+             
                   PLAYER_NAME
-              </div>
+             
             </div>
               <v-divider vertical/>
-              <div class="d-flex" style="width:250px">
-                <div class="pa-2">
+              <div class="d-flex justify-center align-center footer-size" style="width:14vw">
+                
                 2020-07-14 10:46:34 (UTC+6.5)
-                </div>
+              
               </div>
               <v-divider vertical/>
-                <div class="d-flex justify-center">
+                <div class="d-flex justify-center align-center">
                   <v-menu
                   offset-y
                   top
@@ -353,7 +349,7 @@
             </v-menu>
                 </div>
               <v-divider vertical/>
-                <div class="d-flex" style="width:100px">
+                <div class="d-flex" style="width:8vw">
                 </div>
 
 
@@ -442,6 +438,9 @@ export default {
 <style scoped>
 .text-size{
   font-size: 1.6vh;
+}
+.footer-size{
+  font-size: 0.8vw;
 }
 #app {
     background-color: var(--v-background-base);
