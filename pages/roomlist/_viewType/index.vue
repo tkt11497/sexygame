@@ -1,15 +1,12 @@
 <template>
-
-  <v-container class="pa-0 ml-2 mt-0" fluid>
+  <v-container class="pa-0 ml-2 mt-0 viewList" fluid>
     <Tutorialroomlist  @close="tutorial=false" v-if="tutorial"/>
-      <v-row no-gutters dense class="viewList" >
+      <v-row no-gutters dense >
         <dashboardCard v-for="room in roomList" :key="room.roomId" :room="room" :PropCardSize="PropCardSize"/>
       </v-row>
 
-
       
   </v-container>
-
 </template>
 
 <script>
@@ -65,7 +62,7 @@ data() {
   width:100%;
 }
 .viewList::-webkit-scrollbar {
-    width: 16px;
+    width: 14px;
 }
  
 /* Track */

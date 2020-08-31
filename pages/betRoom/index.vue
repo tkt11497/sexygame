@@ -4,6 +4,7 @@
    
   
 <v-row class="pa-0" style="height:96vh;" no-gutters>
+   <v-img v-show="showImage" width="3vw" height="3vw" contain :style="{ left: page.left+ 'vw', top: page.top+ 'px' ,position:'absolute','z-index':1000}" :src="'/coin/'+betCoin"/>
   <TutorialBetroom1 @close="tutorial=false" v-if="tutorial"/>
     <v-col class="pa-0" cols="7">
         <div class="playTable" id="v-step-0">
@@ -72,9 +73,13 @@
               <v-card
                   flat
                   tile
-                  height="30vh"
+                  height="30vh" 
+                  class="playArea" 
+                   @mouseenter="showImage = true"
+                       @mousemove="onMouseMove"
+                        @mouseleave="showImage = false" 
                 >
-                <div class="playArea" >
+                 
                   <v-row style="height:55%;width:100%; margin:0">
                     <v-col tile cols="4" class="playArea-tile" align="center">
                       <h1> Player</h1>
@@ -113,7 +118,7 @@
                         <h2>11:1</h2>
                     </v-col>
                   </v-row>
-                </div>
+               
               </v-card>
 
               </v-tab-item>
@@ -123,9 +128,10 @@
               <v-card
                   flat
                   tile
-                  height="30vh"
+                  height="30vh" 
+                  class="playArea"
                 >
-                <div class="playArea">
+                
                   <v-row style="height:55%;width:100%; margin:0">
                     <v-col tile cols="4" class="playArea-tile" align="center">
                       <h1> Player</h1>
@@ -164,7 +170,7 @@
                         <h2>11:1</h2>
                     </v-col>
                   </v-row>
-                </div>
+               
               </v-card>
               </v-tab-item>
                 <v-tab-item
@@ -173,9 +179,10 @@
                 <v-card
                   flat
                   tile
-                  height="30vh"
+                  height="30vh" 
+                  class="playArea"
                 >
-                <div class="playArea">
+               
                     <v-row style="height:100%;width:100%; margin:0">
                         <v-col tile cols="4" class="playArea-tile" align="center">
                           <h1> Player</h1>
@@ -192,7 +199,7 @@
                             <h2>1:1</h2>
                         </v-col>
                   </v-row>
-                </div>
+                
                 </v-card>
               </v-tab-item>
       </v-tabs>
@@ -364,11 +371,13 @@ export default {
         }else{
         return false
          }
-      }
+      },
 
     },
   data () {
     return {
+      page:{left: 170,top:0},
+      showImage:false,
       tutorial:true,
       drawer:false,
       coinMenu:false,
@@ -380,6 +389,12 @@ export default {
             }
             },
   methods:{
+     onMouseMove(e) {
+                console.log('page x: ',  e.pageX*100/window.screen.width, e.clientY);
+                console.log(window.screen.width)
+                this.page.left = (e.pageX*100/window.screen.width)-7;
+                this.page.top = e.pageY;
+            },
       changeShowing(){
           this.showingCoin=[...this.selectedCoin]
           this.coinMenu=false
@@ -439,10 +454,10 @@ export default {
     }
     .playArea{
         background-color:rgb(3, 62, 29);
-        width:100%;
-        height:100%;
-        cursor: url('/21.png') 2 2,auto;
-        z-index: 10
+        /* width:100%;
+        height:100%; */
+        /* cursor: url('/21.png') 2 2,auto; */
+        position: relative;
     }
     .selectCoin{
         width: 100%;

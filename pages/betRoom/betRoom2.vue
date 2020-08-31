@@ -1,5 +1,5 @@
 <template>
- <v-container class="pa-0 ml-1" fluid>
+ <v-container class="pa-0 ml-2" fluid>
 <v-row class="pa-0" style="height:100vh;" no-gutters>
     <v-col cols="12">
         <div class="tableInfo">
