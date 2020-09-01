@@ -92,7 +92,7 @@
                                 <v-icon>switch_video</v-icon>
                             </v-btn>
                           </v-flex>
-                          <div class=" d-flex justify-center align-center black--text pa-2" style="background:#c6c6c9; height:30px;">
+                          <div class=" d-flex justify-center align-center black--text pa-3" style="background:#c6c6c9;">
                             <div> {{project.status}} </div>
                           </div>
                           

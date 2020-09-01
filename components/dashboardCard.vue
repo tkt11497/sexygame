@@ -171,28 +171,28 @@
                             <!-- first button- second action-->
                             <div
                               v-if="hover ? show&& hover : show=false "
-                              class=" #1f180e darken-2 v-card--reveal display-3 white--text"
+                              class=" #1f180e darken-2 v-card--reveal d-flex justify-center align-center flex-wrap display-3 white--text"
 
-                              style="height: 100%; background:gray;"
+                              style="height: 100%; background:black;"
                             >
-                              <div class="d-flex align-center flex-row justify-center">
-                                  <v-btn class="white--text mt-9 mr-3" :small="PropCardSize=='md3'" :large="!PropCardSize=='md3'" depressed color="#5f4d35" link to="/betRoom">10 - 1,000</v-btn>
+                             
+                                  <v-btn class="white--text  mr-1" :small="PropCardSize=='md3'" :large="!PropCardSize=='md3'" depressed color="#5f4d35" link to="/betRoom">10 - 1,000</v-btn>
 
 
 
-                                  <v-btn class="white--text mt-9 mr-3" :small="PropCardSize=='md3'" :large="!PropCardSize=='md3'" depressed color="#5f4d35" link to="/betRoom">50 - 5,000</v-btn>
+                                  <v-btn class="white--text  mr-1" :small="PropCardSize=='md3'" :large="!PropCardSize=='md3'" depressed color="#5f4d35" link to="/betRoom">50 - 5,000</v-btn>
 
 
-                                  <v-btn class="white--text mt-9 mr-3" :small="PropCardSize=='md3'" :large="!PropCardSize=='md3'" depressed color="#5f4d35" link to="/betRoom">100 - 5,000</v-btn>
-                                </div>
+                                  <v-btn class="white--text mr-1" :small="PropCardSize=='md3'" :large="!PropCardSize=='md3'" depressed color="#5f4d35" link to="/betRoom">100 - 5,000</v-btn>
+                              
 
-                                <div class="d-flex align-center flex-row justify-center">
+                               
 
-                                  <v-btn class="white--text mt-4 mr-3" :small="PropCardSize=='md3'" :large="!PropCardSize=='md3'" depressed color="#5f4d35" link to="/betRoom">100 - 5,000</v-btn>
+                                  <v-btn class="white--text  mr-1" :small="PropCardSize=='md3'" :large="!PropCardSize=='md3'" depressed color="#5f4d35" link to="/betRoom">100 - 5,000</v-btn>
 
 
-                                  <v-btn class="white--text mt-4 mr-3" :small="PropCardSize=='md3'" :large="!PropCardSize=='md3'" depressed color="#5f4d35" link to="/betRoom">100 - 5,000</v-btn>
-                                </div>
+                                  <v-btn class="white--text  mr-1" :small="PropCardSize=='md3'" :large="!PropCardSize=='md3'" depressed color="#5f4d35" link to="/betRoom">100 - 5,000</v-btn>
+                               
 
 
                             </div>
@@ -203,28 +203,26 @@
                             <!-- second button- second action-->
                             <div
                               v-if="hover ? secondshow&& hover : secondshow=false "
-                              class=" #1f180e darken-2 v-card--reveal display-3 white--text"
+                              class=" #1f180e darken-2 v-card--reveal d-flex justify-center align-center flex-wrap display-3 white--text"
 
-                              style="height: 100%; background:gray;"
+                              style="height: 100%; background:black;"
                             >
-                              <div class="d-flex align-center flex-row justify-center">
-                                  <v-btn class="white--text mt-9 mr-3" :small="PropCardSize=='md3'" :large="!PropCardSize=='md3'" depressed color="#5f4d35" link to="/betRoom">10 - 1,000</v-btn>
+                             
+                                  <v-btn class="white--text mr-1" :small="PropCardSize=='md3'" :large="!PropCardSize=='md3'" depressed color="#5f4d35" link to="/betRoom">10 - 1,000</v-btn>
 
 
 
-                                  <v-btn class="white--text mt-9 mr-3" :small="PropCardSize=='md3'" :large="!PropCardSize=='md3'" depressed color="#5f4d35" link to="/betRoom">50 - 5,000</v-btn>
+                                  <v-btn class="white--text  mr-1" :small="PropCardSize=='md3'" :large="!PropCardSize=='md3'" depressed color="#5f4d35" link to="/betRoom">50 - 5,000</v-btn>
 
 
-                                  <v-btn class="white--text mt-9 mr-3" :small="PropCardSize=='md3'" :large="!PropCardSize=='md3'" depressed color="#5f4d35" link to="/betRoom">100 - 5,000</v-btn>
-                                </div>
+                                  <v-btn class="white--text mr-1" :small="PropCardSize=='md3'" :large="!PropCardSize=='md3'" depressed color="#5f4d35" link to="/betRoom">100 - 5,000</v-btn>
+                                
 
-                                <div class="d-flex align-center flex-row justify-center">
-
-                                  <v-btn class="white--text mt-4 mr-3" link to="/betRoom" :small="PropCardSize=='md3'"  :large="!PropCardSize=='md3'" depressed color="#5f4d35">100 - 5,000</v-btn>
+                                  <v-btn class="white--text  mr-1" link to="/betRoom" :small="PropCardSize=='md3'"  :large="!PropCardSize=='md3'" depressed color="#5f4d35">100 - 5,000</v-btn>
 
 
-                                  <v-btn class="white--text mt-4 mr-3" :small="PropCardSize=='md3'" :large="!PropCardSize=='md3'" depressed color="#5f4d35" link to="/betRoom">100 - 5,000</v-btn>
-                                </div>
+                                  <v-btn class="white--text  mr-1" :small="PropCardSize=='md3'" :large="!PropCardSize=='md3'" depressed color="#5f4d35" link to="/betRoom">100 - 5,000</v-btn>
+                               
 
                             </div>
                             <!-- end second button- second action-->
@@ -296,7 +294,7 @@ export default {
 
 bottom: 0;
 
-opacity: 0.6;
+opacity: 0.7;
 position: absolute;
 width: 100%;
 }

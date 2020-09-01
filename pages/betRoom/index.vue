@@ -79,18 +79,26 @@
                        @mousemove="onMouseMove"
                         @mouseleave="showImage = false" 
                 >
+                <div class="d-flex justify-center align-center stopBetting" v-if="false">
+                   
+                  Stop Betting
+                </div>
+                <div class="d-flex flex-column justify-center align-center bettingSuccess" v-if="true">
+                   <v-icon color="green" size="60">done</v-icon>
+                   Betting Success
+                </div>
                  
                   <v-row style="height:55%;width:100%; margin:0">
                     <v-col tile cols="4" class="playArea-tile" align="center">
                       <h1> Player</h1>
                         <h2>1:1</h2>
                     </v-col>
-                    <v-col tile cols="4" class="playArea-tile pa-0" align="center">
-                      <div class="tie tie1">
+                    <v-col tile cols="4" class="pa-0" align="center">
+                      <div class="tie tie1 playArea-tile ">
                         <h2> Tie</h2>
                         <h2>8:1</h2>
                       </div>
-                      <div  class="tie">
+                      <div  class="tie playArea-tile ">
                         <h2> Lucky Six</h2>
                         <h2> 12:1 / 20:1</h2>
                       </div>
@@ -410,7 +418,28 @@ export default {
 }
 </script>
 <style scoped>
-
+  .stopBetting{
+    font-size:0.8vw;
+    width:20%;
+    height:30%;
+    background-color:rgba(0,0,0,0.5);
+    position:absolute;
+    color:white;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+    .bettingSuccess{
+    font-size:0.9vw;
+    width:25%;
+    height:35%;
+    background-color:rgba(0,0,0,0.5);
+    position:absolute;
+    color:green;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
  .scroll {
       overflow-y: auto;
     }
@@ -427,6 +456,12 @@ export default {
         border:1px solid rgba(255,255,255, 0.3);
         color:#3470A9;
         font-size:1.2vw ;
+    }
+    .playArea-tile:hover {
+        background-color: #0E541B;
+    }
+    .playArea-tile1:hover {
+        background-color: #0E541B;
     }
      .playArea-tile1{
         border:1px solid rgba(255,255,255, 0.3);
