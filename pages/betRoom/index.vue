@@ -89,41 +89,233 @@
                 </div>
                  
                   <v-row style="height:55%;width:100%; margin:0">
-                    <v-col tile cols="4" class="playArea-tile" align="center">
+                    <v-col tile cols="4" class="playArea-tile" style="position:relative" align="center" @click="placeBet='player'">
                       <h1> Player</h1>
                         <h2>1:1</h2>
+                         <v-img v-if="PlacedBets.some((item)=>item.bet=='player')" 
+                         width="4vw" 
+                         height="4vw" 
+                         style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)"
+                          contain  
+                          :src="'/coin/'+betCoin"/>
+                        <div class="betConfirm" v-if="placeBet=='player'">
+                          <v-img height="4vw" width="4vw" contain src="/coin/黑色籌碼.png"/>
+                           <v-row justify="center">
+                              <v-img src="/icon/萬用選擇UI.png"
+                                            @click.stop="placeBet=null"
+                                            class="ma-2"
+                                            max-width="2vw"
+                                            max-height="2vw"></v-img>
+
+                                          <!-- </v-btn> -->
+                                          <v-img src="/icon/萬用取消UI.png"
+                                            @click.stop="confirmBet('player')"
+                                            class="ma-2"
+                                            max-width="2vw"
+                                            max-height="2vw"></v-img>
+                           </v-row>
+
+                        </div>
                     </v-col>
-                    <v-col tile cols="4" class="pa-0" align="center">
-                      <div class="tie tie1 playArea-tile ">
+                    <v-col tile cols="4" class="pa-0" align="center" >
+                      <div class="tie tie1 playArea-tile " @click="placeBet='tie'" >
                         <h2> Tie</h2>
                         <h2>8:1</h2>
+                         <v-img v-if="PlacedBets.some((item)=>item.bet=='tie')" 
+                         width="4vw" 
+                         height="4vw" 
+                         style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)"
+                          contain  
+                          :src="'/coin/'+betCoin"/>
+                        <div class="betConfirm" v-if="placeBet=='tie'">
+                          <v-img height="4vw" width="4vw" contain src="/coin/黑色籌碼.png"/>
+                           <v-row justify="center">
+                              <v-img src="/icon/萬用選擇UI.png"
+                                            @click.stop="placeBet=null"
+                                            class="ma-2"
+                                            max-width="2vw"
+                                            max-height="2vw"></v-img>
+
+                                          <!-- </v-btn> -->
+                                          <v-img src="/icon/萬用取消UI.png"
+                                            @click.stop="confirmBet('tie')"
+                                            class="ma-2"
+                                            max-width="2vw"
+                                            max-height="2vw"></v-img>
+                           </v-row>
+
+                        </div>
                       </div>
-                      <div  class="tie playArea-tile ">
+                      <div  class="tie playArea-tile " @click="placeBet='luckySix'">
                         <h2> Lucky Six</h2>
                         <h2> 12:1 / 20:1</h2>
+                            <v-img v-if="PlacedBets.some((item)=>item.bet=='luckySix')" 
+                         width="4vw" 
+                         height="4vw" 
+                         style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)"
+                          contain  
+                          :src="'/coin/'+betCoin"/>
+                        <div class="betConfirm" v-if="placeBet=='luckySix'">
+                          <v-img height="4vw" width="4vw" contain src="/coin/黑色籌碼.png"/>
+                           <v-row justify="center">
+                              <v-img src="/icon/萬用選擇UI.png"
+                                            @click.stop="placeBet=null"
+                                            class="ma-2"
+                                            max-width="2vw"
+                                            max-height="2vw"></v-img>
+
+                                          <!-- </v-btn> -->
+                                          <v-img src="/icon/萬用取消UI.png"
+                                            @click.stop="confirmBet('luckySix')"
+                                            class="ma-2"
+                                            max-width="2vw"
+                                            max-height="2vw"></v-img>
+                           </v-row>
+
+                        </div>
                       </div>
                     </v-col>
-                    <v-col tile cols="4" class="playArea-tile banker" align="center">
+                    <v-col tile cols="4" class="playArea-tile banker" align="center" @click="placeBet='banker'">
                       <h1> Banker</h1>
                         <h2>0.95:1</h2>
+                         <v-img v-if="PlacedBets.some((item)=>item.bet=='banker')" 
+                         width="4vw" 
+                         height="4vw" 
+                         style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)"
+                          contain  
+                          :src="'/coin/'+betCoin"/>
+                        <div class="betConfirm" v-if="placeBet=='banker'">
+                          <v-img height="4vw" width="4vw" contain src="/coin/黑色籌碼.png"/>
+                           <v-row justify="center">
+                              <v-img src="/icon/萬用選擇UI.png"
+                                            @click.stop="placeBet=null"
+                                            class="ma-2"
+                                            max-width="2vw"
+                                            max-height="2vw"></v-img>
+
+                                          <!-- </v-btn> -->
+                                          <v-img src="/icon/萬用取消UI.png"
+                                            @click.stop="confirmBet('banker')"
+                                            class="ma-2"
+                                            max-width="2vw"
+                                            max-height="2vw"></v-img>
+                           </v-row>
+
+                        </div>
                     </v-col>
                   </v-row>
                   <v-row style="height:45%;width:100%; margin:0">
-                    <v-col tile cols="3" class="playArea-tile1" align="center">
+                    <v-col tile cols="3" class="playArea-tile1" align="center" @click="placeBet='pp'">
                         <h1>Player Pair</h1>
                         <h2>11:1</h2>
+                          <v-img v-if="PlacedBets.some((item)=>item.bet=='pp')" 
+                         width="4vw" 
+                         height="4vw" 
+                         style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)"
+                          contain  
+                          :src="'/coin/'+betCoin"/>
+                        <div class="betConfirm" v-if="placeBet=='pp'">
+                          <v-img height="4vw" width="4vw" contain src="/coin/黑色籌碼.png"/>
+                           <v-row justify="center">
+                              <v-img src="/icon/萬用選擇UI.png"
+                                            @click.stop="placeBet=null"
+                                            class="ma-2"
+                                            max-width="2vw"
+                                            max-height="2vw"></v-img>
+
+                                          <!-- </v-btn> -->
+                                          <v-img src="/icon/萬用取消UI.png"
+                                            @click.stop="confirmBet('pp')"
+                                            class="ma-2"
+                                            max-width="2vw"
+                                            max-height="2vw"></v-img>
+                           </v-row>
+
+                        </div>
                     </v-col>
-                    <v-col tile cols="3" class="playArea-tile1" align="center">
+                    <v-col tile cols="3" class="playArea-tile1" align="center" @click="placeBet='pn'">
                         <h1>Player Natural</h1>
                         <h2>7:2</h2>
+                         <v-img v-if="PlacedBets.some((item)=>item.bet=='pn')" 
+                         width="4vw" 
+                         height="4vw" 
+                         style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)"
+                          contain  
+                          :src="'/coin/'+betCoin"/>
+                        <div class="betConfirm" v-if="placeBet=='pn'">
+                          <v-img height="4vw" width="4vw" contain src="/coin/黑色籌碼.png"/>
+                           <v-row justify="center">
+                              <v-img src="/icon/萬用選擇UI.png"
+                                            @click.stop="placeBet=null"
+                                            class="ma-2"
+                                            max-width="2vw"
+                                            max-height="2vw"></v-img>
+
+                                          <!-- </v-btn> -->
+                                          <v-img src="/icon/萬用取消UI.png"
+                                            @click.stop="confirmBet('pn')"
+                                            class="ma-2"
+                                            max-width="2vw"
+                                            max-height="2vw"></v-img>
+                           </v-row>
+
+                        </div>
                     </v-col>
-                    <v-col tile cols="3" class="playArea-tile1 banker" align="center">
+                    <v-col tile cols="3" class="playArea-tile1 banker" align="center" @click="placeBet='bn'">
                         <h1>Banker Natural</h1>
                         <h2>7:2</h2>
+                         <v-img v-if="PlacedBets.some((item)=>item.bet=='bn')" 
+                         width="4vw" 
+                         height="4vw" 
+                         style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)"
+                          contain  
+                          :src="'/coin/'+betCoin"/>
+                        <div class="betConfirm" v-if="placeBet=='bn'">
+                          <v-img height="4vw" width="4vw" contain src="/coin/黑色籌碼.png"/>
+                           <v-row justify="center">
+                              <v-img src="/icon/萬用選擇UI.png"
+                                            @click.stop="placeBet=null"
+                                            class="ma-2"
+                                            max-width="2vw"
+                                            max-height="2vw"></v-img>
+
+                                          <!-- </v-btn> -->
+                                          <v-img src="/icon/萬用取消UI.png"
+                                            @click.stop="confirmBet('bn')"
+                                            class="ma-2"
+                                            max-width="2vw"
+                                            max-height="2vw"></v-img>
+                           </v-row>
+
+                        </div>
                     </v-col>
-                    <v-col tile cols="3" class="playArea-tile1 banker" align="center">
+                    <v-col tile cols="3" class="playArea-tile1 banker" align="center" @click="placeBet='bp'">
                         <h1>Banker Pair</h1>
                         <h2>11:1</h2>
+                         <v-img v-if="PlacedBets.some((item)=>item.bet=='bp')" 
+                         width="4vw" 
+                         height="4vw" 
+                         style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)"
+                          contain  
+                          :src="'/coin/'+betCoin"/>
+                        <div class="betConfirm" v-if="placeBet=='bp'">
+                          <v-img height="4vw" width="4vw" contain src="/coin/黑色籌碼.png"/>
+                           <v-row justify="center">
+                              <v-img src="/icon/萬用選擇UI.png"
+                                            @click.stop="placeBet=null"
+                                            class="ma-2"
+                                            max-width="2vw"
+                                            max-height="2vw"></v-img>
+
+                                          <!-- </v-btn> -->
+                                          <v-img src="/icon/萬用取消UI.png"
+                                            @click.stop="confirmBet('bp')"
+                                            class="ma-2"
+                                            max-width="2vw"
+                                            max-height="2vw"></v-img>
+                           </v-row>
+
+                        </div>
                     </v-col>
                   </v-row>
                
@@ -384,6 +576,8 @@ export default {
     },
   data () {
     return {
+      PlacedBets:[],
+      placeBet:'',
       page:{left: 170,top:0},
       showImage:false,
       tutorial:true,
@@ -397,6 +591,10 @@ export default {
             }
             },
   methods:{
+    confirmBet(bet){
+      this.PlacedBets.push({bet:bet,amount:'50'})
+      this.placeBet=''
+    },
      onMouseMove(e) {
                 console.log('page x: ',  e.pageX*100/window.screen.width, e.clientY);
                 console.log(window.screen.width)
@@ -418,6 +616,15 @@ export default {
 }
 </script>
 <style scoped>
+.betConfirm{
+  position:absolute; 
+  width:100%;
+  height:100%;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  z-index: 20;
+}
   .stopBetting{
     font-size:0.8vw;
     width:20%;
@@ -428,6 +635,7 @@ export default {
     top:50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 20;
   }
     .bettingSuccess{
     font-size:0.9vw;
@@ -439,6 +647,7 @@ export default {
     top:50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 20;
   }
  .scroll {
       overflow-y: auto;
@@ -456,6 +665,7 @@ export default {
         border:1px solid rgba(255,255,255, 0.3);
         color:#3470A9;
         font-size:1.2vw ;
+        position: relative;
     }
     .playArea-tile:hover {
         background-color: #0E541B;
@@ -467,6 +677,7 @@ export default {
         border:1px solid rgba(255,255,255, 0.3);
         color:#3470A9;
         font-size:0.7vw ;
+        position: relative;
     }
     .player{
       color:#3470A9
